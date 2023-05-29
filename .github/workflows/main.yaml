@@ -1,0 +1,76 @@
+name: wizr
+
+on: [ pull_request, push]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.7.0
+          channel: stable
+          cache: true
+      - name: Write environment files to directory
+        run: |
+          echo "${{ secrets.DEV_ENV }}" | base64 --decode > .env_dev
+          echo "${{ secrets.PROD_ENV }}" | base64 --decode > .env_prod
+          echo "${{ secrets.STAGING_ENV }}" | base64 --decode > .env_staging
+
+      - name:  📦 Install Dependencies
+        run: flutter packages get
+
+      - name: Write environment files to directory
+        run: |
+          echo "${{ secrets.DEV_ENV }}" | base64 --decode > .env_dev
+          echo "${{ secrets.PROD_ENV }}" | base64 --decode > .env_prod
+          echo "${{ secrets.STAGING_ENV }}" | base64 --decode > .env_staging
+
+      - name: ✨ Check Formatting
+        run: flutter format --set-exit-if-changed lib test
+
+      - name: 🕵️ Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings lib test
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.7.0
+          channel: stable
+          cache: true
+
+      - name: Write environment files to directory
+        run: |
+          echo "${{ secrets.DEV_ENV }}" | base64 --decode > .env_dev
+          echo "${{ secrets.PROD_ENV }}" | base64 --decode > .env_prod
+          echo "${{ secrets.STAGING_ENV }}" | base64 --decode > .env_stg
+
+      - name:  📦 Install Dependencies
+        run: flutter packages get
+
+      - name: Write environment files to directory
+        run: |
+          echo "${{ secrets.DEV_ENV }}" | base64 --decode > .env_dev
+          echo "${{ secrets.PROD_ENV }}" | base64 --decode > .env_prod
+          echo "${{ secrets.STAGING_ENV }}" | base64 --decode > .env_stg
+
+      - name: 🧪 Run Tests
+        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
+      - name: 📊 Check Code Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v2
+        with:
+          path: "./coverage/lcov.info"
+          min_coverage: 0
+
