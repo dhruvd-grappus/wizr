@@ -27,9 +27,15 @@ dev_dependencies:
     sdk: flutter
   mocktail: ^0.3.0
   very_good_analysis: ^5.0.0
+  build_runner: ^2.4.4
+  flutter_gen_runner: ^5.3.1
 
+
+# add asset into assets/images
+# dart pub global activate flutter_gen, then
+# flutter packages pub run build_runner build
 flutter_gen:
-  output: lib/utils/asset_paths.dart # Optional (default: lib/gen/)
+  output: lib/utils/ # Optional (default: lib/gen/)
   line_length: 80 # Optional (default: 80)
 
   # Optional
@@ -41,8 +47,8 @@ flutter_gen:
       style: camel-case
       class_name: Assets
 
-
-
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/images/
