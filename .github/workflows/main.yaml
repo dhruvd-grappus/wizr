@@ -32,7 +32,7 @@ jobs:
           echo "${{ secrets.STAGING_ENV }}" | base64 --decode > .env_staging
 
       - name: ✨ Check Formatting
-        run: flutter format --set-exit-if-changed lib test
+        run: dart format --set-exit-if-changed lib test
 
       - name: 🕵️ Analyze
         run: flutter analyze --no-fatal-infos --no-fatal-warnings lib test
