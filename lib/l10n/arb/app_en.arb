@@ -3,5 +3,13 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
-    }
+    },
+    "kycAddressHeader":"Where can we find you?",
+    "addAddress":"Add address",
+    "enterFullAddress":"Enter Full Address",
+    "enterLandmark":"Enter Landmark",
+    "city":"City",
+    "pinCode":"Pin code",
+    "state":"State",
+    "confirm":"Confirm"
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wizr/counter/counter.dart';
 import 'package:wizr/l10n/l10n.dart';
+import 'package:wizr/navigation/go_router_config.dart';
 import 'package:wizr/theme/theme_constants.dart';
 
 class App extends StatelessWidget {
@@ -8,11 +8,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: darkTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      routerConfig: router,
     );
   }
 }
