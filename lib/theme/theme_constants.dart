@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wizr/typography/text_styles.dart';
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
@@ -13,20 +14,25 @@ ThemeData darkTheme = ThemeData(
     secondary: Colors.black,
     onSecondary: Colors.black,
     brightness: Brightness.dark,
-    background: Colors.black,
+    background: Colors.white,
   ),
   appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
   primaryColor: Colors.black,
-  textTheme: const TextTheme(
-      // bodySmall: CustomTextStyles.bodySmall,
-      // bodyMedium: CustomTextStyles.bodyMedium,
-      // headlineSmall: CustomTextStyles.headlineSmall,
-      // bodyLarge: CustomTextStyles.bodyLarge,
-      // headlineLarge: CustomTextStyles.headlineLarge,
-      // labelMedium: CustomTextStyles.labelMedium,
-      // labelLarge: CustomTextStyles.labelLarge,
-      // labelSmall: CustomTextStyles.labelSmall,
-      ),
+  textTheme: TextTheme(
+    labelLarge: CustomTextStyles.labelLarge,
+    headlineLarge: CustomTextStyles.headlineLarge,
+    headlineSmall: CustomTextStyles.headlineSmall,
+    labelSmall: CustomTextStyles.labelSmall,
+    bodyMedium: CustomTextStyles.bodyMedium,
+    // bodySmall: CustomTextStyles.bodySmall,
+    // bodyMedium: CustomTextStyles.bodyMedium,
+    // headlineSmall: CustomTextStyles.headlineSmall,
+    // bodyLarge: CustomTextStyles.bodyLarge,
+    // headlineLarge: CustomTextStyles.headlineLarge,
+    // labelMedium: CustomTextStyles.labelMedium,
+    // labelLarge: CustomTextStyles.labelLarge,
+    // labelSmall: CustomTextStyles.labelSmall,
+  ),
 );
 
 extension ThemeExtension on BuildContext {
