@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:wizr/views/kyc/kyc_address_page.dart';
+import '../../views/kyc/kyc_address_page.dart';
 
 class RouteNames {
   static const kycAddressPage = 'kyc-address';

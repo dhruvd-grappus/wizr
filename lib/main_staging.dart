@@ -1,5 +1,5 @@
-import 'package:wizr/app/app.dart';
-import 'package:wizr/bootstrap.dart';
+import 'core/app/app.dart';
+import 'bootstrap.dart';
 
 void main() {
   bootstrap(() => const App());

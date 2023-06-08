@@ -1,7 +1,7 @@
 // ignore_for_file: strict_raw_type, inference_failure_on_function_invocation
 
 import 'package:dio/dio.dart';
-import 'package:wizr/data/api/endpoints.dart';
+import 'package:wizr/core/data/api/endpoints.dart';
 
 class DioClient {
   // injecting dio instance

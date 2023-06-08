@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wizr/typography/text_styles.dart';
+
+import 'typography/text_styles.dart';
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:wizr/l10n/l10n.dart';
-import 'package:wizr/theme/app_colors.dart';
-import 'package:wizr/typography/text_styles.dart';
-import 'package:wizr/utils/responsive_utils.dart';
-import 'package:wizr/utils/ui/common/buttons.dart';
-import 'package:wizr/utils/ui/common/form_fields.dart';
-import 'package:wizr/utils/ui/common/widgets.dart';
+import '../../core/l10n/l10n.dart';
+import '../../core/theme/app_colors.dart';
+import '../../core/theme/typography/text_styles.dart';
+import '../../core/utils/responsive_utils.dart';
+import '../../core/utils/ui/common/buttons.dart';
+import '../../core/utils/ui/common/form_fields.dart';
+import 'widgets/kyc_header_with_title.dart';
 
 class KycAddressPage extends StatefulWidget {
   const KycAddressPage({super.key});

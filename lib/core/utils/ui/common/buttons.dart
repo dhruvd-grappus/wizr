@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wizr/typography/text_styles.dart';
-import 'package:wizr/utils/responsive_utils.dart';
+import '../../../theme/typography/text_styles.dart';
+import '../../responsive_utils.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({required this.label, super.key});
