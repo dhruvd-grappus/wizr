@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
-import 'package:wizr/core/utils/ui/common/buttons.dart';
-import 'package:wizr/core/utils/ui/common/form_fields.dart';
+import 'package:wizr/core/widgets/buttons.dart';
+import 'package:wizr/core/widgets/form_fields.dart';
+import 'package:wizr/core/widgets/app_checkbox.dart';
+import 'package:wizr/core/widgets/tab_header.dart';
+import 'package:wizr/views/kyc/widgets/address_card.dart';
+import 'package:wizr/views/kyc/widgets/document_upload_section.dart';
+import 'package:wizr/views/kyc/widgets/kyc_card.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
 class KycAddressPage extends StatefulWidget {
