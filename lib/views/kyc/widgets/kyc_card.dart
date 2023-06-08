@@ -49,13 +49,15 @@ class KycCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (cardType == KycCardType.iconTitle)
+            if (cardType == KycCardType.iconTitle || isHalfCard)
               Column(
                 children: [
                   IconHeader(
                     iconPath: iconPath,
                   ),
-                  SizedBox(height: 12.toResponsiveHeight(context))
+                  SizedBox(
+                    height: (isHalfCard ? 16 : 12).toResponsiveHeight(context),
+                  )
                 ],
               ),
             if (!isHalfCard && cardType != KycCardType.iconTitle)
@@ -63,7 +65,7 @@ class KycCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: context.screenWidth - 120,
+                    width: context.screenWidth - 120.toResponsiveWidth(context),
                     child: KycCardContentBody(
                       cardType: cardType,
                       iconPath: iconPath,
@@ -129,15 +131,21 @@ class KycCardContentBody extends StatelessWidget {
       children: [
         Text(
           title,
-          style: context.textTheme.headlineSmall,
+          style: context.textTheme.headlineSmall!.responsiveFont(context),
         ),
         SizedBox(height: 8.toResponsiveHeight(context)),
         if (bodyWidget != null)
           bodyWidget!
         else
-          Text(
-            bodyText,
-            style: context.textTheme.bodyMedium?.opacity50,
+          Container(
+            constraints:
+                BoxConstraints(maxWidth: 240.toResponsiveWidth(context)),
+            child: Text(
+              bodyText,
+              maxLines: 3,
+              style: context.textTheme.bodyMedium?.opacity50
+                  .responsiveFont(context),
+            ),
           ),
       ],
     );

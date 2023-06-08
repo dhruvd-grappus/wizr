@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 
 class TabHeader extends StatefulWidget {
   TabHeader({
@@ -30,7 +31,7 @@ class _TabHeaderState extends State<TabHeader> {
   Widget build(BuildContext context) {
     return Container(
       width: widget.width,
-      padding: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4).copyWith(right: 12).responsive(context),
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.lightGrey,
@@ -38,41 +39,53 @@ class _TabHeaderState extends State<TabHeader> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           widget.tabTiles.length,
           (index) {
-            return InkWell(
-              onTap: () {
-                if (widget.tabTiles[index] != selectedTab) {
-                  setState(() {
-                    selectedTab = widget.tabTiles[index];
-                  });
-                  widget.onChanged(selectedTab);
-                }
-              },
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.ease,
-                width: (widget.width / widget.tabTiles.length) - 8,
-                padding: const EdgeInsets.symmetric(
-                  vertical: 8,
-                ),
-                decoration: BoxDecoration(
-                  color: widget.tabTiles[index] == selectedTab
-                      ? AppColors.tabColor
-                      : Colors.transparent,
-                  borderRadius: BorderRadius.circular(9),
-                ),
-                child: Center(
-                  child: Text(
-                    widget.tabTiles[index],
-                    maxLines: 2,
-                    textAlign: TextAlign.center,
-                    style: context.textTheme.labelLarge?.withColor(
-                      widget.tabTiles[index] == selectedTab
-                          ? AppColors.white
-                          : AppColors.greyTextColor,
+            return Expanded(
+              child: Container(
+                margin: EdgeInsets.only(
+                  right: index != widget.tabTiles.length - 1 ? 28 : 0,
+                ).responsive(context),
+                child: InkWell(
+                  onTap: () {
+                    if (widget.tabTiles[index] != selectedTab) {
+                      setState(() {
+                        selectedTab = widget.tabTiles[index];
+                      });
+                      widget.onChanged(selectedTab);
+                    }
+                  },
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
+                    curve: Curves.ease,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: widget.tabTiles[index] == selectedTab
+                          ? AppColors.tabColor
+                          : Colors.transparent,
+                      borderRadius: BorderRadius.circular(9),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20)
+                          .responsive(context),
+                      child: Center(
+                        child: Text(
+                          widget.tabTiles[index],
+                          maxLines: 2,
+                          textAlign: TextAlign.center,
+                          style: context.textTheme.labelLarge
+                              ?.withColor(
+                                widget.tabTiles[index] == selectedTab
+                                    ? AppColors.white
+                                    : AppColors.greyTextColor,
+                              )
+                              .responsiveFont(context),
+                        ),
+                      ),
                     ),
                   ),
                 ),
