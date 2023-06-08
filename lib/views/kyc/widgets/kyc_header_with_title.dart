@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/theme/typography/text_styles.dart';
-import '../../../core/utils/asset_paths.dart';
-import '../../../core/utils/responsive_utils.dart';
+import 'package:wizr/core/theme/app_colors.dart';
+import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/core/utils/asset_paths.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 
 class KycHeaderWithTitle extends StatelessWidget {
   const KycHeaderWithTitle({required this.title, super.key});

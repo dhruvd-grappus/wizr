@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../theme/app_colors.dart';
-import '../../../theme/typography/text_styles.dart';
-import '../../responsive_utils.dart';
+import 'package:wizr/core/theme/app_colors.dart';
+import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 
 class CurvedFormField extends StatefulWidget {
   const CurvedFormField({super.key});

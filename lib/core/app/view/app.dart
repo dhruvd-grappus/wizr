@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../l10n/l10n.dart';
-import '../../navigation/go_router_config.dart';
-import '../../theme/theme_constants.dart';
+import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
+import 'package:wizr/core/theme/theme_constants.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

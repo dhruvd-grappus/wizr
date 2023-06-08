@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/responsive_utils.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 part 'font_weights.dart';
 part 'text_style_extensions.dart';
 
