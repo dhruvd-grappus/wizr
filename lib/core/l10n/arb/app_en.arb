@@ -53,5 +53,7 @@
     "deviceLocationOff":"Device Location is turned off",
     "turnOn":"Turn On",
     "detectViaGps":"Detect via GPS",
-    "enterLocationManually":"Enter Location manually"
+    "enterLocationManually":"Enter Location manually",
+    "selectLocation":"Select your location",
+    "changeLocation":"Change Location"
 }

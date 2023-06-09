@@ -69,6 +69,7 @@ class DetectLocationSheet extends StatelessWidget {
               PrimaryButton(
                 backgroundColor: Colors.white,
                 label: context.l10n.detectViaGps,
+                onTap: () => context.pushNamed(RouteNames.searchLocationPage),
                 icon: AssetIcons.mapPin,
                 customLabelStyle:
                     context.textTheme.labelLarge!.responsiveFont(context).black,
