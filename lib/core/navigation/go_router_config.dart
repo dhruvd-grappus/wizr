@@ -40,7 +40,7 @@ final router = GoRouter(
     GoRoute(
       name: RouteNames.kycEmployeePage,
       path: '/',
-      builder: (context, state) => KycEmployeePage(),
+      builder: (context, state) => const KycEmployeePage(),
     ),
   ],
 );

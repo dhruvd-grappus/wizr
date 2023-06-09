@@ -20,7 +20,8 @@ class CustomEmployeeForm extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (employeeType.title(context).isEmpty)
+          if (employeeType.title(context).isEmpty ||
+              employeeType == EmployeeType.student)
             const SizedBox()
           else
             Container(
