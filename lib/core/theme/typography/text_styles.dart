@@ -53,4 +53,10 @@ abstract class CustomTextStyles {
     color: AppColors.black,
     letterSpacing: 0.02,
   );
+  static TextStyle captionMedium = _interStyle.copyWith(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+    letterSpacing: 0.02,
+  );
 }

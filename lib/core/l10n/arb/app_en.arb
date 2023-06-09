@@ -77,8 +77,19 @@
         }
     },
     "front":"Front",
-    "back":"Back"
-
-
+    "back":"Back",
+    "identityProof":"Identity Proof",
+    "drivingLicense":"Driving License",
+    "voterId":"Voter’s ID",
+    "passport":"Passport",
+    "uploadYourDoc":"Upload your {doc}",
+    "@uploadYourDoc": {
+        "placeholders": {
+            "doc": {
+                "type": "String",
+                "example": "Aadhaar's"
+            }
+        }
+    }
 
 }

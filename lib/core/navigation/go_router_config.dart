@@ -4,6 +4,7 @@ import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
 import 'package:wizr/views/kyc/address/search_location_page.dart';
 import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
+import 'package:wizr/views/kyc/identity/kyc_identity_proof_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_aadhar_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_digitally_page.dart';
 
@@ -15,11 +16,17 @@ class RouteNames {
   static const searchLocationPage = 'search-location-map';
   static const uploadDigitallyPage = 'kyc-upload-digitally';
   static const uploadAadharPage = 'kyc-upload-aadhar';
+  static const kycIdentityProof = 'kyc-identity-proof';
 }
 
 // GoRouter configuration
 final router = GoRouter(
   routes: [
+    GoRoute(
+      name: RouteNames.kycIdentityProof,
+      path: '/${RouteNames.kycIdentityProof}',
+      builder: (context, state) => const KycIdentityProofPage(),
+    ),
     GoRoute(
       name: RouteNames.uploadAadharPage,
       path: '/${RouteNames.uploadAadharPage}',
