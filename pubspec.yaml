@@ -42,8 +42,9 @@ flutter:
   fonts:
     - family: Patron
       fonts:
-        - asset: assets/fonts/Patron-Bold.ttf
+        - asset: assets/fonts/Patron-Bold.otf
           weight: 700
+
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter-Regular.ttf

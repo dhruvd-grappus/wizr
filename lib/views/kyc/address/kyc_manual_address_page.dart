@@ -8,14 +8,14 @@ import 'package:wizr/core/widgets/buttons.dart';
 import 'package:wizr/views/kyc/widgets/form_field.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
-class KycAddressPage extends StatefulWidget {
-  const KycAddressPage({super.key});
+class KycManualAddressPage extends StatefulWidget {
+  const KycManualAddressPage({super.key});
 
   @override
-  State<KycAddressPage> createState() => _KycAddressPageState();
+  State<KycManualAddressPage> createState() => _KycManualAddressPageState();
 }
 
-class _KycAddressPageState extends State<KycAddressPage> {
+class _KycManualAddressPageState extends State<KycManualAddressPage> {
   final addressController = TextEditingController();
 
   final landmarkController = TextEditingController();

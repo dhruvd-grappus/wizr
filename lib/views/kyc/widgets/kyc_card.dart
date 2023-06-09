@@ -96,11 +96,7 @@ class KycCard extends StatelessWidget {
                 bodyWidget: bodyWidget,
                 bodyText: bodyText,
               ),
-            if (isHalfCard ||
-                cardType != KycCardType.timeLineCard &&
-                    cardType != KycCardType.fullCard)
-              const ForwardCardButton(),
-            if (cardType == KycCardType.iconTitle) const ForwardCardButton(),
+            if (isHalfCard) const ForwardCardButton(),
           ],
         ),
       ),
@@ -137,15 +133,21 @@ class KycCardContentBody extends StatelessWidget {
         if (bodyWidget != null)
           bodyWidget!
         else
-          Container(
-            constraints:
-                BoxConstraints(maxWidth: 240.toResponsiveWidth(context)),
-            child: Text(
-              bodyText,
-              maxLines: 3,
-              style: context.textTheme.bodyMedium?.opacity50
-                  .responsiveFont(context),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                constraints:
+                    BoxConstraints(maxWidth: 240.toResponsiveWidth(context)),
+                child: Text(
+                  bodyText,
+                  maxLines: 3,
+                  style: context.textTheme.bodyMedium?.opacity50
+                      .responsiveFont(context),
+                ),
+              ),
+              if (cardType == KycCardType.iconTitle) const ForwardCardButton(),
+            ],
           ),
       ],
     );

@@ -6,8 +6,10 @@ import 'helpers/helpers.dart';
 
 void main() {
   testWidgets('App start', (tester) async {
-    await tester.pumpApp(MaterialApp(
-      theme: darkTheme,
-    ));
+    await tester.pumpApp(
+      MaterialApp(
+        theme: darkTheme,
+      ),
+    );
   });
 }
