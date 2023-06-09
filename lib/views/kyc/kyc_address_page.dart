@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
-import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
-import 'package:wizr/core/widgets/form_fields.dart';
-import 'package:wizr/core/widgets/app_checkbox.dart';
-import 'package:wizr/core/widgets/tab_header.dart';
-import 'package:wizr/views/kyc/widgets/address_card.dart';
-import 'package:wizr/views/kyc/widgets/document_upload_section.dart';
-import 'package:wizr/views/kyc/widgets/kyc_card.dart';
+
+import 'package:wizr/views/kyc/widgets/form_field.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
 class KycAddressPage extends StatefulWidget {
@@ -76,25 +71,25 @@ class _KycAddressPageState extends State<KycAddressPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _CustomAddressFormField(
+                      KycFormField(
                         controller: addressController,
                         label: context.l10n.enterFullAddress,
                       ),
-                      _CustomAddressFormField(
+                      KycFormField(
                         controller: landmarkController,
                         label: context.l10n.enterLandmark,
                       ),
-                      _CustomAddressFormField(
+                      KycFormField(
                         controller: cityController,
                         label: context.l10n.city,
                         isDropDown: true,
                       ),
-                      _CustomAddressFormField(
+                      KycFormField(
                         controller: pinCodeController,
                         label: context.l10n.pinCode,
                         textInputType: TextInputType.phone,
                       ),
-                      _CustomAddressFormField(
+                      KycFormField(
                         controller: stateController,
                         label: context.l10n.state,
                         isDropDown: true,
@@ -109,50 +104,6 @@ class _KycAddressPageState extends State<KycAddressPage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _CustomAddressFormField extends StatelessWidget {
-  const _CustomAddressFormField({
-    required this.controller,
-    required this.label,
-    this.isDropDown = false,
-    this.textInputType = TextInputType.streetAddress,
-  });
-  final TextEditingController controller;
-  final String label;
-  final bool isDropDown;
-  final TextInputType textInputType;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 24).responsive(context),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Text(
-                label,
-                style: context.textTheme.labelSmall!.responsiveFont(context),
-              ),
-              Text(
-                '*',
-                style:
-                    context.textTheme.labelSmall!.copyWith(color: Colors.red),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 12.toResponsiveHeight(context),
-          ),
-          if (isDropDown)
-            const CurvedDropdownField()
-          else
-            const CurvedFormField(),
-        ],
       ),
     );
   }

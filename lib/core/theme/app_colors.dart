@@ -13,7 +13,10 @@ class AppColors extends MaterialColor {
   static const fadeBlue = Color(0xffBDD9F1);
   static const tabColor = Color(0xff102031);
   static const greyTextColor = Color(0xff838F97);
-  static const midnigthBlack = Color(0xff161C20);
+  static const midnightBlack = Color(0xff161C20);
+  static const eggShell = Color(0xFFF0EAE4);
+  static const midnightGrey = Color(0xFFEDF0F1);
+  static const midnightGreyDark = Color(0xFF838F97);
 }
 
 extension ColorExtension on String {

@@ -13,4 +13,9 @@ class AssetIcons {
   static const String idUploadBadge = '${iconBasePath}id_upload_badge.svg';
   static const String documentUploadBadge =
       '${iconBasePath}document_upload_badge.svg';
+
+  static const String salaried = '${iconBasePath}ic_salaried.svg';
+  static const String self = '${iconBasePath}ic_self.svg';
+  static const String retired = '${iconBasePath}ic_retired.svg';
+  static const String student = '${iconBasePath}ic_student.svg';
 }

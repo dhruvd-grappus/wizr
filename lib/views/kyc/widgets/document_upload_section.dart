@@ -74,7 +74,7 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
                 widget.title,
                 textAlign: TextAlign.center,
                 style: CustomTextStyles.captionLarge
-                    .withColor(AppColors.midnigthBlack.withOpacity(0.72)),
+                    .withColor(AppColors.midnightBlack.withOpacity(0.72)),
               ),
               if (widget.isDocument)
                 Padding(
@@ -82,18 +82,18 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
                   child: Column(
                     children: [
                       Text(
-                        context.l10n.docUplodType,
+                        context.l10n.docUploadType,
                         textAlign: TextAlign.center,
                         style: context.textTheme.labelMedium?.withColor(
-                          AppColors.midnigthBlack.withOpacity(0.72),
+                          AppColors.midnightBlack.withOpacity(0.72),
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        context.l10n.docUplodSize,
+                        context.l10n.docUploadSize,
                         textAlign: TextAlign.center,
                         style: context.textTheme.labelMedium?.withColor(
-                          AppColors.midnigthBlack.withOpacity(0.72),
+                          AppColors.midnightBlack.withOpacity(0.72),
                         ),
                       ),
                     ],

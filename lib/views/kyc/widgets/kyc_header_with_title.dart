@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
@@ -10,19 +11,24 @@ class KycHeaderWithTitle extends StatelessWidget {
     required this.title,
     this.progressValue = 0.3,
     super.key,
+    this.onBack,
   });
   final String title;
   final double progressValue;
 
+  final void Function()? onBack;
   @override
   Widget build(BuildContext context) {
+    final statusBarHeight = MediaQuery.of(context).viewPadding.top;
+
     return SizedBox(
-      height: 180.toResponsiveHeight(context),
+      height: 180.toResponsiveHeight(context) + statusBarHeight,
       width: double.infinity,
       child: Stack(
         children: [
           Positioned(
-            height: 190.toResponsiveHeight(context),
+            height: 190.toResponsiveHeight(context) +
+                statusBarHeight.toResponsiveHeight(context),
             width: context.screenWidth,
             child: Image.asset(
               AssetImages.kycHeaderBackgroundPng,
@@ -30,19 +36,35 @@ class KycHeaderWithTitle extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 32.toResponsiveHeight(context),
+            bottom: 28.toResponsiveHeight(context),
             child: Container(
               margin: const EdgeInsets.only(left: 16).responsive(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const CustomBackButton(),
-                  const SizedBox(height: 24),
-                  Text(
-                    title,
-                    style: context.textTheme.headlineLarge?.white
-                        .responsiveFont(context),
+                  CustomBackButton(
+                    onTap: () {
+                      if (onBack != null) {
+                        onBack!();
+                        return;
+                      }
+                      context.pop();
+                    },
+                  ),
+                  SizedBox(
+                    height: 25.toResponsiveHeight(context),
+                  ),
+                  Container(
+                    constraints: BoxConstraints(
+                      maxWidth: 350.toResponsiveWidth(context),
+                    ),
+                    child: Text(
+                      title,
+                      maxLines: 2,
+                      style: context.textTheme.headlineLarge!
+                          .responsiveFont(context),
+                    ),
                   )
                 ],
               ),
@@ -65,14 +87,17 @@ class KycHeaderWithTitle extends StatelessWidget {
 }
 
 class CustomBackButton extends StatelessWidget {
-  const CustomBackButton({super.key});
-
+  const CustomBackButton({required this.onTap, super.key});
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      AssetIcons.backButton,
-      height: 30.toResponsiveHeight(context),
-      width: 30.toResponsiveWidth(context),
+    return GestureDetector(
+      onTap: onTap,
+      child: SvgPicture.asset(
+        AssetIcons.backButton,
+        height: 30.toResponsiveHeight(context),
+        width: 30.toResponsiveWidth(context),
+      ),
     );
   }
 }
