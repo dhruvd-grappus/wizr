@@ -45,6 +45,9 @@
     "selfOwnedDescription":"You or a family member owns the place you live in",
     "rented":"Rented",
     "rentedDescription":"You pay a monthly rent for the place you live in",
-    "monthlyRent":"Monthly Rent"
-
+    "monthlyRent":"Monthly Rent",
+    "whereDoYouCurrentlyLive":"Where do you currently live?",
+    "addressFound":"Addresses found",
+    "addressFoundDesc":"We detected the following addresses, please select your current residential status.",
+    "cantFindAddressQuestion":"Can't find your address?"
 }

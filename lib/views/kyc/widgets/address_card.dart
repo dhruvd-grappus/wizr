@@ -47,7 +47,7 @@ class AddressCard extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 40),
-                  child: AddressCardContentBody(
+                  child: _AddressCardContentBody(
                     title: title,
                     bodyWidget: bodyWidget,
                     bodyText: bodyText,
@@ -58,7 +58,7 @@ class AddressCard extends StatelessWidget {
             const Positioned(
               bottom: 0,
               right: 0,
-              child: EditCardButton(),
+              child: _EditCardButton(),
             ),
           ],
         ),
@@ -67,12 +67,11 @@ class AddressCard extends StatelessWidget {
   }
 }
 
-class AddressCardContentBody extends StatelessWidget {
-  const AddressCardContentBody({
+class _AddressCardContentBody extends StatelessWidget {
+  const _AddressCardContentBody({
     required this.title,
     required this.bodyWidget,
     required this.bodyText,
-    super.key,
   });
 
   final String title;
@@ -101,10 +100,8 @@ class AddressCardContentBody extends StatelessWidget {
   }
 }
 
-class EditCardButton extends StatelessWidget {
-  const EditCardButton({
-    super.key,
-  });
+class _EditCardButton extends StatelessWidget {
+  const _EditCardButton();
 
   @override
   Widget build(BuildContext context) {

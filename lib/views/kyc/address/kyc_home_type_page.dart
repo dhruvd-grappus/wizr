@@ -1,40 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
-import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
+import 'package:wizr/views/kyc/constants/property_type.dart';
 import 'package:wizr/views/kyc/widgets/form_field.dart';
 import 'package:wizr/views/kyc/widgets/kyc_card.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
-
-enum PropertyType {
-  self(AssetIcons.bank),
-  rented(AssetIcons.scroll);
-
-  const PropertyType(this.icon);
-  final String icon;
-}
-
-extension PropTypeUtil on PropertyType {
-  String title(BuildContext context) {
-    switch (this) {
-      case PropertyType.self:
-        return context.l10n.selfOwned;
-      case PropertyType.rented:
-        return context.l10n.rented;
-    }
-  }
-
-  String description(BuildContext context) {
-    switch (this) {
-      case PropertyType.self:
-        return context.l10n.selfOwnedDescription;
-      case PropertyType.rented:
-        return context.l10n.rentedDescription;
-    }
-  }
-}
 
 class KycHomeTypePage extends StatelessWidget {
   KycHomeTypePage({super.key});
@@ -56,7 +30,9 @@ class KycHomeTypePage extends StatelessWidget {
                       label: context.l10n.confirm,
                       active: false,
                       onTap: () {
-                        // TODO(dhruv): navigate to addresses page
+                        context.pushNamed(
+                          RouteNames.kycAddressSelectPage,
+                        );
                       },
                     ),
                   )
@@ -103,6 +79,9 @@ class KycHomeTypePage extends StatelessWidget {
                                       return;
                                     }
                                     isRented.value = false;
+                                    context.pushNamed(
+                                      RouteNames.kycAddressSelectPage,
+                                    );
                                     // TODO(dhruv): navigate to addresses page
                                   },
                                   bodyText: e.description(context),

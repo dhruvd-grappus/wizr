@@ -3,7 +3,7 @@ import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/icon_header.dart';
-import 'package:wizr/views/kyc/employee/utils/employee_type_enum.dart';
+import 'package:wizr/views/kyc/constants/employee_type_enum.dart';
 
 class CustomEmployeeForm extends StatelessWidget {
   const CustomEmployeeForm({

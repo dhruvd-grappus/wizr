@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
-import 'package:wizr/views/kyc/employee/utils/employee_type_enum.dart';
+import 'package:wizr/views/kyc/constants/employee_type_enum.dart';
 import 'package:wizr/views/kyc/employee/widgets/custom_employee_form.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
