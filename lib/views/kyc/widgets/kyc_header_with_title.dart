@@ -6,8 +6,14 @@ import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 
 class KycHeaderWithTitle extends StatelessWidget {
-  const KycHeaderWithTitle({required this.title, super.key});
+  const KycHeaderWithTitle({
+    required this.title,
+    this.progressValue = 0.3,
+    super.key,
+  });
   final String title;
+  final double progressValue;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,19 +30,18 @@ class KycHeaderWithTitle extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 44,
+            bottom: 32.toResponsiveHeight(context),
             child: Container(
               margin: const EdgeInsets.only(left: 16).responsive(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const CustomBackButton(),
-                  SizedBox(
-                    height: 25.toResponsiveHeight(context),
-                  ),
+                  const SizedBox(height: 24),
                   Text(
                     title,
-                    style: context.textTheme.headlineLarge!
+                    style: context.textTheme.headlineLarge?.white
                         .responsiveFont(context),
                   )
                 ],
@@ -47,8 +52,8 @@ class KycHeaderWithTitle extends StatelessWidget {
             height: 6,
             width: context.screenWidth,
             bottom: 0,
-            child: const LinearProgressIndicator(
-              value: 0.3,
+            child: LinearProgressIndicator(
+              value: progressValue,
               color: AppColors.yellow,
               minHeight: 6,
             ),

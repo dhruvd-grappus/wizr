@@ -11,5 +11,8 @@
     "city":"City",
     "pinCode":"Pin code",
     "state":"State",
-    "confirm":"Confirm"
+    "confirm":"Confirm",
+    "docUplodType" : "Jpg, Png, Jpeg, Pdf accepted",
+    "docUplodSize": "File size not to exceed 5 MB"
+
 }

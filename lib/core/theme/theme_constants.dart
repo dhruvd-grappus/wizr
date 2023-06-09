@@ -24,6 +24,7 @@ ThemeData darkTheme = ThemeData(
     headlineLarge: CustomTextStyles.headlineLarge,
     headlineSmall: CustomTextStyles.headlineSmall,
     labelSmall: CustomTextStyles.labelSmall,
+    labelMedium: CustomTextStyles.labelMedium,
     bodyMedium: CustomTextStyles.bodyMedium,
     // bodySmall: CustomTextStyles.bodySmall,
     // bodyMedium: CustomTextStyles.bodyMedium,
