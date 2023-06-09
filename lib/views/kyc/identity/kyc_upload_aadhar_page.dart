@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
@@ -68,6 +70,8 @@ class KycUploadAadharPage extends StatelessWidget {
                     PrimaryButton(
                       label: context.l10n.confirm,
                       margin: EdgeInsets.zero,
+                      onTap: () =>
+                          context.pushNamed(RouteNames.kycIdentityProof),
                       //     height: 52.toResponsiveHeight(context),
                     ),
                     SizedBox(height: 28.toResponsiveHeight(context)),

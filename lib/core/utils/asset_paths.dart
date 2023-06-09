@@ -22,4 +22,8 @@ class AssetIcons {
   static const String scroll = '${iconBasePath}ic_scroll.svg';
   static const String mapPin = '${iconBasePath}ic_map_pin.svg';
   static const String search = '${iconBasePath}ic_search.svg';
+  static const String car = '${iconBasePath}ic_car.svg';
+  static const String voter = '${iconBasePath}ic_voter.svg';
+  static const String notebook = '${iconBasePath}ic_notebook.svg';
+  static const String check = '${iconBasePath}ic_check.svg';
 }
