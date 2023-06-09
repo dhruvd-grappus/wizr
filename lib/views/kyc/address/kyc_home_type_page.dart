@@ -16,8 +16,6 @@ class KycHomeTypePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      bottom: false,
-      top: false,
       child: Scaffold(
         bottomSheet: ValueListenableBuilder(
           valueListenable: isRented,

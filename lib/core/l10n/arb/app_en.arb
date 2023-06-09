@@ -55,5 +55,30 @@
     "detectViaGps":"Detect via GPS",
     "enterLocationManually":"Enter Location manually",
     "selectLocation":"Select your location",
-    "changeLocation":"Change Location"
+    "changeLocation":"Change Location",
+    "uploadDigitally":"Upload digitally",
+    "aadharKYC":"Aadhaar KYC",
+    "aadharKYCDesc":"KYC details provided will be used to complete your KYC",
+    "onClickContinue":"On clicking continue:",
+    "enterAadharNumber":"Enter your Aadhaar Number",
+    "enterOTPSentToAadhar":"Enter the OTP sent to your Aadhaar linked mobile no.",
+    "aadharNotLinkedQues":"Aadhaar Not linked with mobile?",
+    "dontHaveAadharQues":"Don’t have Aadhaar?",
+    "aadharUpload":"Aadhaar upload",
+    "uploadYourAadharCard":"Upload your Aadhaar card",
+    "fileSpecs":"File should be PDF or JPEG. Max file size 5 MB",
+    "tapToUploadDoc": "Tap to upload {doc} front photo here",
+    "@tapToUploadDoc": {
+        "placeholders": {
+            "doc": {
+                "type": "String",
+                "example": "Aadhaar's"
+            }
+        }
+    },
+    "front":"Front",
+    "back":"Back"
+
+
+
 }

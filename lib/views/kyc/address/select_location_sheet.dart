@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
@@ -84,6 +86,8 @@ class SelectLocationSheet extends StatelessWidget {
                     label: context.l10n.continueBtnLabel,
                     width: double.infinity,
                     margin: EdgeInsets.zero,
+                    onTap: () =>
+                        context.pushNamed(RouteNames.uploadDigitallyPage),
                   )
                 ],
               ),
