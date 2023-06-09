@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
@@ -6,6 +8,7 @@ import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
+import 'package:wizr/views/kyc/address/detect_location_sheet.dart';
 import 'package:wizr/views/kyc/widgets/address_card.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
@@ -26,13 +29,23 @@ class KycAddressSelectPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: 22.toResponsiveHeight(context)),
-              Text(
-                context.l10n.cantFindAddressQuestion,
-                maxLines: 1,
-                textAlign: TextAlign.center,
-                style: context.textTheme.bodyMedium!
-                    .responsiveFont(context)
-                    .withColor(AppColors.financeBlueLight),
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet<void>(
+                    context: context,
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                    builder: (_) => const DetectLocationSheet(),
+                  );
+                },
+                child: Text(
+                  context.l10n.cantFindAddressQuestion,
+                  maxLines: 1,
+                  textAlign: TextAlign.center,
+                  style: context.textTheme.bodyMedium!
+                      .responsiveFont(context)
+                      .withColor(AppColors.financeBlueLight),
+                ),
               ),
               SizedBox(height: 26.toResponsiveHeight(context)),
               PrimaryButton(label: context.l10n.continueBtnLabel),
@@ -71,7 +84,7 @@ class KycAddressSelectPage extends StatelessWidget {
                   ),
                   AddressCard(
                     title:
-                        '1206, Jainam elysuim, LBS Road, Near jainam hall, opp bhandup police station Bhandup west, Mumbai - 400078',
+                        '1206,Address , LBS Road, Near Address hall, opp Address police station Address west, Mumbai - 400078',
                     onTap: () {
                       context.pushNamed(RouteNames.kycManualAddressPage);
                     },
