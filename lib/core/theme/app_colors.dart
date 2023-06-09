@@ -11,6 +11,7 @@ class AppColors extends MaterialColor {
   static const white = Colors.white;
   static const black = Colors.black;
   static const fadeBlue = Color(0xffBDD9F1);
+  static const financeBlueLight = Color(0xff5B8FCF);
   static const tabColor = Color(0xff102031);
   static const greyTextColor = Color(0xff838F97);
   static const midnightBlack = Color(0xff161C20);

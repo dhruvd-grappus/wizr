@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
-import 'package:wizr/views/kyc/employee/utils/employee_type_enum.dart';
+import 'package:wizr/views/kyc/constants/employee_type_enum.dart';
 import 'package:wizr/views/kyc/widgets/kyc_card.dart';
 
 class EmployeeTypeSelectorWidget extends StatelessWidget {
