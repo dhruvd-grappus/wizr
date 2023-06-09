@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
+import 'package:wizr/views/kyc/address/search_location_page.dart';
 import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
 
 class RouteNames {
@@ -9,12 +10,18 @@ class RouteNames {
   static const kycEmployeePage = 'kyc-employee';
   static const kycHomeTypePage = 'kyc-home-type';
   static const kycAddressSelectPage = 'kyc-address-select';
+  static const searchLocationPage = 'search-location-map';
 }
 
 // GoRouter configuration
 final router = GoRouter(
   initialLocation: '/${RouteNames.kycHomeTypePage}',
   routes: [
+    GoRoute(
+      name: RouteNames.searchLocationPage,
+      path: '/${RouteNames.searchLocationPage}',
+      builder: (context, state) => const SearchLocationPage(),
+    ),
     GoRoute(
       name: RouteNames.kycManualAddressPage,
       path: '/${RouteNames.kycManualAddressPage}',

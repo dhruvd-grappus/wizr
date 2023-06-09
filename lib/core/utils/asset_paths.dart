@@ -20,4 +20,6 @@ class AssetIcons {
   static const String student = '${iconBasePath}ic_student.svg';
   static const String bank = '${iconBasePath}ic_bank.svg';
   static const String scroll = '${iconBasePath}ic_scroll.svg';
+  static const String mapPin = '${iconBasePath}ic_map_pin.svg';
+  static const String search = '${iconBasePath}ic_search.svg';
 }

@@ -49,5 +49,11 @@
     "whereDoYouCurrentlyLive":"Where do you currently live?",
     "addressFound":"Addresses found",
     "addressFoundDesc":"We detected the following addresses, please select your current residential status.",
-    "cantFindAddressQuestion":"Can't find your address?"
+    "cantFindAddressQuestion":"Can't find your address?",
+    "deviceLocationOff":"Device Location is turned off",
+    "turnOn":"Turn On",
+    "detectViaGps":"Detect via GPS",
+    "enterLocationManually":"Enter Location manually",
+    "selectLocation":"Select your location",
+    "changeLocation":"Change Location"
 }

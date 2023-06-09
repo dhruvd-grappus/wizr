@@ -39,7 +39,10 @@ class _KycManualAddressPageState extends State<KycManualAddressPage> {
         bottomSheet: Container(
           color: Colors.white,
           width: context.screenWidth,
-          child: PrimaryButton(label: context.l10n.confirm),
+          child: PrimaryButton(
+            label: context.l10n.confirm,
+            //     height: 52.toResponsiveHeight(context),
+          ),
         ),
         resizeToAvoidBottomInset: true,
         backgroundColor: AppColors.offWhiteBackground,
