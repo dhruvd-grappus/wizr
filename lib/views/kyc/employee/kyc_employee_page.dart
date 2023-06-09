@@ -6,9 +6,16 @@ import 'package:wizr/views/kyc/employee/utils/employee_type_enum.dart';
 import 'package:wizr/views/kyc/employee/widgets/custom_employee_form.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
-class KycEmployeePage extends StatelessWidget {
-  KycEmployeePage({super.key});
+class KycEmployeePage extends StatefulWidget {
+  const KycEmployeePage({super.key});
+
+  @override
+  State<KycEmployeePage> createState() => _KycEmployeePageState();
+}
+
+class _KycEmployeePageState extends State<KycEmployeePage> {
   final PageController pageController = PageController();
+  final ValueNotifier<bool> isLastPage = ValueNotifier(false);
   Future<bool> goToPreviousPage() async {
     if (pageController.hasClients) {
       if ((pageController.page ?? 0) >= 1) {
@@ -22,6 +29,16 @@ class KycEmployeePage extends StatelessWidget {
   }
 
   @override
+  void initState() {
+    super.initState();
+    pageController.addListener(() {
+      if (pageController.hasClients) {
+        isLastPage.value = (pageController.page ?? 0) >= 2;
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: WillPopScope(
@@ -32,9 +49,16 @@ class KycEmployeePage extends StatelessWidget {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              KycHeaderWithTitle(
-                title: context.l10n.kycEmployeeStatus,
-                onBack: goToPreviousPage,
+              ValueListenableBuilder<bool>(
+                valueListenable: isLastPage,
+                builder: (_, isLastPage, child) {
+                  return KycHeaderWithTitle(
+                    title: isLastPage
+                        ? context.l10n.borrowerDetails
+                        : context.l10n.kycEmployeeStatus,
+                    onBack: goToPreviousPage,
+                  );
+                },
               ),
               SizedBox(height: 28.toResponsiveHeight(context)),
               Expanded(
