@@ -60,7 +60,9 @@ class KycCard extends StatelessWidget {
                   )
                 ],
               ),
-            if (!isHalfCard && cardType != KycCardType.iconTitle)
+            if (!isHalfCard &&
+                cardType != KycCardType.iconTitle &&
+                cardType != KycCardType.timeLineCard)
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -70,6 +72,7 @@ class KycCard extends StatelessWidget {
                       cardType: cardType,
                       iconPath: iconPath,
                       title: title,
+                      isHalfCard: isHalfCard,
                       bodyWidget: bodyWidget,
                       bodyText: bodyText,
                     ),
@@ -93,6 +96,7 @@ class KycCard extends StatelessWidget {
                 cardType: cardType,
                 iconPath: iconPath,
                 title: title,
+                isHalfCard: isHalfCard,
                 bodyWidget: bodyWidget,
                 bodyText: bodyText,
               ),
@@ -111,6 +115,7 @@ class KycCardContentBody extends StatelessWidget {
     required this.title,
     required this.bodyWidget,
     required this.bodyText,
+    required this.isHalfCard,
     super.key,
   });
 
@@ -119,7 +124,7 @@ class KycCardContentBody extends StatelessWidget {
   final String title;
   final Widget? bodyWidget;
   final String bodyText;
-
+  final bool isHalfCard;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -127,7 +132,10 @@ class KycCardContentBody extends StatelessWidget {
       children: [
         Text(
           title,
-          style: context.textTheme.headlineSmall!.responsiveFont(context),
+          style:
+              context.textTheme.headlineSmall!.responsiveFont(context).copyWith(
+                    fontSize: cardType == KycCardType.timeLineCard ? 16 : null,
+                  ),
         ),
         SizedBox(height: 8.toResponsiveHeight(context)),
         if (bodyWidget != null)
@@ -137,8 +145,9 @@ class KycCardContentBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                constraints:
-                    BoxConstraints(maxWidth: 240.toResponsiveWidth(context)),
+                constraints: BoxConstraints(
+                  maxWidth: (isHalfCard ? 139 : 240).toResponsiveWidth(context),
+                ),
                 child: Text(
                   bodyText,
                   maxLines: 3,

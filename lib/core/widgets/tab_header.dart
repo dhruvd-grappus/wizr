@@ -31,7 +31,9 @@ class _TabHeaderState extends State<TabHeader> {
   Widget build(BuildContext context) {
     return Container(
       width: widget.width,
-      padding: const EdgeInsets.all(4).copyWith(right: 12).responsive(context),
+      padding: const EdgeInsets.all(4)
+          .copyWith(right: 0.02 * widget.width)
+          .responsive(context),
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.lightGrey,
@@ -46,7 +48,9 @@ class _TabHeaderState extends State<TabHeader> {
             return Expanded(
               child: Container(
                 margin: EdgeInsets.only(
-                  right: index != widget.tabTiles.length - 1 ? 28 : 0,
+                  right: index != widget.tabTiles.length - 1
+                      ? (0.08 * widget.width)
+                      : 0,
                 ).responsive(context),
                 child: InkWell(
                   onTap: () {

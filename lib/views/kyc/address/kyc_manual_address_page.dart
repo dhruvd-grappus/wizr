@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
-
 import 'package:wizr/views/kyc/widgets/form_field.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
@@ -33,14 +34,13 @@ class _KycManualAddressPageState extends State<KycManualAddressPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      bottom: false,
-      top: false,
       child: Scaffold(
         bottomSheet: Container(
           color: Colors.white,
           width: context.screenWidth,
           child: PrimaryButton(
             label: context.l10n.confirm,
+            onTap: () => context.pushNamed(RouteNames.uploadDigitallyPage),
             //     height: 52.toResponsiveHeight(context),
           ),
         ),

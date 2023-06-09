@@ -19,15 +19,13 @@ class KycHeaderWithTitle extends StatelessWidget {
   final void Function()? onBack;
   @override
   Widget build(BuildContext context) {
-    final statusBarHeight = MediaQuery.of(context).viewPadding.top;
-
     return SizedBox(
-      height: 180.toResponsiveHeight(context) + statusBarHeight,
+      height: 180.toResponsiveHeight(context),
       width: double.infinity,
       child: Stack(
         children: [
           Positioned(
-            height: 200.toResponsiveHeight(context) + statusBarHeight,
+            height: 200.toResponsiveHeight(context),
             width: context.screenWidth,
             child: Image.asset(
               AssetImages.kycHeaderBackgroundPng,
@@ -35,13 +33,16 @@ class KycHeaderWithTitle extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 56.toResponsiveHeight(context),
+            top: 0.toResponsiveHeight(context),
             child: Container(
               margin: const EdgeInsets.only(left: 16).responsive(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  SizedBox(
+                    height: 28.toResponsiveHeight(context),
+                  ),
                   CustomBackButton(
                     onTap: () {
                       if (onBack != null) {
@@ -56,7 +57,7 @@ class KycHeaderWithTitle extends StatelessWidget {
                   ),
                   Container(
                     constraints: BoxConstraints(
-                      maxWidth: 350.toResponsiveWidth(context),
+                      maxWidth: 352.toResponsiveWidth(context),
                     ),
                     child: Text(
                       title,

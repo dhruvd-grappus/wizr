@@ -18,8 +18,6 @@ class KycAddressSelectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      bottom: false,
-      top: false,
       child: Scaffold(
         bottomSheet: Container(
           height: 156.toResponsiveHeight(context),
@@ -48,7 +46,10 @@ class KycAddressSelectPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 26.toResponsiveHeight(context)),
-              PrimaryButton(label: context.l10n.continueBtnLabel),
+              PrimaryButton(
+                label: context.l10n.continueBtnLabel,
+                onTap: () => context.pushNamed(RouteNames.uploadDigitallyPage),
+              ),
             ],
           ),
         ),
