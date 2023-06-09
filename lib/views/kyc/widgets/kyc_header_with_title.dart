@@ -27,8 +27,7 @@ class KycHeaderWithTitle extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            height: 190.toResponsiveHeight(context) +
-                statusBarHeight.toResponsiveHeight(context),
+            height: 200.toResponsiveHeight(context) + statusBarHeight,
             width: context.screenWidth,
             child: Image.asset(
               AssetImages.kycHeaderBackgroundPng,
@@ -36,7 +35,7 @@ class KycHeaderWithTitle extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 28.toResponsiveHeight(context),
+            top: 56.toResponsiveHeight(context),
             child: Container(
               margin: const EdgeInsets.only(left: 16).responsive(context),
               child: Column(

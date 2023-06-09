@@ -39,6 +39,12 @@
     "pan":"PAN",
     "borrowerDetails":"Co-borrower details",
     "professional":"Professional",
-    "nonProfessional":"Non Professional"
+    "nonProfessional":"Non Professional",
+    "tellAboutHome":"Tell us about your home",
+    "selfOwned":"Self Owned",
+    "selfOwnedDescription":"You or a family member owns the place you live in",
+    "rented":"Rented",
+    "rentedDescription":"You pay a monthly rent for the place you live in",
+    "monthlyRent":"Monthly Rent"
 
 }

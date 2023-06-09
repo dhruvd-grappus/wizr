@@ -8,8 +8,11 @@ abstract class CustomTextStyles {
   static const _patronStyle = TextStyle(fontFamily: 'Patron');
   static const _interStyle = TextStyle(fontFamily: 'Inter');
 
-  static TextStyle headlineLarge =
-      _patronStyle.copyWith(fontSize: 31, fontWeight: CustomFontWeights.medium);
+  static TextStyle headlineLarge = _patronStyle.copyWith(
+    fontSize: 31,
+    fontWeight: CustomFontWeights.bold,
+    color: Colors.white,
+  );
 
   static TextStyle labelLarge = _interStyle.copyWith(
     fontSize: 16,

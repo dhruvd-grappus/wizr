@@ -1,19 +1,27 @@
 import 'package:go_router/go_router.dart';
+import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
+import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
 import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
-import 'package:wizr/views/kyc/kyc_address_page.dart';
 
 class RouteNames {
-  static const kycAddressPage = 'kyc-address';
+  static const kycManualAddressPage = 'kyc-manual-address';
   static const kycEmployeePage = 'kyc-employee';
+  static const kycHomeTypePage = 'kyc-home-type';
 }
 
 // GoRouter configuration
 final router = GoRouter(
+  initialLocation: '/${RouteNames.kycHomeTypePage}',
   routes: [
     GoRoute(
-      name: RouteNames.kycAddressPage,
-      path: '/${RouteNames.kycAddressPage}',
-      builder: (context, state) => const KycAddressPage(),
+      name: RouteNames.kycManualAddressPage,
+      path: '/${RouteNames.kycManualAddressPage}',
+      builder: (context, state) => const KycManualAddressPage(),
+    ),
+    GoRoute(
+      name: RouteNames.kycHomeTypePage,
+      path: '/${RouteNames.kycHomeTypePage}',
+      builder: (context, state) => KycHomeTypePage(),
     ),
     GoRoute(
       name: RouteNames.kycEmployeePage,
