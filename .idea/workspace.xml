@@ -4,66 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="196d1cec-3e5f-4cfc-b459-a68f978ebcbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Quintus-Bold-Trial.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_arrow_rounded.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_arrow_rounded_white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_discover.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_finance.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_grow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_home.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_learn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/ic_search_rounded.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icons/wizr_logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bg_arrow_shadow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bg_zigzag_shadow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/course_collection.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/course_collection2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/course_collection3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/course_model.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/exp_model.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/group_finance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_achieve1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_achieve2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_achieve3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_achieve4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_achieve5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_lerner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_life_at_wizr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_partner9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/tetrist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/top_fold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/home_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/landing_page.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_eight.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_five.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_four.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_nine.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_one.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_seven.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_six.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_three.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/snap_two.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/widgets/custom_layout.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/widgets/landing_app_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/landing/widgets/stack_view.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/widgets/subject_chip.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/widgets/under_development.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/views/widgets/wizr_bottom_navigation_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/kyc/employee/kyc_employee_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/kyc/employee/kyc_employee_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    <list default="true" id="196d1cec-3e5f-4cfc-b459-a68f978ebcbc" name="Changes" comment="added landing-page ui.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +69,14 @@
       <option name="presentableId" value="Default" />
       <updated>1686345168690</updated>
     </task>
+    <task id="LOCAL-00001" summary="added landing-page ui.">
+      <created>1686363124359</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686363124359</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added landing-page ui." />
+    <option name="LAST_COMMIT_MESSAGE" value="added landing-page ui." />
   </component>
 </project>
