@@ -40,46 +40,44 @@ class _KycEmployeePageState extends State<KycEmployeePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: WillPopScope(
-        onWillPop: goToPreviousPage,
-        child: Scaffold(
-          resizeToAvoidBottomInset: true,
-          backgroundColor: AppColors.offWhiteBackground,
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ValueListenableBuilder<bool>(
-                valueListenable: isLastPage,
-                builder: (_, isLastPage, child) {
-                  return KycHeaderWithTitle(
-                    title: isLastPage
-                        ? context.l10n.borrowerDetails
-                        : context.l10n.kycEmployeeStatus,
-                    onBack: goToPreviousPage,
-                  );
-                },
-              ),
-              SizedBox(height: 28.toResponsiveHeight(context)),
-              Expanded(
-                child: SizedBox(
-                  width: context.screenWidth,
-                  child: PageView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: EmployeeType.values.length,
-                    controller: pageController,
-                    itemBuilder: (_, index) {
-                      final type = EmployeeType.values[index];
-                      return CustomEmployeeForm(
-                        employeeType: type,
-                        child: type.pageContent(pageController),
-                      );
-                    },
-                  ),
+    return WillPopScope(
+      onWillPop: goToPreviousPage,
+      child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        backgroundColor: AppColors.offWhiteBackground,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ValueListenableBuilder<bool>(
+              valueListenable: isLastPage,
+              builder: (_, isLastPage, child) {
+                return KycHeaderWithTitle(
+                  title: isLastPage
+                      ? context.l10n.borrowerDetails
+                      : context.l10n.kycEmployeeStatus,
+                  onBack: goToPreviousPage,
+                );
+              },
+            ),
+            SizedBox(height: 28.toResponsiveHeight(context)),
+            Expanded(
+              child: SizedBox(
+                width: context.screenWidth,
+                child: PageView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: EmployeeType.values.length,
+                  controller: pageController,
+                  itemBuilder: (_, index) {
+                    final type = EmployeeType.values[index];
+                    return CustomEmployeeForm(
+                      employeeType: type,
+                      child: type.pageContent(pageController),
+                    );
+                  },
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
