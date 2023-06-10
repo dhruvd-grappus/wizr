@@ -112,7 +112,7 @@ class IdentityProofUploadForm extends StatelessWidget {
           Align(
             child: TabHeader(
               tabTiles: [context.l10n.front, context.l10n.back],
-              width: 200.toResponsiveWidth(context),
+              width: 240.toResponsiveWidth(context),
               onChanged: log,
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
@@ -17,6 +18,7 @@ class RouteNames {
   static const uploadDigitallyPage = 'kyc-upload-digitally';
   static const uploadAadharPage = 'kyc-upload-aadhar';
   static const kycIdentityProof = 'kyc-identity-proof';
+  static const financeHomePage = 'finance-homepage';
 }
 
 // GoRouter configuration
@@ -59,8 +61,13 @@ final router = GoRouter(
     ),
     GoRoute(
       name: RouteNames.kycEmployeePage,
-      path: '/',
+      path: '/${RouteNames.kycEmployeePage}',
       builder: (context, state) => const KycEmployeePage(),
+    ),
+    GoRoute(
+      name: RouteNames.financeHomePage,
+      path: '/',
+      builder: (context, state) => const FinancePage(),
     ),
   ],
 );
