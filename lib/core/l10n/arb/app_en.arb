@@ -1,9 +1,14 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    },
+    "financeHome": "Home / Finance",
+     "financeNeedWithWizer": "Finance your needs with Wizr Credit",
+    "leanWithWizer": "Learn Web Design to create and design websites using various technologies to enhance functionality and user experience.",
+    "checkYourCreditlimit": "Check your Credit limit",
+    "activateYourCreditLimit" : "Activate your Credit limit",
+    "getCreditLineUpto" : "Get Credit Line Upto",
+    "yourCIBILScore": "Your CIBIL Score",
+    "youUnlockedYour" : "You’ve unlocked your",
+    "creditLimit" : "Credit limit",
     "kycAddressHeader":"Where can we find you?",
     "addAddress":"Add address",
     "enterFullAddress":"Enter Full Address",

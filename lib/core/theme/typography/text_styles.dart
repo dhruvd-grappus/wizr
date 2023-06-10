@@ -13,7 +13,13 @@ abstract class CustomTextStyles {
     fontWeight: CustomFontWeights.bold,
     color: Colors.white,
   );
-
+  static TextStyle headlineMedium = _patronStyle.copyWith(
+    fontSize: 28,
+    fontWeight: FontWeight.w700,
+    color: AppColors.midnightBlack,
+    letterSpacing: 1.3,
+    wordSpacing: 0.3,
+  );
   static TextStyle labelLarge = _interStyle.copyWith(
     fontSize: 16,
     fontWeight: FontWeight.w500,
