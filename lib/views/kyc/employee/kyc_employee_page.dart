@@ -24,6 +24,9 @@ class _KycEmployeePageState extends State<KycEmployeePage> {
           0,
         );
         return false;
+      } else {
+        context.pop();
+        return true;
       }
     }
     return true;

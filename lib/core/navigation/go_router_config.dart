@@ -14,6 +14,7 @@ import 'package:wizr/views/landing/landing_page.dart';
 import 'package:wizr/views/widgets/under_development.dart';
 
 // Keys
+final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> _shellNavigatorKey =
     GlobalKey<NavigatorState>();
 
@@ -37,6 +38,7 @@ class RouteNames {
 
 // GoRouter configuration
 final router = GoRouter(
+  navigatorKey: _rootNavigatorKey,
   routes: [
     GoRoute(
       name: RouteNames.kycIdentityProof,
@@ -73,11 +75,11 @@ final router = GoRouter(
       path: '/${RouteNames.kycHomeTypePage}',
       builder: (context, state) => KycHomeTypePage(),
     ),
-    GoRoute(
+   /* GoRoute(
       name: RouteNames.kycEmployeePage,
       path: '/${RouteNames.kycEmployeePage}',
       builder: (context, state) => const KycEmployeePage(),
-    ),
+    ),*/
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (_, __, child) {
@@ -171,6 +173,31 @@ final router = GoRouter(
             },
             transitionDuration: const Duration(milliseconds: 600)
           ),
+          routes: [
+            GoRoute(
+              path: RouteNames.kycEmployeePage,
+              name: RouteNames.kycEmployeePage,
+              parentNavigatorKey: _rootNavigatorKey,
+              pageBuilder: (_, __) => CustomTransitionPage(
+                  child: const KycEmployeePage(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(1.0, 0.0);
+                    const end = Offset.zero;
+                    const curve = Curves.ease;
+
+                    var tween =
+                    Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                    return SlideTransition(
+                      position: animation.drive(tween),
+                      child: child,
+                    );
+                  },
+                  transitionDuration: const Duration(milliseconds: 600)
+              ),
+            ),
+          ],
         ),
         GoRoute(
           name: RouteNames.growPage,
