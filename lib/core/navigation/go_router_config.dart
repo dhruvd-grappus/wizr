@@ -195,6 +195,7 @@ final router = GoRouter(
           ),
         ),
       ],
+    ),
     /*GoRoute(
       name: RouteNames.financeHomePage,
       path: '/',
