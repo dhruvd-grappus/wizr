@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';

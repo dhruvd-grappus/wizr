@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wizr/core/theme/app_colors.dart';
 
 import 'package:wizr/core/theme/typography/text_styles.dart';
 
@@ -18,23 +19,17 @@ ThemeData darkTheme = ThemeData(
     background: Colors.white,
   ),
   appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+  scaffoldBackgroundColor: AppColors.offWhiteBackground,
   primaryColor: Colors.black,
   textTheme: TextTheme(
     labelLarge: CustomTextStyles.labelLarge,
     headlineLarge: CustomTextStyles.headlineLarge,
+    headlineMedium: CustomTextStyles.headlineMedium,
     headlineSmall: CustomTextStyles.headlineSmall,
     labelSmall: CustomTextStyles.labelSmall,
     labelMedium: CustomTextStyles.labelMedium,
     bodyMedium: CustomTextStyles.bodyMedium,
     bodySmall: CustomTextStyles.captionMedium,
-    // bodySmall: CustomTextStyles.bodySmall,
-    // bodyMedium: CustomTextStyles.bodyMedium,
-    // headlineSmall: CustomTextStyles.headlineSmall,
-    // bodyLarge: CustomTextStyles.bodyLarge,
-    // headlineLarge: CustomTextStyles.headlineLarge,
-    // labelMedium: CustomTextStyles.labelMedium,
-    // labelLarge: CustomTextStyles.labelLarge,
-    // labelSmall: CustomTextStyles.labelSmall,
   ),
 );
 

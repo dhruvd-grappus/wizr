@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wizr/views/home_page.dart';
+import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
@@ -31,6 +32,7 @@ class RouteNames {
   static const landingPage = 'home';
   static const financePage = 'finance';
   static const growPage = 'grow';
+  static const financeHomePage = 'finance-homepage';
 }
 
 // GoRouter configuration
@@ -152,7 +154,7 @@ final router = GoRouter(
           name: RouteNames.financePage,
           path: '/${RouteNames.financePage}',
           pageBuilder: (_, __) => CustomTransitionPage(
-            child: const KycEmployeePage(),
+            child: const FinancePage(), //const KycEmployeePage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0.0, 1.0);
@@ -193,7 +195,11 @@ final router = GoRouter(
           ),
         ),
       ],
-    ),
+    /*GoRoute(
+      name: RouteNames.financeHomePage,
+      path: '/',
+      builder: (context, state) => const FinancePage(),
+    ),*/
   ],
 );
 
