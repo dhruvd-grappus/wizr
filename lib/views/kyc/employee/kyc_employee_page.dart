@@ -41,7 +41,8 @@ class _KycEmployeePageState extends State<KycEmployeePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return WillPopScope(
+      onWillPop: goToPreviousPage,
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: AppColors.offWhiteBackground,
@@ -55,11 +56,11 @@ class _KycEmployeePageState extends State<KycEmployeePage> {
                   title: isLastPage
                       ? context.l10n.borrowerDetails
                       : context.l10n.kycEmployeeStatus,
-                  onBack: () => context.pop(),
+                  onBack: goToPreviousPage,
                 );
               },
             ),
-            SizedBox(height: 6.toResponsiveHeight(context)),
+            SizedBox(height: 28.toResponsiveHeight(context)),
             Expanded(
               child: SizedBox(
                 width: context.screenWidth,

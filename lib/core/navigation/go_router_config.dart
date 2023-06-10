@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
@@ -8,6 +10,12 @@ import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_identity_proof_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_aadhar_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_digitally_page.dart';
+import 'package:wizr/views/landing/landing_page.dart';
+import 'package:wizr/views/widgets/under_development.dart';
+
+// Keys
+final GlobalKey<NavigatorState> _shellNavigatorKey =
+    GlobalKey<NavigatorState>();
 
 class RouteNames {
   static const kycManualAddressPage = 'kyc-manual-address';
@@ -18,6 +26,12 @@ class RouteNames {
   static const uploadDigitallyPage = 'kyc-upload-digitally';
   static const uploadAadharPage = 'kyc-upload-aadhar';
   static const kycIdentityProof = 'kyc-identity-proof';
+  static const baseHome = 'base-home';
+  static const discoverPage = 'discover';
+  static const learnPage = 'learn';
+  static const landingPage = 'home';
+  static const financePage = 'finance';
+  static const growPage = 'grow';
   static const financeHomePage = 'finance-homepage';
 }
 
@@ -64,10 +78,144 @@ final router = GoRouter(
       path: '/${RouteNames.kycEmployeePage}',
       builder: (context, state) => const KycEmployeePage(),
     ),
-    GoRoute(
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (_, __, child) {
+        return HomePage(child: child);
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          name: RouteNames.discoverPage,
+          path: '/${RouteNames.discoverPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const UnderDevelopment(name: 'Discover'),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.0, 1.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              var tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+              transitionDuration: const Duration(milliseconds: 600)
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.learnPage,
+          path: '/${RouteNames.learnPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const UnderDevelopment(name: 'Learn'),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.0, 1.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+              transitionDuration: const Duration(milliseconds: 600)
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.landingPage,
+          path: '/',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const LandingPage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.0, 1.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+              transitionDuration: const Duration(milliseconds: 600)
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.financePage,
+          path: '/${RouteNames.financePage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const FinancePage(), //const KycEmployeePage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.0, 1.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600)
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.growPage,
+          path: '/${RouteNames.growPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const UnderDevelopment(name: 'Grow'),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0.0, 1.0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+              transitionDuration: const Duration(milliseconds: 600)
+          ),
+        ),
+      ],
+    /*GoRoute(
       name: RouteNames.financeHomePage,
       path: '/',
       builder: (context, state) => const FinancePage(),
-    ),
+    ),*/
   ],
 );
+
+/// For Left to Right transition chnage offset
+/// transitionsBuilder:
+//                 (context, animation, secondaryAnimation, child) {
+//               const begin = Offset(1.0, 0.0);
+//               const end = Offset.zero;
+//               const curve = Curves.ease;
+//
+//               var tween =
+//               Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+//
+//               return SlideTransition(
+//                 position: animation.drive(tween),
+//                 child: child,
+//               );
+//             },
+//               transitionDuration: const Duration(milliseconds: 600)
