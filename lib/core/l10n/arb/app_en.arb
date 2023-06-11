@@ -101,7 +101,10 @@
     "firstWeNeedPhone":"First we need your phone number",
 "phoneNumber":"Phone Number",
 "byUsingWizr":"By using WiZR you agree to the",
-"termsAndPrivacy":"Terms of Service & Privacy Policy"
+"termsAndPrivacy":"Terms of Service & Privacy Policy",
+    "weSentYouAnOtp":"We’ve sent you an OTP",
+    "onYourPhone":"On your phone number"
+
 
 
 }

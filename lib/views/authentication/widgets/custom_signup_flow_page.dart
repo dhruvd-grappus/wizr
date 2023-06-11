@@ -41,8 +41,7 @@ class CustomSignupFlowPage extends StatelessWidget {
                       ),
                       Expanded(child: Container()),
                       GestureDetector(
-                        onTap: () =>
-                            context.goNamed(RouteNames.financePage),
+                        onTap: () => context.goNamed(RouteNames.financePage),
                         child: SvgPicture.asset(AssetIcons.close),
                       ),
                       SizedBox(width: 16.toResponsiveWidth(context)),
