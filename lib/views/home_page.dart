@@ -20,12 +20,17 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _selectedIndex = index;
     });
-    switch(index) {
-      case 0: context.pushNamed(RouteNames.discoverPage);
-      case 1: context.pushNamed(RouteNames.learnPage);
-      case 2: context.pushNamed(RouteNames.landingPage);
-      case 3: context.pushNamed(RouteNames.financePage);
-      case 4: context.pushNamed(RouteNames.growPage);
+    switch (index) {
+      case 0:
+        context.pushNamed(RouteNames.discoverPage);
+      case 1:
+        context.pushNamed(RouteNames.learnPage);
+      case 2:
+        context.pushNamed(RouteNames.landingPage);
+      case 3:
+        context.pushNamed(RouteNames.financePage);
+      case 4:
+        context.pushNamed(RouteNames.growPage);
     }
   }
 

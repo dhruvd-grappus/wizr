@@ -82,7 +82,7 @@ class WizrBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       final _borderRaduis = borderRaduis ??
-          BorderRadius.only(
+          const BorderRadius.only(
               topLeft: Radius.circular(10), topRight: Radius.circular(10));
 
       final Color _barColor =
@@ -97,7 +97,7 @@ class WizrBottomNavigationBar extends StatelessWidget {
       final double _domeWidth = min(domeWidth, _tabWidth);
 
       assert(domeCircleSize <= (barHeight + domeHeight),
-      'domeCircleSize must be less than or equal to (barHeight + domeHeight)');
+          'domeCircleSize must be less than or equal to (barHeight + domeHeight)');
       final selectedTab = tabs[selectedIndex];
       return Container(
         height: barHeight + domeHeight,
@@ -125,7 +125,7 @@ class WizrBottomNavigationBar extends StatelessWidget {
               domeWidth: _domeWidth - _borderRaduis.topRight.x,
               domeHeight: domeHeight,
               domeColor:
-              borderSize > 0 ? (borderColor ?? _barColor) : _barColor,
+                  borderSize > 0 ? (borderColor ?? _barColor) : _barColor,
             ),
             // Actual dome
             _animatedPositionedDome(

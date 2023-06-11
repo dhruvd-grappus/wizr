@@ -88,9 +88,8 @@ class FinancePage extends StatelessWidget {
                       SizedBox(height: 16.toResponsiveHeight(context)),
                       PrimaryButton(
                         label: context.l10n.activateYourCreditLimit,
-                        onTap: () => context.pushNamed(
-                          RouteNames.kycEmployeePage,
-                        ),
+                        onTap: () =>
+                            context.goNamed(RouteNames.kycEmployeePage),
                       )
                     ],
                   ),

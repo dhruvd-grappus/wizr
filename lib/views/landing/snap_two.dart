@@ -170,7 +170,8 @@ class SnapTwo extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {
                                 Fluttertoast.showToast(
-                                    msg: 'Under Development');
+                                  msg: 'Under Development',
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xff1D1B21),
@@ -284,7 +285,8 @@ class SnapTwo extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {
                                 Fluttertoast.showToast(
-                                    msg: 'Under Development');
+                                  msg: 'Under Development',
+                                );
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xff1D1B21),

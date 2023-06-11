@@ -28,30 +28,31 @@ class SnapEight extends StatelessWidget {
         children: [
           RichText(
             text: const TextSpan(
-                text: 'Life ',
-                style: TextStyle(
-                  fontFamily: 'Quintus',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 40,
-                  height: 1,
-                  color: Color(0xffCBFB62),
-                ),
-                children: [
-                  TextSpan(
-                    text: 'at WiZR',
-                    style: TextStyle(
-                      fontFamily: 'Patron',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 39,
-                      height: 1,
-                      color: Color(0xffF8F5F2),
-                    ),
+              text: 'Life ',
+              style: TextStyle(
+                fontFamily: 'Quintus',
+                fontWeight: FontWeight.w700,
+                fontSize: 40,
+                height: 1,
+                color: Color(0xffCBFB62),
+              ),
+              children: [
+                TextSpan(
+                  text: 'at WiZR',
+                  style: TextStyle(
+                    fontFamily: 'Patron',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 39,
+                    height: 1,
+                    color: Color(0xffF8F5F2),
                   ),
-                ]),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 30),
           const Text(
-            'WiZR has been doing a bunch of things\nand stuf and here are a bunch of stats\nthat’ll eventually need some',
+            "WiZR has been doing a bunch of things\nand stuff and here are a bunch of stats\nthat'll eventually need some",
             style: TextStyle(
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,

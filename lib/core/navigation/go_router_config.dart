@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
+import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
@@ -75,11 +75,28 @@ final router = GoRouter(
       path: '/${RouteNames.kycHomeTypePage}',
       builder: (context, state) => KycHomeTypePage(),
     ),
-   /* GoRoute(
+    GoRoute(
       name: RouteNames.kycEmployeePage,
       path: '/${RouteNames.kycEmployeePage}',
-      builder: (context, state) => const KycEmployeePage(),
-    ),*/
+      parentNavigatorKey: _rootNavigatorKey,
+      pageBuilder: (_, __) => CustomTransitionPage(
+        child: const KycEmployeePage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1, 0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+
+          final tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 600),
+      ),
+    ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (_, __, child) {
@@ -93,11 +110,11 @@ final router = GoRouter(
             child: const UnderDevelopment(name: 'Discover'),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, 1.0);
+              const begin = Offset(0, 1);
               const end = Offset.zero;
               const curve = Curves.ease;
 
-              var tween =
+              final tween =
                   Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
               return SlideTransition(
@@ -105,7 +122,7 @@ final router = GoRouter(
                 child: child,
               );
             },
-              transitionDuration: const Duration(milliseconds: 600)
+            transitionDuration: const Duration(milliseconds: 600),
           ),
         ),
         GoRoute(
@@ -115,19 +132,19 @@ final router = GoRouter(
             child: const UnderDevelopment(name: 'Learn'),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, 1.0);
+              const begin = Offset(0, 1);
               const end = Offset.zero;
               const curve = Curves.ease;
 
-              var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
               return SlideTransition(
                 position: animation.drive(tween),
                 child: child,
               );
             },
-              transitionDuration: const Duration(milliseconds: 600)
+            transitionDuration: const Duration(milliseconds: 600),
           ),
         ),
         GoRoute(
@@ -137,19 +154,19 @@ final router = GoRouter(
             child: const LandingPage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, 1.0);
+              const begin = Offset(0, 1);
               const end = Offset.zero;
               const curve = Curves.ease;
 
-              var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
               return SlideTransition(
                 position: animation.drive(tween),
                 child: child,
               );
             },
-              transitionDuration: const Duration(milliseconds: 600)
+            transitionDuration: const Duration(milliseconds: 600),
           ),
         ),
         GoRoute(
@@ -159,45 +176,20 @@ final router = GoRouter(
             child: const FinancePage(), //const KycEmployeePage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, 1.0);
+              const begin = Offset(0, 1);
               const end = Offset.zero;
               const curve = Curves.ease;
 
-              var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
               return SlideTransition(
                 position: animation.drive(tween),
                 child: child,
               );
             },
-            transitionDuration: const Duration(milliseconds: 600)
+            transitionDuration: const Duration(milliseconds: 600),
           ),
-          routes: [
-            GoRoute(
-              path: RouteNames.kycEmployeePage,
-              name: RouteNames.kycEmployeePage,
-              parentNavigatorKey: _rootNavigatorKey,
-              pageBuilder: (_, __) => CustomTransitionPage(
-                  child: const KycEmployeePage(),
-                  transitionsBuilder:
-                      (context, animation, secondaryAnimation, child) {
-                    const begin = Offset(1.0, 0.0);
-                    const end = Offset.zero;
-                    const curve = Curves.ease;
-
-                    var tween =
-                    Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-                    return SlideTransition(
-                      position: animation.drive(tween),
-                      child: child,
-                    );
-                  },
-                  transitionDuration: const Duration(milliseconds: 600)
-              ),
-            ),
-          ],
         ),
         GoRoute(
           name: RouteNames.growPage,
@@ -206,19 +198,19 @@ final router = GoRouter(
             child: const UnderDevelopment(name: 'Grow'),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              const begin = Offset(0.0, 1.0);
+              const begin = Offset(0, 1);
               const end = Offset.zero;
               const curve = Curves.ease;
 
-              var tween =
-              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
               return SlideTransition(
                 position: animation.drive(tween),
                 child: child,
               );
             },
-              transitionDuration: const Duration(milliseconds: 600)
+            transitionDuration: const Duration(milliseconds: 600),
           ),
         ),
       ],
