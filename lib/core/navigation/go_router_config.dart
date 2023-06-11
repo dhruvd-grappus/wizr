@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
@@ -34,12 +35,18 @@ class RouteNames {
   static const financePage = 'finance';
   static const growPage = 'grow';
   static const financeHomePage = 'finance-homepage';
+  static const phoneLoginPage = 'phone-login';
 }
 
 // GoRouter configuration
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   routes: [
+    GoRoute(
+      name: RouteNames.phoneLoginPage,
+      path: '/${RouteNames.phoneLoginPage}',
+      builder: (context, state) => const PhoneLoginPage(),
+    ),
     GoRoute(
       name: RouteNames.kycIdentityProof,
       path: '/${RouteNames.kycIdentityProof}',

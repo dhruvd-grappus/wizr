@@ -95,6 +95,13 @@
                 "example": "Aadhaar's"
             }
         }
-    }
+    },
+    "contactDetails":"Contact Details",
+    "letsGetYouStarted":"Let’s get you started!",
+    "firstWeNeedPhone":"First we need your phone number",
+"phoneNumber":"Phone Number",
+"byUsingWizr":"By using WiZR you agree to the",
+"termsAndPrivacy":"Terms of Service & Privacy Policy"
+
 
 }

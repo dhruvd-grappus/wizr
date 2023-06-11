@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:wizr/views/widgets/subject_chip.dart';
+import 'package:wizr/views/widgets/rotated_chip.dart';
 
 class SnapFour extends StatelessWidget {
   const SnapFour({super.key});
@@ -106,7 +106,7 @@ class SnapFour extends StatelessWidget {
                         children: [
                           Row(
                             children: <Widget>[
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'IT & Development',
                                 chipColor: Colors.black,
                                 actionIconColor: Colors.white,
@@ -116,7 +116,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded_white.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Marketing',
                                 angle: math.pi / 40,
                                 chipColor: const Color(0xffF5F4F6),
@@ -124,7 +124,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Healthcare',
                                 chipColor: const Color(0xffB5CECD),
                                 actionIconColor: Colors.white,
@@ -133,7 +133,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Science',
                                 chipColor: const Color(0xffF5F4F6),
                                 actionIconColor: Colors.white,
@@ -141,7 +141,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Law',
                                 chipColor: const Color(0xffBACFE8),
                                 actionIconColor: Colors.white,
@@ -151,7 +151,7 @@ class SnapFour extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(width: 36),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Human Resources',
                                 chipColor: const Color(0xffF5F4F6),
                                 actionIconColor: Colors.white,
@@ -165,7 +165,7 @@ class SnapFour extends StatelessWidget {
                           const SizedBox(height: 12),
                           Row(
                             children: <Widget>[
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Business Managenment',
                                 chipColor: const Color(0xffF5F4F6),
                                 actionIconColor: Colors.white,
@@ -174,7 +174,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Design',
                                 chipColor: Colors.black,
                                 actionIconColor: Colors.white,
@@ -185,7 +185,7 @@ class SnapFour extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(width: 20),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Linguistics',
                                 chipColor: const Color(0xffF5F4F6),
                                 actionIconColor: Colors.white,
@@ -194,7 +194,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Engineering',
                                 chipColor: const Color(0xffDFB19D),
                                 actionIconColor: Colors.white,
@@ -203,7 +203,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Personal Development',
                                 chipColor: const Color(0xffFEEC8D),
                                 actionIconColor: Colors.white,
@@ -212,7 +212,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Arts',
                                 chipColor: const Color(0xffDFB19D),
                                 actionIconColor: Colors.white,
@@ -220,7 +220,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'BFSI',
                                 chipColor: const Color(0xffF5F4F6),
                                 actionIconColor: Colors.white,
@@ -233,7 +233,7 @@ class SnapFour extends StatelessWidget {
                           const SizedBox(height: 12),
                           Row(
                             children: <Widget>[
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Data Science',
                                 chipColor: const Color(0xffFEEC8D),
                                 actionIconColor: Colors.white,
@@ -242,7 +242,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Computer Science',
                                 chipColor: const Color(0xffDFB19D),
                                 actionIconColor: Colors.white,
@@ -251,7 +251,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Teaching and Academics',
                                 chipColor: const Color(0xffBACFE8),
                                 actionIconColor: Colors.white,
@@ -260,7 +260,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Test & Preparation',
                                 chipColor: const Color(0xffF5F4F6),
                                 actionIconColor: Colors.white,
@@ -269,7 +269,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Travel & Hospitality',
                                 chipColor: const Color(0xffB5CECD),
                                 actionIconColor: Colors.white,
@@ -277,7 +277,7 @@ class SnapFour extends StatelessWidget {
                                   'assets/icons/ic_arrow_rounded.svg',
                                 ),
                               ),
-                              SubjectChip(
+                              RotatedChip(
                                 name: 'Beauty d Wellness',
                                 chipColor: const Color(0xffFEEC8D),
                                 actionIconColor: Colors.white,

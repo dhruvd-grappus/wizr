@@ -41,7 +41,9 @@ class KycFormField extends StatelessWidget {
           if (isDropDown)
             const CurvedDropdownField()
           else
-            const CurvedFormField(),
+            CurvedTextFormField(
+              controller: controller,
+            ),
         ],
       ),
     );

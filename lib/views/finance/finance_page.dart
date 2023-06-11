@@ -65,7 +65,7 @@ class FinancePage extends StatelessWidget {
                               color: AppColors.credBlue,
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: SvgPicture.asset(AssetImages.cread),
+                            child: SvgPicture.asset(AssetImages.cred),
                           ),
                           const SizedBox(width: 6),
                           Text(
@@ -88,8 +88,7 @@ class FinancePage extends StatelessWidget {
                       SizedBox(height: 16.toResponsiveHeight(context)),
                       PrimaryButton(
                         label: context.l10n.activateYourCreditLimit,
-                        onTap: () =>
-                            context.goNamed(RouteNames.kycEmployeePage),
+                        onTap: () => context.goNamed(RouteNames.phoneLoginPage),
                       )
                     ],
                   ),

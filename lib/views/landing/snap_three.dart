@@ -64,7 +64,9 @@ class SnapThree extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'Receive unbiased and personalized course\nrecommendations from across India and the\nworld. Filter, compare and enrol',
+                      'Receive unbiased and personalized course'
+                      '\nrecommendations from across India and '
+                      'the\nworld. Filter, compare and enrol',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,

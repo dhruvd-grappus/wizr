@@ -3,14 +3,27 @@ import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 
-class CurvedFormField extends StatefulWidget {
-  const CurvedFormField({super.key});
-
+class CurvedTextFormField extends StatefulWidget {
+  const CurvedTextFormField({
+    required this.controller,
+    this.prefix,
+    this.focusedBorderColor,
+    super.key,
+    this.hint,
+    this.fillColor,
+    this.textInputType = TextInputType.name,
+  });
+  final TextEditingController controller;
+  final String? hint;
+  final Widget? prefix;
+  final Color? focusedBorderColor;
+  final Color? fillColor;
+  final TextInputType textInputType;
   @override
-  State<CurvedFormField> createState() => _CurvedFormFieldState();
+  State<CurvedTextFormField> createState() => _CurvedTextFormFieldState();
 }
 
-class _CurvedFormFieldState extends State<CurvedFormField> {
+class _CurvedTextFormFieldState extends State<CurvedTextFormField> {
   final FocusNode focusNode = FocusNode();
 
   bool hasFocus = false;
@@ -29,21 +42,30 @@ class _CurvedFormFieldState extends State<CurvedFormField> {
     return Container(
       height: 48.toResponsiveHeight(context),
       decoration: BoxDecoration(
-        color: hasFocus ? Colors.white : Colors.black.withOpacity(0.05),
+        color: widget.fillColor ??
+            (hasFocus ? Colors.white : Colors.black.withOpacity(0.05)),
         borderRadius: BorderRadius.circular(12.toResponsiveHeight(context)),
-        border:
-            Border.all(color: hasFocus ? Colors.blue : AppColors.borderGray),
+        border: Border.all(
+          color: hasFocus
+              ? widget.focusedBorderColor ?? Colors.blue
+              : AppColors.borderGray,
+        ),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16).responsive(context),
       child: TextFormField(
         cursorColor: Colors.black,
         autofocus: true,
         focusNode: focusNode,
+        keyboardType: widget.textInputType,
         style: context.textTheme.bodyMedium,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.zero,
           focusColor: Colors.white,
+          hintText: widget.hint,
+          hintStyle: context.textTheme.labelMedium!
+              .withColor(AppColors.purpleText.withOpacity(0.5)),
+          prefix: widget.prefix,
         ),
       ),
     );

@@ -3,9 +3,11 @@ class AssetImages {
   static const String kycHeaderBackgroundPng =
       '${imageBasePath}img_kyc_header_background.png';
   static const String creditLimit = '${imageBasePath}credit_limit.svg';
-  static const String cread = '${imageBasePath}CRED.svg';
+  static const String cred = '${imageBasePath}CRED.svg';
   static const String civil = '${imageBasePath}civil.svg';
   static const String civilScore = '${imageBasePath}civil_score.png';
+  static const String signupFlowHeader =
+      '${imageBasePath}img_signup_header.png';
 }
 
 class AssetIcons {
@@ -33,4 +35,5 @@ class AssetIcons {
   static const String voter = '${iconBasePath}ic_voter.svg';
   static const String notebook = '${iconBasePath}ic_notebook.svg';
   static const String check = '${iconBasePath}ic_check.svg';
+  static const String close = '${iconBasePath}ic_close.svg';
 }

@@ -65,7 +65,8 @@ class SnapNine extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            'We’ve been fortunate to have brilliant alliances\nwith esteemed institutes all over the world',
+            "We've been fortunate to have brilliant alliances4"
+            '\nwith esteemed institutes all over the world',
             style: TextStyle(
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
