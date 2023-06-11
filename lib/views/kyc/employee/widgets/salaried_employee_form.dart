@@ -21,7 +21,7 @@ class SalariedEmployeeForm extends StatelessWidget {
           child: PrimaryButton(
             label: context.l10n.continueBtnLabel,
             active: false,
-            onTap: () => context.pushNamed(RouteNames.kycHomeTypePage),
+            onTap: () => context.push('/${RouteNames.kycHomeTypePage}'),
           ),
         ),
         backgroundColor: AppColors.offWhiteBackground,

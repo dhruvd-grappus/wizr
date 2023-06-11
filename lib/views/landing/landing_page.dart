@@ -44,13 +44,12 @@ class LandingPage extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemWidth: MediaQuery.of(context).size.width,
             itemHeight: MediaQuery.of(context)
-                .size
-                .height - // total height// top AppBar height
+                    .size
+                    .height - // total height// top AppBar height
                 kBottomNavigationBarHeight,
             loop: false,
           ),
         ),
-
       ],
     );
   }

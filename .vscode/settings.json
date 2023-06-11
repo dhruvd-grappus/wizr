@@ -4,6 +4,8 @@
         "dotenv",
         "gapless",
         "navigationbar",
-        "RGBO"
+        "Quintus",
+        "RGBO",
+        "Swiper"
     ]
 }

@@ -25,7 +25,7 @@ class LandingAppBar extends StatelessWidget {
               const SizedBox(width: 6),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 11, vertical: 11),
+                    const EdgeInsets.symmetric(horizontal: 11, vertical: 11),
                 decoration: const BoxDecoration(
                   color: Color(0xFFE1D7C9),
                   shape: BoxShape.circle,

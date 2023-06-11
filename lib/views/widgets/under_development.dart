@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UnderDevelopment extends StatelessWidget {
-  const UnderDevelopment({super.key, required this.name});
+  const UnderDevelopment({required this.name, super.key});
 
   final String name;
 

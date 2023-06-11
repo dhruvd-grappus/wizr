@@ -4,6 +4,20 @@ import 'package:flutter/material.dart';
 part 'custom_layout.dart';
 
 abstract class _SubSwiper extends StatefulWidget {
+  const _SubSwiper({
+    required this.loop,
+    required this.curve,
+    required this.itemCount,
+    super.key,
+    this.itemHeight,
+    this.itemWidth,
+    this.duration,
+    this.itemBuilder,
+    this.index,
+    this.scrollDirection = Axis.horizontal,
+    this.axisDirection = AxisDirection.left,
+    this.onIndexChanged,
+  });
   final IndexedWidgetBuilder? itemBuilder;
   final int itemCount;
   final int? index;
@@ -15,21 +29,6 @@ abstract class _SubSwiper extends StatefulWidget {
   final bool loop;
   final Axis? scrollDirection;
   final AxisDirection? axisDirection;
-
-  const _SubSwiper({
-    Key? key,
-    required this.loop,
-    this.itemHeight,
-    this.itemWidth,
-    this.duration,
-    required this.curve,
-    this.itemBuilder,
-    this.index,
-    required this.itemCount,
-    this.scrollDirection = Axis.horizontal,
-    this.axisDirection = AxisDirection.left,
-    this.onIndexChanged,
-  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState();
@@ -46,32 +45,19 @@ abstract class _SubSwiper extends StatefulWidget {
 
 class StackSwiper extends _SubSwiper {
   const StackSwiper({
-    Key? key,
-    required Curve curve,
-    int? duration,
-    ValueChanged<int>? onIndexChanged,
-    double? itemHeight,
-    double? itemWidth,
-    IndexedWidgetBuilder? itemBuilder,
-    int? index,
-    required bool loop,
-    required int itemCount,
-    Axis? scrollDirection,
-    AxisDirection? axisDirection,
-  }) : super(
-    loop: loop,
-    key: key,
-    itemWidth: itemWidth,
-    itemHeight: itemHeight,
-    itemBuilder: itemBuilder,
-    curve: curve,
-    duration: duration,
-    index: index,
-    onIndexChanged: onIndexChanged,
-    itemCount: itemCount,
-    scrollDirection: scrollDirection,
-    axisDirection: axisDirection,
-  );
+    required super.curve,
+    required super.loop,
+    required super.itemCount,
+    super.key,
+    super.duration,
+    super.onIndexChanged,
+    super.itemHeight,
+    super.itemWidth,
+    super.itemBuilder,
+    super.index,
+    super.scrollDirection = null,
+    super.axisDirection = null,
+  });
 
   @override
   State<StatefulWidget> createState() => _StackViewState();
@@ -84,10 +70,10 @@ class _StackViewState extends _CustomLayoutStateBase<StackSwiper> {
 
   void _updateValues() {
     if (widget.scrollDirection == Axis.horizontal) {
-      double space = (_swiperWidth - widget.itemWidth!) / 2;
+      final space = (_swiperWidth - widget.itemWidth!) / 2;
       offsets = [-space, -space / 3 * 2, -space / 3, 0.0, _swiperWidth];
     } else {
-      double space = (_swiperHeight - widget.itemHeight!) / 2;
+      final space = (_swiperHeight - widget.itemHeight!) / 2;
       offsets = [-space, -space / 3 * 2, -space / 3, 0.0, _swiperHeight];
     }
   }
@@ -116,24 +102,23 @@ class _StackViewState extends _CustomLayoutStateBase<StackSwiper> {
   @override
   Widget _buildItem(int i, int realIndex, double animationValue) {
     //double s = _getValue(scales, animationValue, i);
-    double f = _getValue(offsets, animationValue, i);
+    final f = _getValue(offsets, animationValue, i);
     //double o = _getValue(opacity, animationValue, i);
 
-    final offset = widget.scrollDirection == Axis.horizontal
-        ? Offset(f, 0.0)
-        : Offset(0.0, f);
+    final offset =
+        widget.scrollDirection == Axis.horizontal ? Offset(f, 0) : Offset(0, f);
 
-    Alignment alignment = widget.scrollDirection == Axis.horizontal
+    final alignment = widget.scrollDirection == Axis.horizontal
         ? Alignment.centerLeft
         : Alignment.topCenter;
 
     return Opacity(
-      opacity: 1.0,
+      opacity: 1,
       child: Transform.translate(
         key: ValueKey<int>(_currentIndex + i),
         offset: offset,
         child: Transform.scale(
-          scale: 1.0,
+          scale: 1,
           alignment: alignment,
           child: SizedBox(
             width: widget.itemWidth ?? double.infinity,

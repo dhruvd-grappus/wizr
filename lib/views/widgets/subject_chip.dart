@@ -1,13 +1,10 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class SubjectChip extends StatelessWidget {
   const SubjectChip({
-    super.key,
     required this.name,
+    super.key,
     this.textColor = Colors.black,
     this.chipColor = Colors.white,
     this.onTap,
@@ -44,10 +41,11 @@ class SubjectChip extends StatelessWidget {
               Text(
                 name,
                 style: TextStyle(
-                    fontFamily: 'Patron',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: textColor),
+                  fontFamily: 'Patron',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: textColor,
+                ),
               ),
               const SizedBox(width: 6),
               if (tailWidget != null) tailWidget!,
