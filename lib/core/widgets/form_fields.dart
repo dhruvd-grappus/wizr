@@ -11,6 +11,7 @@ class CurvedTextFormField extends StatefulWidget {
     super.key,
     this.hint,
     this.fillColor,
+    this.autofocus = false,
     this.textInputType = TextInputType.name,
   });
   final TextEditingController controller;
@@ -19,6 +20,7 @@ class CurvedTextFormField extends StatefulWidget {
   final Color? focusedBorderColor;
   final Color? fillColor;
   final TextInputType textInputType;
+  final bool autofocus;
   @override
   State<CurvedTextFormField> createState() => _CurvedTextFormFieldState();
 }
@@ -54,7 +56,7 @@ class _CurvedTextFormFieldState extends State<CurvedTextFormField> {
       padding: const EdgeInsets.symmetric(horizontal: 16).responsive(context),
       child: TextFormField(
         cursorColor: Colors.black,
-        autofocus: true,
+        autofocus: widget.autofocus,
         focusNode: focusNode,
         keyboardType: widget.textInputType,
         style: context.textTheme.bodyMedium,
@@ -73,8 +75,8 @@ class _CurvedTextFormFieldState extends State<CurvedTextFormField> {
 }
 
 class CurvedDropdownField extends StatefulWidget {
-  const CurvedDropdownField({super.key});
-
+  const CurvedDropdownField({this.dropDownHint, super.key});
+  final Widget? dropDownHint;
   @override
   CurvedDropdownFieldState createState() => CurvedDropdownFieldState();
 }
@@ -107,7 +109,7 @@ class CurvedDropdownFieldState extends State<CurvedDropdownField> {
       child: DropdownButtonFormField<String>(
         focusNode: focusNode,
         iconEnabledColor: Colors.black,
-        value: 'a',
+        hint: widget.dropDownHint,
         dropdownColor: Colors.white,
         onChanged: (value) {
           // TODO(dhruv): onChanged
