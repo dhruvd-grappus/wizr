@@ -67,7 +67,9 @@ class PhoneLoginPage extends StatelessWidget {
           SizedBox(height: 26.toResponsiveHeight(context)),
           Text(
             context.l10n.letsGetYouStarted,
-            style: context.textTheme.headlineLarge!.withColor(Colors.black),
+            style: context.textTheme.headlineLarge!
+                .withColor(Colors.black)
+                .responsiveFont(context),
           ),
           SizedBox(height: 18.toResponsiveHeight(context)),
           Text(
@@ -91,6 +93,7 @@ class PhoneLoginPage extends StatelessWidget {
               textInputType: TextInputType.phone,
               controller: TextEditingController(),
               hint: context.l10n.phoneNumber,
+              autofocus: true,
               prefix: Container(
                 margin: const EdgeInsets.only(right: 13).responsive(context),
                 child: Text(

@@ -5,6 +5,16 @@ import 'package:wizr/core/theme/typography/text_styles.dart';
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
+  bottomSheetTheme: const BottomSheetThemeData(
+    modalBarrierColor: Colors.white,
+    elevation: 0,
+    backgroundColor: Colors.white,
+    modalBackgroundColor: Colors.white,
+    modalElevation: 0,
+    dragHandleColor: Colors.white,
+    showDragHandle: false,
+    constraints: BoxConstraints(maxHeight: 125),
+  ),
   colorScheme: const ColorScheme(
     onPrimary: Colors.yellow,
     primary: Colors.yellow,

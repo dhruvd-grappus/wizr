@@ -18,6 +18,7 @@ class OtpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomSignupFlowPage(
+      backButton: true,
       bottomButton: SizedBox(
         child: Column(
           children: [
@@ -46,7 +47,7 @@ class OtpPage extends StatelessWidget {
             SizedBox(height: 16.toResponsiveHeight(context)),
             PrimaryButton(
               label: context.l10n.continueBtnLabel,
-              onTap: () => context.pushNamed(RouteNames.kycEmployeePage),
+              onTap: () => context.pushNamed(RouteNames.signupPage),
             ),
             SizedBox(height: 16.toResponsiveHeight(context)),
           ],
@@ -67,7 +68,9 @@ class OtpPage extends StatelessWidget {
           SizedBox(height: 26.toResponsiveHeight(context)),
           Text(
             context.l10n.weSentYouAnOtp,
-            style: context.textTheme.headlineLarge!.withColor(Colors.black),
+            style: context.textTheme.headlineLarge!
+                .withColor(Colors.black)
+                .responsiveFont(context),
           ),
           SizedBox(height: 18.toResponsiveHeight(context)),
           Row(
