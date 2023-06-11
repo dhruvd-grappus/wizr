@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wizr/views/authentication/otp_page.dart';
 import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
@@ -36,12 +37,18 @@ class RouteNames {
   static const growPage = 'grow';
   static const financeHomePage = 'finance-homepage';
   static const phoneLoginPage = 'phone-login';
+  static const otpPage = 'otp-page';
 }
 
 // GoRouter configuration
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   routes: [
+    GoRoute(
+      name: RouteNames.otpPage,
+      path: '/${RouteNames.otpPage}',
+      builder: (context, state) => const OtpPage(),
+    ),
     GoRoute(
       name: RouteNames.phoneLoginPage,
       path: '/${RouteNames.phoneLoginPage}',
