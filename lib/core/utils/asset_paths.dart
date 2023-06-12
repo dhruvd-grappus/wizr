@@ -8,6 +8,8 @@ class AssetImages {
   static const String civilScore = '${imageBasePath}civil_score.png';
   static const String signupFlowHeader =
       '${imageBasePath}img_signup_header.png';
+  static const String student = '${imageBasePath}student_4x.png';
+  static const String professional = '${imageBasePath}professional_4x.png';
 }
 
 class AssetIcons {
@@ -36,4 +38,6 @@ class AssetIcons {
   static const String notebook = '${iconBasePath}ic_notebook.svg';
   static const String check = '${iconBasePath}ic_check.svg';
   static const String close = '${iconBasePath}ic_close.svg';
+  static const String selectedProfession =
+      '${iconBasePath}selected-profession.svg';
 }

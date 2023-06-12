@@ -7,6 +7,7 @@ import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
+import 'package:wizr/core/widgets/app_checkbox.dart';
 import 'package:wizr/core/widgets/buttons.dart';
 import 'package:wizr/views/kyc/widgets/form_field.dart';
 
@@ -120,7 +121,7 @@ class SignupButton extends StatelessWidget {
         SizedBox(height: 16.toResponsiveHeight(context)),
         PrimaryButton(
           label: context.l10n.continueBtnLabel,
-          onTap: () => context.pushNamed(RouteNames.kycEmployeePage),
+          onTap: () => context.pushNamed(RouteNames.userProfessionPage),
         ),
       ],
     );
@@ -213,7 +214,16 @@ class SignupForm extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
+          AppCheckBox(
+            onChanged: (_) {},
+            text: context.l10n.agreeToTerms,
+          ),
+          const SizedBox(height: 8),
+          AppCheckBox(
+            onChanged: (_) {},
+            text: context.l10n.getUpdatesOnWhatsapp,
+          ),
         ],
       ),
     );
