@@ -91,7 +91,6 @@ class _StackViewState extends _CustomLayoutStateBase<StackSwiper> {
     //length of the values array below
     _animationCount = 5;
 
-    //Array below this line, '0' index is 1.0 ,witch is the first item show in swiper.
     _startIndex = -3;
     scales = [0.7, 0.8, 0.9, 1.0, 1.0];
     opacity = [0.0, 0.5, 1.0, 1.0, 1.0];

@@ -63,7 +63,9 @@ class SnapTwo extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'Unleash your inner superhero!\nDiscover your super powers and find out how\nskilled you are. Get top-notch',
+                      'Unleash your inner superhero!\nDiscover your '
+                      'super powers'
+                      ' and find out how\nskilled you are. Get top-notch',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,

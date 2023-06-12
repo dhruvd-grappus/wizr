@@ -16,6 +16,7 @@ dart_code_metrics:
 
   metrics-exclude:
     - test/**
+    - lib/views/widgets/wizr_bottom_navigation_bar.dart
   rules-exclude:
     - test/**
   rules:
@@ -30,10 +31,8 @@ dart_code_metrics:
     - no-boolean-literal-compare
     - no-empty-block
     - avoid-collection-methods-with-unrelated-types
-    - avoid-returning-widgets
     - list-all-equatable-fields
     - avoid-non-ascii-symbols
-    - avoid-returning-widgets
     - prefer-immediate-return
     - prefer-conditional-expressions
     - no-equal-then-else

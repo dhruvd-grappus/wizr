@@ -161,7 +161,8 @@ class SnapThree extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 12),
                                 const Text(
-                                  'Based on your profile get\nunbiased course\nrecommendations.',
+                                  'Based on your profile get\nunbiased'
+                                  ' course\nrecommendations.',
                                   style: TextStyle(
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.w500,
