@@ -64,7 +64,6 @@ class SignupPage extends StatelessWidget {
                     SizedBox(height: 16.toResponsiveHeight(context)),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 20)
-                          .copyWith(top: 12)
                           .responsive(context),
                       width: context.screenWidth,
                       decoration: const BoxDecoration(
@@ -97,6 +96,7 @@ class SignupButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 16.toResponsiveHeight(context)),
         Container(
           constraints: BoxConstraints(maxWidth: 250.toResponsiveWidth(context)),
           child: RichText(
@@ -118,7 +118,7 @@ class SignupButton extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16.toResponsiveHeight(context)),
+        SizedBox(height: 5.toResponsiveHeight(context)),
         PrimaryButton(
           label: context.l10n.continueBtnLabel,
           onTap: () => context.pushNamed(RouteNames.userProfessionPage),

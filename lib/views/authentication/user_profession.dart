@@ -10,7 +10,6 @@ import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
 import 'package:wizr/core/widgets/form_fields.dart';
 import 'package:wizr/views/authentication/widgets/profession_card.dart';
-import 'package:wizr/views/kyc/widgets/form_field.dart';
 
 class UserProfessionPage extends StatelessWidget {
   const UserProfessionPage({super.key});
