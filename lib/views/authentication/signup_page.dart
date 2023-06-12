@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -18,7 +20,39 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomSheet: const SignupButton(),
+        bottomSheet: ColoredBox(
+          color: Colors.white,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: 16.toResponsiveHeight(context)),
+              Container(
+                constraints: BoxConstraints(
+                  maxWidth: 250.toResponsiveWidth(context),
+                ),
+                child: RichText(
+                  maxLines: 2,
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: '${context.l10n.byUsingWizr} ',
+                        style: context.textTheme.labelSmall!
+                            .withColor(AppColors.greyTextColor),
+                      ),
+                      TextSpan(
+                        text: context.l10n.termsAndPrivacy,
+                        style: context.textTheme.labelSmall!
+                            .withColor(AppColors.black),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              const SignupButton(),
+            ],
+          ),
+        ),
         backgroundColor: Colors.white,
         body: Stack(
           alignment: Alignment.topCenter,
@@ -75,7 +109,6 @@ class SignupPage extends StatelessWidget {
                       ),
                       child: const SignupForm(),
                     ),
-                    SizedBox(height: 16.toResponsiveHeight(context)),
                   ],
                 ),
               ),
@@ -94,36 +127,9 @@ class SignupButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 16.toResponsiveHeight(context)),
-        Container(
-          constraints: BoxConstraints(maxWidth: 250.toResponsiveWidth(context)),
-          child: RichText(
-            maxLines: 2,
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '${context.l10n.byUsingWizr} ',
-                  style: context.textTheme.labelSmall!
-                      .withColor(AppColors.greyTextColor),
-                ),
-                TextSpan(
-                  text: context.l10n.termsAndPrivacy,
-                  style:
-                      context.textTheme.labelSmall!.withColor(AppColors.black),
-                )
-              ],
-            ),
-          ),
-        ),
-        SizedBox(height: 5.toResponsiveHeight(context)),
-        PrimaryButton(
-          label: context.l10n.continueBtnLabel,
-          onTap: () => context.pushNamed(RouteNames.userProfessionPage),
-        ),
-      ],
+    return PrimaryButton(
+      label: context.l10n.continueBtnLabel,
+      onTap: () => context.pushNamed(RouteNames.userProfessionPage),
     );
   }
 }
@@ -216,14 +222,19 @@ class SignupForm extends StatelessWidget {
             ),
           ),
           AppCheckBox(
-            onChanged: (_) {},
+            onChanged: (_) {
+              log('');
+            },
             text: context.l10n.agreeToTerms,
           ),
           const SizedBox(height: 8),
           AppCheckBox(
-            onChanged: (_) {},
+            onChanged: (_) {
+              log('');
+            },
             text: context.l10n.getUpdatesOnWhatsapp,
           ),
+          SizedBox(height: 150.toResponsiveHeight(context))
         ],
       ),
     );

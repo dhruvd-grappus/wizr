@@ -313,7 +313,7 @@ class TranslateTransformBuilder extends TransformBuilder<Offset> {
 
 class CustomLayoutOption {
   CustomLayoutOption({required this.startIndex, this.stateCount});
-  final List<TransformBuilder> builders = [];
+  final List<TransformBuilder<dynamic>> builders = [];
   final int startIndex;
   final int? stateCount;
 

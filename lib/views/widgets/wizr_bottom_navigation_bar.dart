@@ -1,4 +1,4 @@
-// ignore_for_file: no_leading_underscores_for_local_identifiers, lines_longer_than_80_chars
+// ignore_for_file: no_leading_underscores_for_local_identifiers, lines_longer_than_80_chars, cascade_invocations
 // ignore_for_file: avoid_returning_widgets
 
 import 'dart:math';
@@ -54,14 +54,14 @@ class WizrBottomNavigationBar extends StatelessWidget {
   /// If the opacity is less than 1, it will automatically be 1
   final Color? barColor;
 
-  /// List of [MoltenTab], each wil have an icon as the main widget, selcted color and unselected color
+  /// List of [WizrTab], each wil have an icon as the main widget, selcted color and unselected color
   final List<WizrTab> tabs;
 
   /// The currently selected tab
   final int selectedIndex;
 
-  /// A callback function that will be triggered whenever a [MoltenTab] is clicked, and will return it's index.
-  final Function(int index) onTabChange;
+  /// A callback function that will be triggered whenever a [WizrTab] is clicked, and will return it's index.
+  final void Function(int index) onTabChange;
 
   /// Select a [Curve] value for the dome animation. Default is [Curves.linear]
   final Curve curve;
