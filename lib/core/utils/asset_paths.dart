@@ -40,4 +40,6 @@ class AssetIcons {
   static const String close = '${iconBasePath}ic_close.svg';
   static const String selectedProfession =
       '${iconBasePath}selected-profession.svg';
+
+  static String bankIcon(String bank) => '${iconBasePath}ic_$bank.svg';
 }

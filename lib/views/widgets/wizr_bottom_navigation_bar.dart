@@ -187,7 +187,7 @@ class WizrBottomNavigationBar extends StatelessWidget {
                     ],
                   ),
                 );
-              }).toList(),
+              }),
             ],
           ),
         );
@@ -235,7 +235,7 @@ class WizrBottomNavigationBar extends StatelessWidget {
   }
 }
 
-/// Wraps the [MoltenTab] with extra attributes.
+/// Wraps the [WizrTab] with extra attributes.
 class _TabWrapper extends StatelessWidget {
   const _TabWrapper({
     required this.tab,

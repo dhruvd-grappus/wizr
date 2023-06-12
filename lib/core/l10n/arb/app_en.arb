@@ -120,8 +120,26 @@
 "curateCourses": "We will curate courses based on who you are",
     "iam" : "I am",
     "aStudent" : "A Student",
-    "aProfessional" : "A Professional"
+    "aProfessional" : "A Professional",
+    "selectYourBank":"Select your bank",
 
+    "selectYourSalaryAccount":"Select your salary account",
+    "pleaseSelectOneBank":"Please select any one bank",
+    "searchYourBank":"Search your bank",
+    "updateBankDetails":"Update Bank Details",
+    "accountType":"Account Type",
+    "current":"Current",
+    "savings":"Savings",
+    "other":"Other",
+    "bankName":"Bank Name",
+    "accountNumber":"Account Number",
+    "accountHolderName":"Account Holder Name",
+    "ifscCode":"IFSC Code",
+    "creditAccount":"Credit Account",
+    "overDraftAccount":"Overdraft Account",
+    "selectAccountType":"Select Account Type",
+    "bankSupportsNACH":"Your bank supports digital NACH",
+    "selectedType":"Selected Type:"
 
 
 }
