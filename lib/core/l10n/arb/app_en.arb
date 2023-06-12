@@ -115,7 +115,12 @@
     "gender":"Gender",
     "select":"Select",
     "agreeToTerms":"I agree to WiZR’s terms & conditions",
-    "getUpdatesOnWhatsapp":"Get updates on Whatsapp"
+    "getUpdatesOnWhatsapp":"Get updates on Whatsapp",
+"bestDescribesYou": "What describes you the best?",
+"curateCourses": "We will curate courses based on who you are",
+    "iam" : "I am",
+    "aStudent" : "A Student",
+    "aProfessional" : "A Professional"
 
 
 

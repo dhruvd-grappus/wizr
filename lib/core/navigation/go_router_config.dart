@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:wizr/views/authentication/otp_page.dart';
 import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/authentication/signup_page.dart';
+import 'package:wizr/views/authentication/user_profession.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
@@ -40,6 +41,7 @@ class RouteNames {
   static const phoneLoginPage = 'phone-login';
   static const otpPage = 'otp-page';
   static const signupPage = 'signup-page';
+  static const userProfessionPage = 'user-profession-page';
 }
 
 // GoRouter configuration
@@ -95,6 +97,11 @@ final router = GoRouter(
       name: RouteNames.kycHomeTypePage,
       path: '/${RouteNames.kycHomeTypePage}',
       builder: (context, state) => KycHomeTypePage(),
+    ),
+    GoRoute(
+      name: RouteNames.userProfessionPage,
+      path: '/${RouteNames.userProfessionPage}',
+      builder: (context, state) => const UserProfessionPage(),
     ),
     GoRoute(
       name: RouteNames.kycEmployeePage,

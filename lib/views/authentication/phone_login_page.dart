@@ -62,7 +62,7 @@ class PhoneLoginPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 8.4, horizontal: 13),
             textColor: Colors.white,
             labelStyle: context.textTheme.labelSmall,
-            angle: pi / 50,
+            angle: pi / 56,
           ),
           SizedBox(height: 26.toResponsiveHeight(context)),
           Text(
