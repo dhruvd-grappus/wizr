@@ -1,4 +1,4 @@
-package com.example.verygoodcore.wizr
+package com.grappus.wizrlearning
 
 import io.flutter.embedding.android.FlutterActivity
 

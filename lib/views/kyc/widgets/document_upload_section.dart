@@ -45,11 +45,10 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
       ),
       child: RippleAnimation(
         color: AppColors.greyTextColor.withOpacity(0.2),
-        delay: const Duration(seconds: 3),
         duration: const Duration(seconds: 3),
         minRadius: 45.toResponsiveHeight(context),
         repeat: true,
-        ripplesCount: 4,
+        ripplesCount: 6,
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: 65.toResponsiveWidth(context),
