@@ -16,6 +16,7 @@ class KycFormField extends StatelessWidget {
     this.prefix,
     this.focusedBorderColor,
     this.fillColor,
+    this.margin,
   });
   final TextEditingController controller;
   final String label;
@@ -27,10 +28,11 @@ class KycFormField extends StatelessWidget {
   final Color? focusedBorderColor;
   final Color? fillColor;
   final Widget? dropDownHint;
+  final EdgeInsets? margin;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 24).responsive(context),
+      margin: margin ?? const EdgeInsets.only(bottom: 24).responsive(context),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -63,6 +65,7 @@ class KycFormField extends StatelessWidget {
               hint: hint,
               prefix: prefix,
               fillColor: fillColor,
+              textInputType: textInputType,
               focusedBorderColor: focusedBorderColor,
             ),
         ],

@@ -11,6 +11,7 @@ class CurvedTextFormField extends StatefulWidget {
     super.key,
     this.hint,
     this.fillColor,
+    this.enabled = true,
     this.autofocus = false,
     this.textInputType = TextInputType.name,
   });
@@ -21,6 +22,7 @@ class CurvedTextFormField extends StatefulWidget {
   final Color? fillColor;
   final TextInputType textInputType;
   final bool autofocus;
+  final bool enabled;
   @override
   State<CurvedTextFormField> createState() => _CurvedTextFormFieldState();
 }
@@ -58,16 +60,21 @@ class _CurvedTextFormFieldState extends State<CurvedTextFormField> {
         cursorColor: Colors.black,
         autofocus: widget.autofocus,
         focusNode: focusNode,
+        enabled: widget.enabled,
+        textAlignVertical: TextAlignVertical.center,
         keyboardType: widget.textInputType,
-        style: context.textTheme.bodyMedium,
+        style: context.textTheme.bodyMedium!.copyWith(height: 20 / 14),
         decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: EdgeInsets.zero,
           focusColor: Colors.white,
+          isDense: true,
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 10).responsive(context),
           hintText: widget.hint,
+          prefixIconConstraints: const BoxConstraints(),
           hintStyle: context.textTheme.labelMedium!
               .withColor(AppColors.purpleText.withOpacity(0.5)),
-          prefix: widget.prefix,
+          prefixIcon: widget.prefix,
         ),
       ),
     );

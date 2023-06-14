@@ -10,6 +10,8 @@ import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
 import 'package:wizr/views/kyc/address/search_location_page.dart';
+import 'package:wizr/views/kyc/bank/kyc_select_bank_page.dart';
+import 'package:wizr/views/kyc/bank/kyc_update_bank_page.dart';
 import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_identity_proof_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_aadhar_page.dart';
@@ -42,12 +44,24 @@ class RouteNames {
   static const otpPage = 'otp-page';
   static const signupPage = 'signup-page';
   static const userProfessionPage = 'user-profession-page';
+  static const kycSelectBankPage = 'kyc-select-bank';
+  static const kycUpdateBankPage = 'kyc-update-bank';
 }
 
 // GoRouter configuration
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   routes: [
+    GoRoute(
+      name: RouteNames.kycUpdateBankPage,
+      path: '/${RouteNames.kycUpdateBankPage}',
+      builder: (context, state) => const KycUpdateBankPage(),
+    ),
+    GoRoute(
+      name: RouteNames.kycSelectBankPage,
+      path: '/${RouteNames.kycSelectBankPage}',
+      builder: (context, state) => const KycSelectBankPage(),
+    ),
     GoRoute(
       name: RouteNames.signupPage,
       path: '/${RouteNames.signupPage}',
