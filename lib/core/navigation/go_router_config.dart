@@ -6,12 +6,14 @@ import 'package:wizr/views/authentication/signup_page.dart';
 import 'package:wizr/views/authentication/user_profession.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
+import 'package:wizr/views/kyc/account_verified_page.dart';
 import 'package:wizr/views/kyc/address/kyc_address_select_page.dart';
 import 'package:wizr/views/kyc/address/kyc_home_type_page.dart';
 import 'package:wizr/views/kyc/address/kyc_manual_address_page.dart';
 import 'package:wizr/views/kyc/address/search_location_page.dart';
 import 'package:wizr/views/kyc/bank/kyc_select_bank_page.dart';
 import 'package:wizr/views/kyc/bank/kyc_update_bank_page.dart';
+import 'package:wizr/views/kyc/bank/kyc_upload_bank_statement_page.dart';
 import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_identity_proof_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_aadhar_page.dart';
@@ -46,12 +48,24 @@ class RouteNames {
   static const userProfessionPage = 'user-profession-page';
   static const kycSelectBankPage = 'kyc-select-bank';
   static const kycUpdateBankPage = 'kyc-update-bank';
+  static const kycUploadBankStatement = 'kyc-upload-bank-statement';
+  static const accountVerified = 'account-verified';
 }
 
 // GoRouter configuration
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   routes: [
+    GoRoute(
+      name: RouteNames.accountVerified,
+      path: '/${RouteNames.accountVerified}',
+      builder: (context, state) => const AccountVerifiedPage(),
+    ),
+    GoRoute(
+      name: RouteNames.kycUploadBankStatement,
+      path: '/${RouteNames.kycUploadBankStatement}',
+      builder: (context, state) => const KycUploadBankStatementPage(),
+    ),
     GoRoute(
       name: RouteNames.kycUpdateBankPage,
       path: '/${RouteNames.kycUpdateBankPage}',

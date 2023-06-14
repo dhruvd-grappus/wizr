@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 
-void showRoundedBottomSheet(BuildContext context, Widget sheet) {
-  showModalBottomSheet<void>(
+Future<void> showRoundedBottomSheet(BuildContext context, Widget sheet) async {
+  await showModalBottomSheet<void>(
     context: context,
     backgroundColor: Colors.transparent,
     elevation: 0,
+    isScrollControlled: true,
     builder: (_) => sheet,
   );
 }
