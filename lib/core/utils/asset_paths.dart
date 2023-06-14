@@ -10,6 +10,10 @@ class AssetImages {
       '${imageBasePath}img_signup_header.png';
   static const String student = '${imageBasePath}student_4x.png';
   static const String professional = '${imageBasePath}professional_4x.png';
+  static const String verifyProgress =
+      '${imageBasePath}img_verify_progress.png';
+  static const String accountVerified =
+      '${imageBasePath}img_account_verified.png';
 }
 
 class AssetIcons {
@@ -38,8 +42,13 @@ class AssetIcons {
   static const String notebook = '${iconBasePath}ic_notebook.svg';
   static const String check = '${iconBasePath}ic_check.svg';
   static const String close = '${iconBasePath}ic_close.svg';
+  static const String closeBlack = '${iconBasePath}ic_close_black.svg';
+
   static const String selectedProfession =
       '${iconBasePath}selected-profession.svg';
 
   static String bankIcon(String bank) => '${iconBasePath}ic_$bank.svg';
+
+  static const String pdf = '${iconBasePath}ic_pdf.svg';
+  static const String checkGreen = '${iconBasePath}ic_check_green.svg';
 }

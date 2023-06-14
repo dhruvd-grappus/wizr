@@ -72,7 +72,7 @@
     "aadharUpload":"Aadhaar upload",
     "uploadYourAadharCard":"Upload your Aadhaar card",
     "fileSpecs":"File should be PDF or JPEG. Max file size 5 MB",
-    "tapToUploadDoc": "Tap to upload {doc} front photo here",
+    "tapToUploadDoc": "Tap to upload {doc}",
     "@tapToUploadDoc": {
         "placeholders": {
             "doc": {
@@ -81,6 +81,8 @@
             }
         }
     },
+    "frontPhotoHere":" front photo here",
+    "backPhotoHere":" back photo here",
     "front":"Front",
     "back":"Back",
     "identityProof":"Identity Proof",
@@ -139,7 +141,19 @@
     "overDraftAccount":"Overdraft Account",
     "selectAccountType":"Select Account Type",
     "bankSupportsNACH":"Your bank supports digital NACH",
-    "selectedType":"Selected Type:"
+    "selectedType":"Selected Type:",
+    "greatWeAreVerifying":"Great, we are verifying your bank account",
+    "weAreDepositingRs":"We are now depositing Rs. 01 in your account for verify it from our behalf.",
+    "verificationInProgress":"Verification in Progress...",
+    "cancelledCheque":"Cancelled Cheque",
+    "bankPassbook":"Bank Passbook",
+    "bankStatement":"Bank Statement",
+    "uploadBankStatement":"Upload bank statement",
+    "uploadAnyOfTheseDocs":"Upload any of these documents",
+    "congratulationsAccountVerified":"Congratulations! your\naccount has been verified",
+
+    "greatThanks":"Great! Thanks"
+
 
 
 }

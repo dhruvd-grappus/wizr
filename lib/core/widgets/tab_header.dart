@@ -8,11 +8,13 @@ class TabHeader extends StatefulWidget {
     required this.tabTiles,
     required this.width,
     required this.onChanged,
+    this.fontSize,
     super.key,
   }) : assert(tabTiles.isNotEmpty, 'Tab List cannot be empty');
   final List<String> tabTiles;
   final double width;
   final ValueChanged<String> onChanged;
+  final double? fontSize;
 
   @override
   State<TabHeader> createState() => _TabHeaderState();
@@ -47,11 +49,11 @@ class _TabHeaderState extends State<TabHeader> {
           (index) {
             return Expanded(
               child: Container(
-                margin: EdgeInsets.only(
-                  right: index != widget.tabTiles.length - 1
-                      ? (0.08 * widget.width)
-                      : 0,
-                ).responsive(context),
+                margin: widget.tabTiles.length > 2
+                    ? null
+                    : EdgeInsets.only(
+                        right: marginForPosition(index),
+                      ).responsive(context),
                 child: InkWell(
                   onTap: () {
                     if (widget.tabTiles[index] != selectedTab) {
@@ -69,7 +71,7 @@ class _TabHeaderState extends State<TabHeader> {
                     ),
                     decoration: BoxDecoration(
                       color: widget.tabTiles[index] == selectedTab
-                          ? AppColors.tabColor
+                          ? AppColors.financeBlueDark
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(9),
                     ),
@@ -87,6 +89,7 @@ class _TabHeaderState extends State<TabHeader> {
                                     ? AppColors.white
                                     : AppColors.greyTextColor,
                               )
+                              .copyWith(fontSize: widget.fontSize)
                               .responsiveFont(context),
                         ),
                       ),
@@ -99,5 +102,9 @@ class _TabHeaderState extends State<TabHeader> {
         ),
       ),
     );
+  }
+
+  double marginForPosition(int index) {
+    return index != widget.tabTiles.length - 1 ? (0.08 * widget.width) : 0;
   }
 }

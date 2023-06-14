@@ -51,7 +51,8 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
         ripplesCount: 6,
         child: Container(
           padding: EdgeInsets.symmetric(
-            horizontal: 65.toResponsiveWidth(context),
+            horizontal:
+                (widget.isDocument ? 32 : 65).toResponsiveWidth(context),
           ),
           height: 200.toResponsiveHeight(context),
           width: context.screenWidth,
@@ -71,9 +72,11 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
               ),
               Text(
                 widget.title,
+                maxLines: widget.isDocument ? 1 : null,
                 textAlign: TextAlign.center,
                 style: CustomTextStyles.captionLarge
-                    .withColor(AppColors.midnightBlack.withOpacity(0.72)),
+                    .withColor(AppColors.midnightBlack.withOpacity(0.72))
+                    .responsiveFont(context),
               ),
               if (widget.isDocument)
                 Padding(

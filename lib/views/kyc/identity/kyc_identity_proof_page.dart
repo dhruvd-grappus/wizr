@@ -99,7 +99,7 @@ class IdentityProofUploadForm extends StatelessWidget {
               maxLines: 2,
               style: context.textTheme.bodyMedium!
                   .responsiveFont(context)
-                  .withColor(AppColors.tabColor)
+                  .withColor(AppColors.financeBlueDark)
                   .withOpacity(0.72),
             ),
           ),

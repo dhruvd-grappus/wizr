@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
@@ -9,6 +11,7 @@ import 'package:wizr/core/widgets/buttons.dart';
 import 'package:wizr/core/widgets/rounded_bottom_sheet.dart';
 import 'package:wizr/core/widgets/tab_header.dart';
 import 'package:wizr/views/kyc/bank/widgets/other_account_type_sheet.dart';
+import 'package:wizr/views/kyc/bank/widgets/verifying_bank_sheet.dart';
 import 'package:wizr/views/kyc/widgets/form_field.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
 
@@ -25,6 +28,11 @@ class KycUpdateBankPage extends StatelessWidget {
           child: PrimaryButton(
             label: context.l10n.continueBtnLabel,
             active: false,
+            onTap: () {
+              showRoundedBottomSheet(context, const VerifyingBankSheet()).then(
+                (value) => context.pushNamed(RouteNames.kycUploadBankStatement),
+              );
+            },
           ),
         ),
         resizeToAvoidBottomInset: true,
@@ -68,7 +76,7 @@ class KycUpdateBankPage extends StatelessWidget {
                               Text(
                                 context.l10n.selectedType,
                                 style: context.textTheme.labelMedium!.withColor(
-                                  AppColors.tabColor.withOpacity(0.5),
+                                  AppColors.financeBlueDark.withOpacity(0.5),
                                 ),
                               ),
                               const SizedBox(width: 7),
@@ -89,8 +97,8 @@ class KycUpdateBankPage extends StatelessWidget {
                                     ),
                                     Icon(
                                       Icons.close,
-                                      color:
-                                          AppColors.tabColor.withOpacity(0.72),
+                                      color: AppColors.financeBlueDark
+                                          .withOpacity(0.72),
                                       size: 16,
                                     )
                                   ],

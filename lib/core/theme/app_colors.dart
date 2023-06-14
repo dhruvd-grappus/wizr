@@ -14,7 +14,7 @@ class AppColors extends MaterialColor {
   static const financeBlue = Color(0xffBDD9F1);
   static const financeBlueLight = Color(0xff5B8FCF);
   static const credBlue = Color(0xff5B8ECA);
-  static const tabColor = Color(0xff102031);
+  static const financeBlueDark = Color(0xff102031);
   static const greyTextColor = Color(0xff838F97);
   static const midnightBlack = Color(0xff161C20);
   static const eggShell = Color(0xFFF0EAE4);

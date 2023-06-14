@@ -74,7 +74,7 @@ class KycAddressSelectPage extends StatelessWidget {
                     context.l10n.addressFoundDesc,
                     style: context.textTheme.bodyMedium!
                         .responsiveFont(context)
-                        .withColor(AppColors.tabColor),
+                        .withColor(AppColors.financeBlueDark),
                   ),
                   SizedBox(
                     height: 24.toResponsiveHeight(context),
