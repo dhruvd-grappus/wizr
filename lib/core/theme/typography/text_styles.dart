@@ -7,7 +7,6 @@ part 'text_style_extensions.dart';
 abstract class CustomTextStyles {
   static const _patronStyle = TextStyle(fontFamily: 'Patron');
   static const _interStyle = TextStyle(fontFamily: 'Inter');
-
   static TextStyle headlineLarge = _patronStyle.copyWith(
     fontSize: 31,
     fontWeight: CustomFontWeights.bold,

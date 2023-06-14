@@ -19,7 +19,7 @@ class StudentForm extends StatelessWidget {
         child: PrimaryButton(
           label: context.l10n.confirm,
           active: false,
-          onTap: () => context.pushNamed(RouteNames.kycHomeTypePage),
+          onTap: () => context.pushNamed(RouteNames.kycUploadPhotoPage),
         ),
       ),
       backgroundColor: AppColors.offWhiteBackground,

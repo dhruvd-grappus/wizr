@@ -24,6 +24,7 @@ class AppColors extends MaterialColor {
   static const purple1 = Color(0x0ff198ac);
   static const lightGrey2 = Color(0xff999999);
   static const brick = Color(0xffB7704E);
+  static const lightBrown = Color(0xffE1D7C9);
 }
 
 extension ColorExtension on String {

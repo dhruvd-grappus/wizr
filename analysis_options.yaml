@@ -40,3 +40,4 @@ dart_code_metrics:
 linter:
   rules:
     public_member_api_docs: false
+    flutter_style_todos: false
