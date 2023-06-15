@@ -15,6 +15,8 @@ import 'package:wizr/views/kyc/bank/kyc_select_bank_page.dart';
 import 'package:wizr/views/kyc/bank/kyc_update_bank_page.dart';
 import 'package:wizr/views/kyc/bank/kyc_upload_bank_statement_page.dart';
 import 'package:wizr/views/kyc/employee/kyc_employee_page.dart';
+import 'package:wizr/views/kyc/face/kyc_face_scan_page.dart';
+import 'package:wizr/views/kyc/face/kyc_upload_photo_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_identity_proof_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_aadhar_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_digitally_page.dart';
@@ -50,6 +52,8 @@ class RouteNames {
   static const kycUpdateBankPage = 'kyc-update-bank';
   static const kycUploadBankStatement = 'kyc-upload-bank-statement';
   static const accountVerified = 'account-verified';
+  static const kycUploadPhotoPage = 'kyc-upload-photo';
+  static const kycFaceScanPage = 'kyc-face-scan';
 }
 
 // GoRouter configuration
@@ -60,6 +64,16 @@ final router = GoRouter(
       name: RouteNames.accountVerified,
       path: '/${RouteNames.accountVerified}',
       builder: (context, state) => const AccountVerifiedPage(),
+    ),
+    GoRoute(
+      name: RouteNames.kycFaceScanPage,
+      path: '/${RouteNames.kycFaceScanPage}',
+      builder: (context, state) => KycFaceScanPage(),
+    ),
+    GoRoute(
+      name: RouteNames.kycUploadPhotoPage,
+      path: '/${RouteNames.kycUploadPhotoPage}',
+      builder: (context, state) => const KycUploadPhotoPage(),
     ),
     GoRoute(
       name: RouteNames.kycUploadBankStatement,

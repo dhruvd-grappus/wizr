@@ -152,7 +152,20 @@
     "uploadAnyOfTheseDocs":"Upload any of these documents",
     "congratulationsAccountVerified":"Congratulations! your\naccount has been verified",
 
-    "greatThanks":"Great! Thanks"
+    "greatThanks":"Great! Thanks",
+    "justOneMoreMinuteToBeIn":"Just one more minute to be in",
+    "forVerification":"For verification, you need to",
+    "clickASelfie":"Click a selfie",
+    "stepIntoAWellLitArea":"Step into a well-lit area & smile at your camera!",
+    "keepYourIDReady":"Keep your ID card ready",
+    "youWillUploadAadhar":"You will upload a picture\nof your Aadhaar Card\nDon’t have Aadhar? Tap here",
+    "panCard":"Pan Card",
+    "youWillUploadPan":"You will upload a picture\nof your PAN",
+    "selfie":"Selfie",
+    "forASelfieToGetApproved":"For a selfie to get approved, please note",
+    "complete":"Complete"
+
+
 
 
 

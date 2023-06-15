@@ -16,6 +16,7 @@ class PrimaryButton extends StatelessWidget {
     this.width,
     this.customLabelStyle,
     this.margin,
+    this.borderColor,
   });
   final void Function()? onTap;
   final String label;
@@ -26,6 +27,7 @@ class PrimaryButton extends StatelessWidget {
   final double? height;
   final TextStyle? customLabelStyle;
   final EdgeInsets? margin;
+  final Color? borderColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -40,8 +42,10 @@ class PrimaryButton extends StatelessWidget {
           color: backgroundColor ??
               (active ? Colors.black : AppColors.midnightGrey),
           borderRadius: BorderRadius.circular(1000.toResponsiveHeight(context)),
-          border:
-              Border.all(color: active ? Colors.black : AppColors.midnightGrey),
+          border: Border.all(
+            color:
+                borderColor ?? (active ? Colors.black : AppColors.midnightGrey),
+          ),
         ),
         child: Center(
           child: Row(

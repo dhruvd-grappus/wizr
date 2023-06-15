@@ -14,6 +14,8 @@ class AssetImages {
       '${imageBasePath}img_verify_progress.png';
   static const String accountVerified =
       '${imageBasePath}img_account_verified.png';
+  static const String selfieInstruction = '${imageBasePath}img_selfie_man.png';
+  static const String faceOverlay = '${imageBasePath}face_scan_overlay.svg';
 }
 
 class AssetIcons {
@@ -51,4 +53,6 @@ class AssetIcons {
 
   static const String pdf = '${iconBasePath}ic_pdf.svg';
   static const String checkGreen = '${iconBasePath}ic_check_green.svg';
+  static const String retake = '${iconBasePath}ic_retake.svg';
+  static const String gallery = '${iconBasePath}ic_gallery.svg';
 }
