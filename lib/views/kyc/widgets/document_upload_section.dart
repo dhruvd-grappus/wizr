@@ -74,7 +74,7 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
                 widget.title,
                 maxLines: widget.isDocument ? 1 : null,
                 textAlign: TextAlign.center,
-                style: CustomTextStyles.captionLarge
+                style: CustomTextStyles.displayLarge
                     .withColor(AppColors.midnightBlack.withOpacity(0.72))
                     .responsiveFont(context),
               ),

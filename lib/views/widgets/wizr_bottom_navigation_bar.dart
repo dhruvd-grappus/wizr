@@ -26,7 +26,7 @@ class WizrBottomNavigationBar extends StatelessWidget {
     this.curve = Curves.linear,
     this.borderColor,
     this.borderSize = 0,
-    this.borderRaduis,
+    this.borderRadius,
   });
 
   /// specify a Height for the bar, Default is kBottomNavigationBarHeight
@@ -79,13 +79,13 @@ class WizrBottomNavigationBar extends StatelessWidget {
   /// Default is: (topLeft: Radius.circular(10), topRight: Radius.circular(10))
   ///
   /// Note that high raduis values may decrease the dome width.
-  final BorderRadius? borderRaduis;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final _borderRaduis = borderRaduis ??
+        final _borderRaduis = borderRadius ??
             const BorderRadius.only(
               topLeft: Radius.circular(10),
               topRight: Radius.circular(10),

@@ -21,6 +21,7 @@ import 'package:wizr/views/kyc/identity/kyc_identity_proof_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_aadhar_page.dart';
 import 'package:wizr/views/kyc/identity/kyc_upload_digitally_page.dart';
 import 'package:wizr/views/landing/landing_page.dart';
+import 'package:wizr/views/learn/learn_page.dart';
 import 'package:wizr/views/widgets/under_development.dart';
 
 // Keys
@@ -176,6 +177,7 @@ final router = GoRouter(
         GoRoute(
           name: RouteNames.discoverPage,
           path: '/${RouteNames.discoverPage}',
+          parentNavigatorKey: _shellNavigatorKey,
           pageBuilder: (_, __) => CustomTransitionPage(
             child: const UnderDevelopment(name: 'Discover'),
             transitionsBuilder:
@@ -199,7 +201,7 @@ final router = GoRouter(
           name: RouteNames.learnPage,
           path: '/${RouteNames.learnPage}',
           pageBuilder: (_, __) => CustomTransitionPage(
-            child: const UnderDevelopment(name: 'Learn'),
+            child: const LearnPage(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0, 1);

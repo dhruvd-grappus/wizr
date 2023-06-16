@@ -28,6 +28,7 @@ dependencies:
   permission_handler: ^10.3.0
   pinput: ^2.2.31
   simple_ripple_animation: ^0.0.7
+  sleek_circular_slider: ^2.0.1
 
 dev_dependencies:
   bloc_test: ^9.1.2
