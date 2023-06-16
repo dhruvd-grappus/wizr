@@ -1,13 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
-import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
 import 'package:wizr/views/authentication/widgets/custom_signup_flow_page.dart';
 import 'package:wizr/views/widgets/rotated_chip.dart';
@@ -23,8 +23,7 @@ class OtpPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              constraints:
-                  BoxConstraints(maxWidth: 250.toResponsiveWidth(context)),
+              constraints: BoxConstraints(maxWidth: 250.w),
               child: RichText(
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -44,12 +43,12 @@ class OtpPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.toResponsiveHeight(context)),
+            SizedBox(height: 16.h),
             PrimaryButton(
               label: context.l10n.continueBtnLabel,
               onTap: () => context.pushNamed(RouteNames.signupPage),
             ),
-            SizedBox(height: 16.toResponsiveHeight(context)),
+            SizedBox(height: 16.h),
           ],
         ),
       ),
@@ -65,14 +64,14 @@ class OtpPage extends StatelessWidget {
             labelStyle: context.textTheme.labelSmall,
             angle: pi / 56,
           ),
-          SizedBox(height: 26.toResponsiveHeight(context)),
+          SizedBox(height: 26.h),
           Text(
             context.l10n.weSentYouAnOtp,
             style: context.textTheme.headlineLarge!
                 .withColor(Colors.black)
                 .responsiveFont(context),
           ),
-          SizedBox(height: 18.toResponsiveHeight(context)),
+          SizedBox(height: 18.h),
           Row(
             children: [
               Text(
@@ -88,20 +87,20 @@ class OtpPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 37.toResponsiveHeight(context)),
+          SizedBox(height: 37.h),
           Pinput(
             length: 6,
             autofocus: true,
             defaultPinTheme: PinTheme(
-              height: 52.toResponsiveHeight(context),
-              width: 50.toResponsiveWidth(context),
+              height: 52.h,
+              width: 50.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: AppColors.lightGrey2.withOpacity(0.1),
               ),
             ),
           ),
-          SizedBox(height: 17.toResponsiveHeight(context)),
+          SizedBox(height: 17.h),
           Text(
             'Resend OTP in 00:30 seconds',
             style: context.textTheme.labelMedium!.black
