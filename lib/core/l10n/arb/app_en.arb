@@ -169,7 +169,9 @@
     "zeroCostEMI":"Zero-Cost EMI",
     "starts":"Starts",
     "totalCost":"Total Cost",
-    "viewDetails":"View details"
+    "viewDetails":"View details",
+    "applyFilters":"Apply Filters",
+    "courseFilters":"Course Filters"
 
 
 

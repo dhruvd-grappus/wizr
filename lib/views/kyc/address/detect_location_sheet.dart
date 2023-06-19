@@ -62,7 +62,7 @@ class DetectLocationSheet extends StatelessWidget {
             backgroundColor: Colors.white,
             label: context.l10n.detectViaGps,
             onTap: () => context.pushNamed(RouteNames.searchLocationPage),
-            icon: AssetIcons.mapPin,
+            icon: SvgPicture.asset(AssetIcons.mapPin),
             customLabelStyle:
                 context.textTheme.labelLarge!.responsiveFont(context).black,
           ),
@@ -74,7 +74,7 @@ class DetectLocationSheet extends StatelessWidget {
             height: 40.toResponsiveHeight(context),
           ),
           PrimaryButton(
-            icon: AssetIcons.search,
+            icon: SvgPicture.asset(AssetIcons.search),
             onTap: () => context.pushNamed(RouteNames.kycManualAddressPage),
             label: context.l10n.enterLocationManually,
           ),

@@ -12,12 +12,16 @@ class AppCheckBox extends StatefulWidget {
     super.key,
     this.widget,
     this.text,
+    this.borderColor,
+    this.uncheckedColor,
   });
 
   final Widget? widget;
   final String? text;
   final ValueChanged<bool> onChanged;
   final bool value;
+  final Color? borderColor;
+  final Color? uncheckedColor;
 
   @override
   State<AppCheckBox> createState() => _AppCheckBoxState();
@@ -34,28 +38,32 @@ class _AppCheckBoxState extends State<AppCheckBox> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        InkWell(
-          onTap: () {
-            setState(() {
-              _isChecked = !_isChecked;
-            });
-            widget.onChanged(
-              _isChecked,
-            ); // Notify the parent about the selected value
-          },
-          child: AnimatedContainer(
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () {
+        setState(() {
+          _isChecked = !_isChecked;
+        });
+        widget.onChanged(
+          _isChecked,
+        ); // Notify the parent about the selected value
+      },
+      child: Row(
+        children: [
+          AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             width: 18.toResponsiveWidth(context),
             height: 18.toResponsiveHeight(context),
-            padding: const EdgeInsets.all(2),
+            padding: const EdgeInsets.all(3.5),
             decoration: BoxDecoration(
               border: Border.all(
-                color: AppColors.yellow,
+                color: _isChecked
+                    ? AppColors.yellow
+                    : widget.borderColor ?? AppColors.yellow,
               ),
-              color:
-                  _isChecked ? AppColors.yellow : AppColors.offWhiteBackground,
+              color: _isChecked
+                  ? AppColors.yellow
+                  : widget.uncheckedColor ?? AppColors.offWhiteBackground,
               borderRadius: BorderRadius.circular(6),
             ),
             child: AnimatedCrossFade(
@@ -77,16 +85,16 @@ class _AppCheckBoxState extends State<AppCheckBox> {
               crossFadeState: CrossFadeState.showFirst,
             ),
           ),
-        ),
-        const SizedBox(width: 8),
-        if (widget.widget != null)
-          widget.widget!
-        else
-          Text(
-            widget.text!,
-            style: context.textTheme.labelSmall?.opacity50,
-          )
-      ],
+          const SizedBox(width: 8),
+          if (widget.widget != null)
+            widget.widget!
+          else
+            Text(
+              widget.text!,
+              style: context.textTheme.labelSmall?.opacity50,
+            )
+        ],
+      ),
     );
   }
 }

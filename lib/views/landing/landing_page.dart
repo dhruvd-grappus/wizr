@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wizr/core/widgets/app_header.dart';
 import 'package:wizr/views/landing/snap_eight.dart';
 import 'package:wizr/views/landing/snap_five.dart';
 import 'package:wizr/views/landing/snap_four.dart';
@@ -31,6 +32,7 @@ class LandingPage extends StatelessWidget {
     return Column(
       children: [
         // app bar
+        const AppHeader(),
         Expanded(
           child: StackSwiper(
             curve: Curves.ease,

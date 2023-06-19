@@ -128,7 +128,9 @@ class KycFaceScanPage extends StatelessWidget {
                                         child: TweenAnimationBuilder<double>(
                                           duration: const Duration(seconds: 2),
                                           curve: Curves.easeInOut,
-                                          onEnd: () {},
+                                          onEnd: () {
+                                            debugPrint('callback');
+                                          },
                                           tween: Tween<double>(
                                             begin: 0,
                                             end: scanProgress,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wizr/core/navigation/go_router_config.dart';
-import 'package:wizr/core/widgets/app_header.dart';
 import 'package:wizr/views/widgets/wizr_bottom_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,10 +41,6 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         extendBody: true,
         resizeToAvoidBottomInset: false,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.h),
-          child: const AppHeader(),
-        ),
         bottomNavigationBar: WizrBottomNavigationBar(
           selectedIndex: _selectedIndex,
           domeCircleColor: const Color(0xffCBFB62),

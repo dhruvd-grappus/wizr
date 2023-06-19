@@ -46,7 +46,9 @@ abstract class _CustomLayoutStateBase<T extends _SubSwiper> extends State<T>
     final size = renderObject.paintBounds.size;
     _swiperWidth = size.width;
     _swiperHeight = size.height;
-    setState(() {});
+    setState(() {
+      debugPrint('callback');
+    });
   }
 
   @override
