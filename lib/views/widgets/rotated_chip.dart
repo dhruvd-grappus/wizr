@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class RotatedChip extends StatelessWidget {
@@ -12,6 +13,7 @@ class RotatedChip extends StatelessWidget {
     this.angle = 0,
     this.tailWidget,
     this.labelStyle,
+    this.radius = 30,
     this.padding,
   });
 
@@ -24,6 +26,7 @@ class RotatedChip extends StatelessWidget {
   final Widget? tailWidget;
   final TextStyle? labelStyle;
   final EdgeInsets? padding;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return Transform.rotate(
@@ -35,7 +38,7 @@ class RotatedChip extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: chipColor,
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(radius.h),
           ),
           padding: padding ?? const EdgeInsets.fromLTRB(20, 14, 20, 14),
           child: Row(
@@ -51,7 +54,7 @@ class RotatedChip extends StatelessWidget {
                       color: textColor,
                     ),
               ),
-              const SizedBox(width: 6),
+              if (tailWidget != null) const SizedBox(width: 6),
               if (tailWidget != null) tailWidget!,
             ],
           ),

@@ -21,9 +21,12 @@ class AppColors extends MaterialColor {
   static const midnightGrey = Color(0xFFEDF0F1);
   static const midnightGreyDark = Color(0xFF838F97);
   static const purpleText = Color(0xff50495A);
-  static const purple1 = Color(0x0ff198ac);
+  static const purple1 = Color(0xffA198AC);
+  static const purpleBackground = Color(0xffF5F4F6);
+  static const purpleDark = Color(0xff1D1B21);
   static const lightGrey2 = Color(0xff999999);
   static const brick = Color(0xffB7704E);
+  static const sageGreen = Color(0xff7E9392);
   static const lightBrown = Color(0xffE1D7C9);
 }
 

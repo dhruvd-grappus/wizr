@@ -55,4 +55,9 @@ class AssetIcons {
   static const String checkGreen = '${iconBasePath}ic_check_green.svg';
   static const String retake = '${iconBasePath}ic_retake.svg';
   static const String gallery = '${iconBasePath}ic_gallery.svg';
+  static const String dropDown = '${iconBasePath}ic_arrow_drop.svg';
+  static const String compare = '${iconBasePath}ic_compare.svg';
+  static const String star = '${iconBasePath}ic_star.svg';
+  static const String discount = '${iconBasePath}ic_discount.svg';
+  static const String like = '${iconBasePath}ic_like.svg';
 }

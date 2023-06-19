@@ -37,6 +37,8 @@ ThemeData darkTheme = ThemeData(
     labelMedium: CustomTextStyles.labelMedium,
     bodyMedium: CustomTextStyles.bodyMedium,
     bodySmall: CustomTextStyles.captionMedium,
+    displaySmall: CustomTextStyles.displaySmall,
+    displayLarge: CustomTextStyles.displayLarge,
   ),
 );
 

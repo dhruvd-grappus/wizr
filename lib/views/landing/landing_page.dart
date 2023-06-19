@@ -8,7 +8,6 @@ import 'package:wizr/views/landing/snap_seven.dart';
 import 'package:wizr/views/landing/snap_six.dart';
 import 'package:wizr/views/landing/snap_three.dart';
 import 'package:wizr/views/landing/snap_two.dart';
-import 'package:wizr/views/landing/widgets/landing_app_bar.dart';
 import 'package:wizr/views/landing/widgets/stack_view.dart';
 
 class LandingPage extends StatelessWidget {
@@ -32,7 +31,6 @@ class LandingPage extends StatelessWidget {
     return Column(
       children: [
         // app bar
-        const LandingAppBar(),
         Expanded(
           child: StackSwiper(
             curve: Curves.ease,

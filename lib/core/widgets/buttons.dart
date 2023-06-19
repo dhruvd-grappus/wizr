@@ -17,6 +17,7 @@ class PrimaryButton extends StatelessWidget {
     this.customLabelStyle,
     this.margin,
     this.borderColor,
+    this.padding,
   });
   final void Function()? onTap;
   final String label;
@@ -28,12 +29,14 @@ class PrimaryButton extends StatelessWidget {
   final TextStyle? customLabelStyle;
   final EdgeInsets? margin;
   final Color? borderColor;
+  final EdgeInsets? padding;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: width,
+        padding: padding,
         constraints: height == null ? null : BoxConstraints(maxHeight: height!),
         margin: margin ??
             const EdgeInsets.symmetric(vertical: 12, horizontal: 16)
