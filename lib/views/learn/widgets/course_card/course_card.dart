@@ -13,17 +13,18 @@ part 'course_price_details.dart';
 part 'star_rater.dart';
 
 class CourseCard extends StatelessWidget {
-  const CourseCard({super.key, this.radius = 0});
+  const CourseCard({super.key, this.radius = 0, this.bottomMargin = 16});
   factory CourseCard.rounded() {
     return const CourseCard(
       radius: 20,
     );
   }
   final double radius;
+  final double bottomMargin;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16.h),
+      margin: EdgeInsets.only(bottom: bottomMargin.h),
       padding: EdgeInsets.symmetric(vertical: 21.h, horizontal: 16.w),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -81,7 +82,9 @@ class CourseCard extends StatelessWidget {
                   ),
                   SizedBox(width: 6.1.w),
                   StarRater(
-                    onRatingChanged: (_) {},
+                    onRatingChanged: (_) {
+                      debugPrint('callback');
+                    },
                   )
                 ],
               ),
@@ -117,7 +120,8 @@ class CourseCard extends StatelessWidget {
                     label: context.l10n.viewDetails,
                     margin: EdgeInsets.zero,
                     height: 32,
-                    backgroundColor: AppColors.purpleText,
+                    backgroundColor:
+                        radius > 0 ? AppColors.purpleText : Colors.black,
                     padding: EdgeInsets.symmetric(horizontal: 17.w),
                   )
                 ],

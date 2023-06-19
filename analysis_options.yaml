@@ -32,7 +32,7 @@ dart_code_metrics:
     - no-empty-block
     - avoid-collection-methods-with-unrelated-types
     - list-all-equatable-fields
-    - avoid-non-ascii-symbols
+
     - prefer-immediate-return
     - prefer-conditional-expressions
     - no-equal-then-else
@@ -41,3 +41,4 @@ linter:
   rules:
     public_member_api_docs: false
     flutter_style_todos: false
+    

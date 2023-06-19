@@ -28,13 +28,13 @@ class _StarRaterState extends State<StarRater> {
           width: widget.starSize.w,
           margin: const EdgeInsets.only(right: 2).responsive(context),
           child: GestureDetector(
-            onTap: () {
-              rating = rating == 1 ? 0 : index + 1;
-              setState(() {
-                rating = rating;
-              });
-              widget.onRatingChanged(rating);
-            },
+            // onTap: () {
+            //   rating = rating == 1 ? 0 : index + 1;
+            //   setState(() {
+            //     rating = rating;
+            //   });
+            //   widget.onRatingChanged(rating);
+            // },
             child: SvgPicture.asset(
               AssetIcons.star,
               // ignore: deprecated_member_use
