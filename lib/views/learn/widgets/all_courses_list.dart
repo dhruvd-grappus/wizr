@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
+import 'package:wizr/views/learn/model/course_model.dart';
 import 'package:wizr/views/learn/widgets/course_card/course_card.dart';
 
 class AllCoursesList extends StatelessWidget {
@@ -33,9 +34,12 @@ class AllCoursesList extends StatelessWidget {
           ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (_, index) => const CourseCard(bottomMargin: 1),
+            itemBuilder: (_, index) => CourseCard(
+              bottomMargin: 1,
+              courseModel: CourseModel.allCourseList[index],
+            ),
             separatorBuilder: (_, index) => Container(height: 1),
-            itemCount: 4,
+            itemCount: CourseModel.allCourseList.length,
           ),
         ],
       ),

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/views/learn/model/course_model.dart';
 import 'package:wizr/views/learn/widgets/course_card/course_card.dart';
 import 'package:wizr/views/widgets/rotated_chip.dart';
 
@@ -78,9 +79,15 @@ class TopCourseRecommendations extends StatelessWidget {
                         .responsiveFont(context),
                   ),
                 ),
-                CourseCard.rounded(),
-                CourseCard.rounded(),
-                CourseCard.rounded()
+                Column(
+                  children: List.generate(
+                    3,
+                    (index) => CourseCard(
+                      courseModel: CourseModel.allCourseList[index],
+                      radius: 20,
+                    ),
+                  ),
+                ),
               ],
             ),
           )
