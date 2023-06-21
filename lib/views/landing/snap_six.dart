@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class SnapSix extends StatelessWidget {
@@ -120,7 +121,7 @@ class SnapSix extends StatelessWidget {
                   Positioned(
                     left: 22,
                     right: 25,
-                    bottom: 84,
+                    bottom: 0,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -174,6 +175,9 @@ class SnapSix extends StatelessWidget {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: kBottomNavigationBarHeight + 17.h,
+                        )
                       ],
                     ),
                   ),

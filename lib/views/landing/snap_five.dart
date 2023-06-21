@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:wizr/core/theme/app_colors.dart';
+import 'package:wizr/core/theme/typography/text_styles.dart';
 
 class SnapFive extends StatelessWidget {
   const SnapFive({super.key});
@@ -91,45 +94,28 @@ class SnapFive extends StatelessWidget {
                   ),
                   alignment: Alignment.bottomCenter,
                   margin: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                  ).copyWith(top: 80),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 22, vertical: 19),
+                    horizontal: 11,
+                  ).copyWith(top: 80.h),
+                  padding: const EdgeInsets.symmetric(vertical: 19)
+                      .copyWith(left: 11),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Explore our\ncourse collections',
-                            style: TextStyle(
-                              fontFamily: 'Patron',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                              height: 1.4,
-                              letterSpacing: 0.3,
-                              color: Color(0xff1D1B21),
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.arrow_back,
-                                color: Color(0xffF5F4F6),
-                              ),
-                              SizedBox(width: 18),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Color(0xffF5F4F6),
-                              ),
-                            ],
-                          ),
-                        ],
+                      Expanded(child: Container()),
+                      Text(
+                        'Explore our course collections',
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontFamily: 'Patron',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25.h,
+                          height: 1.4,
+                          letterSpacing: 0.3,
+                          color: AppColors.purpleBackground,
+                        ).responsiveFont(context),
                       ),
-                      const SizedBox(height: 15),
+                      SizedBox(height: 15.h),
                       const Text(
                         'To find a course with ease, choose from our\ncurated collection.',
                         style: TextStyle(
@@ -137,7 +123,7 @@ class SnapFive extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           fontSize: 14,
                           height: 1,
-                          color: Color(0xff50495A),
+                          color: AppColors.purpleBackground,
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -167,6 +153,9 @@ class SnapFive extends StatelessWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        height: kBottomNavigationBarHeight,
+                      )
                     ],
                   ),
                 ),

@@ -1,7 +1,13 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wizr/core/navigation/go_router_config.dart';
+import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/views/widgets/wizr_bottom_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,93 +40,50 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  final tabIcons = [
+    'assets/icons/ic_discover.svg',
+    'assets/icons/ic_learn.svg',
+    'assets/icons/ic_home.svg',
+    'assets/icons/ic_finance.svg',
+    'assets/icons/ic_grow.svg'
+  ];
+  final tabTexts = ['Discover', 'Learn', 'Home', 'Finance', 'Grow'];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         extendBody: true,
-        resizeToAvoidBottomInset: false,
         bottomNavigationBar: WizrBottomNavigationBar(
           selectedIndex: _selectedIndex,
           domeCircleColor: const Color(0xffCBFB62),
           borderRadius: BorderRadius.zero,
-          domeHeight: 17,
-          domeCircleSize: 45,
+          domeHeight: 17.h,
+          domeCircleSize: 45.h,
           barColor: Colors.white,
           onTabChange: _onItemTapped,
-          tabs: [
-            WizrTab(
-              icon: SvgPicture.asset('assets/icons/ic_discover.svg'),
-              title: Text(
-                'Discover',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: _selectedIndex == 0
-                      ? const Color(0xff161C20)
-                      : const Color(0xff838F97),
+          tabs: List.generate(
+            tabIcons.length,
+            (index) => WizrTab(
+              icon: Transform.rotate(
+                angle: _selectedIndex == index ? -17 * pi / 180 : 0,
+                child: SvgPicture.asset(
+                  tabIcons[index],
+                  color: _selectedIndex == index ? Colors.black : null,
                 ),
               ),
-            ),
-            WizrTab(
-              icon: SvgPicture.asset('assets/icons/ic_learn.svg'),
               title: Text(
-                'Learn',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: _selectedIndex == 1
-                      ? const Color(0xff161C20)
-                      : const Color(0xff838F97),
-                ),
+                tabTexts[index],
+                style: context.textTheme.labelSmall!
+                    .withColor(
+                      _selectedIndex == index
+                          ? const Color(0xff161C20)
+                          : const Color(0xff838F97),
+                    )
+                    .responsiveFont(context),
               ),
             ),
-            WizrTab(
-              icon: SvgPicture.asset('assets/icons/ic_home.svg'),
-              title: Text(
-                'Home',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: _selectedIndex == 2
-                      ? const Color(0xff161C20)
-                      : const Color(0xff838F97),
-                ),
-              ),
-            ),
-            WizrTab(
-              icon: SvgPicture.asset('assets/icons/ic_finance.svg'),
-              title: Text(
-                'Finance',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: _selectedIndex == 3
-                      ? const Color(0xff161C20)
-                      : const Color(0xff838F97),
-                ),
-              ),
-            ),
-            WizrTab(
-              icon: SvgPicture.asset('assets/icons/ic_grow.svg'),
-              title: Text(
-                'Grow',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 12,
-                  color: _selectedIndex == 4
-                      ? const Color(0xff161C20)
-                      : const Color(0xff838F97),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
         body: widget.child,
       ),

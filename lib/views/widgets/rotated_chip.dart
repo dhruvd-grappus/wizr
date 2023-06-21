@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 
 class RotatedChip extends StatelessWidget {
   const RotatedChip({
@@ -40,7 +42,8 @@ class RotatedChip extends StatelessWidget {
             color: chipColor,
             borderRadius: BorderRadius.circular(radius.h),
           ),
-          padding: padding ?? const EdgeInsets.fromLTRB(20, 14, 20, 14),
+          padding: padding ??
+              const EdgeInsets.fromLTRB(20, 14, 20, 14).responsive(context),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -52,7 +55,7 @@ class RotatedChip extends StatelessWidget {
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
                       color: textColor,
-                    ),
+                    ).responsiveFont(context),
               ),
               if (tailWidget != null) const SizedBox(width: 6),
               if (tailWidget != null) tailWidget!,

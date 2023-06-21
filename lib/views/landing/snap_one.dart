@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 
 class SnapOne extends StatelessWidget {
   const SnapOne({super.key});
@@ -15,14 +17,13 @@ class SnapOne extends StatelessWidget {
           topRight: Radius.circular(30),
         ),
       ),
-      padding: const EdgeInsets.only(top: 9),
       child: Stack(
         children: [
           Positioned(
             top: 0,
             right: 13,
             child: Container(
-              height: 356,
+              height: 356.h,
               width: 356,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
@@ -33,9 +34,9 @@ class SnapOne extends StatelessWidget {
           Align(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 41),
-                  child: Column(
+                Padding(
+                  padding: EdgeInsets.only(top: 41.h),
+                  child: const Column(
                     children: [
                       Text(
                         'Discover',
@@ -63,8 +64,13 @@ class SnapOne extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Image.asset('assets/images/top_fold.png'),
-                const SizedBox(height: 28),
+                Image.asset(
+                  'assets/images/top_fold.png',
+                  height: 250.h,
+                  width: context.screenWidth,
+                  fit: BoxFit.fill,
+                ),
+                SizedBox(height: 25.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -96,7 +102,9 @@ class SnapOne extends StatelessWidget {
                     color: Color(0xff161C20),
                   ),
                 ),
-                const SizedBox(height: 30),
+                Expanded(
+                  child: Container(),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 49),
                   child: ElevatedButton(
@@ -123,6 +131,7 @@ class SnapOne extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: kBottomNavigationBarHeight + 45.h),
               ],
             ),
           ),
