@@ -15,7 +15,7 @@ class StarRater extends StatefulWidget {
 }
 
 class _StarRaterState extends State<StarRater> {
-  int rating = 0;
+  int rating = 4;
 
   @override
   Widget build(BuildContext context) {

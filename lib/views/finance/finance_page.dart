@@ -20,6 +20,7 @@ class FinancePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const AppHeader(),
             Expanded(
               child: Container(
                 width: context.screenWidth,

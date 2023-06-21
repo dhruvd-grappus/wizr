@@ -1,29 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/state_manager.dart';
 import 'package:wizr/core/l10n/l10n.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
+import 'package:wizr/views/learn/controller/learn_controller.dart';
+import 'package:wizr/views/learn/model/course_model.dart';
 import 'package:wizr/views/widgets/rotated_chip.dart';
 
 part 'course_price_details.dart';
 part 'star_rater.dart';
 
 class CourseCard extends StatelessWidget {
-  const CourseCard({super.key, this.radius = 0, this.bottomMargin = 16});
-  factory CourseCard.rounded() {
-    return const CourseCard(
-      radius: 20,
-    );
-  }
+  CourseCard({
+    required this.courseModel,
+    super.key,
+    this.radius = 0,
+    this.bottomMargin = 16,
+  });
+
   final double radius;
   final double bottomMargin;
+  final CourseModel courseModel;
+
+  final LearnController learnController = Get.put(LearnController());
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: ValueKey(courseModel.id),
       margin: EdgeInsets.only(bottom: bottomMargin.h),
       padding: EdgeInsets.symmetric(vertical: 21.h, horizontal: 16.w),
       decoration: BoxDecoration(
@@ -37,35 +47,54 @@ class CourseCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RotatedChip(
-                name: 'Intermediate',
+                name: courseModel.courseLevel,
                 radius: 7,
                 labelStyle:
                     context.textTheme.labelSmall!.responsiveFont(context),
-                chipColor: AppColors.purple1,
+                chipColor: AppColors.purple1.withOpacity(0.8),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 6, horizontal: 4).h,
+                    const EdgeInsets.symmetric(vertical: 6, horizontal: 8).w,
               ),
-              Row(
-                children: [
-                  Text(
-                    context.l10n.compare,
-                    style: context.textTheme.bodyMedium!
-                        .withColor(AppColors.purpleText),
+              Obx(() {
+                return InkWell(
+                  onTap: () {
+                    learnController.updateCourseComare(courseModel);
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        learnController.selectedComparisionList
+                                .contains(courseModel)
+                            ? context.l10n.shortlistedForComparision
+                            : context.l10n.compare,
+                        style: context.textTheme.bodyMedium!
+                            .withColor(AppColors.purpleText),
+                      ),
+                      if (learnController.selectedComparisionList
+                          .contains(courseModel))
+                        Container(
+                          padding: const EdgeInsets.only(left: 4),
+                          child: SvgPicture.asset(
+                            AssetIcons.sealCheck,
+                          ),
+                        )
+                      else
+                        SvgPicture.asset(AssetIcons.compare),
+                    ],
                   ),
-                  SvgPicture.asset(AssetIcons.compare)
-                ],
-              )
+                );
+              })
             ],
           ),
           SizedBox(height: 18.h),
           Image.asset(
-            'assets/images/test_course_brand.png',
+            courseModel.courseProviderImage,
           ),
           SizedBox(height: 11.h),
           Container(
             constraints: BoxConstraints(maxWidth: context.screenWidth / 1.6),
             child: Text(
-              'Masters Program in ETABS & Safe Software for RCC Composite...',
+              courseModel.courseTitle,
               style: context.textTheme.displayLarge!.responsiveFont(context),
             ),
           ),
@@ -76,7 +105,7 @@ class CourseCard extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '4.0',
+                    '${courseModel.ratings}',
                     style:
                         context.textTheme.displayLarge!.responsiveFont(context),
                   ),
