@@ -38,8 +38,6 @@ part 'kyc_routes.dart';
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> _shellNavigatorKey =
     GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> _shellNavigatorKey2 =
-    GlobalKey<NavigatorState>();
 
 class RouteNames {
   static const kycManualAddressPage = 'kyc-manual-address';

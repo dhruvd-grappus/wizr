@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/widgets/app_header.dart';
-import 'package:wizr/views/course_recommendations/choose_subject_page.dart';
-import 'package:wizr/views/course_recommendations/pick_skill_page.dart';
 
 class CourseRecommendationsPage extends StatefulWidget {
   const CourseRecommendationsPage({required this.child, super.key});

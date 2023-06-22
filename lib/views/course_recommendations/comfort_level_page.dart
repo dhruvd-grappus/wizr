@@ -47,7 +47,8 @@ class ComfortLevelPage extends StatelessWidget {
           SizedBox(height: 22.h),
           LevelTile(
             label: 'Advance',
-            bodyText: 'Extensive experience and high level of  skill and knowledge.',
+            bodyText:
+                'Extensive experience and high level of  skill and knowledge.',
             iconPath: AssetIcons.icFlexible,
             onTap: () => goToNextPage(context),
           ),
@@ -60,9 +61,7 @@ class ComfortLevelPage extends StatelessWidget {
             chipColor: const Color(0xFFDBDADC),
             highlightColor: AppColors.yellow,
             radius: 10,
-            onTap: () {
-
-            },
+            onTap: () {},
           ),
           SizedBox(height: 20.h),
         ],
@@ -73,5 +72,4 @@ class ComfortLevelPage extends StatelessWidget {
   void goToNextPage(BuildContext context) {
     context.goNamed(RouteNames.preferredLearningModePage);
   }
-
 }

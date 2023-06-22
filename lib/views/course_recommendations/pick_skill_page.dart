@@ -21,21 +21,22 @@ class PickSkillPage extends StatelessWidget {
           ),
           SizedBox(height: 28.h),
           GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 16,
-                crossAxisSpacing: 20,
-                childAspectRatio: 1.36
-              ),
-              itemCount: 20,
-              itemBuilder: (BuildContext context, int index) {
-                return SkillCard(
-                  name: 'Project Management',
-                  onTap: () => goToNextPage(context),
-                );
-              }),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 20,
+              childAspectRatio: 1.36,
+            ),
+            itemCount: 20,
+            itemBuilder: (BuildContext context, int index) {
+              return SkillCard(
+                name: 'Project Management',
+                onTap: () => goToNextPage(context),
+              );
+            },
+          ),
         ],
       ),
     );

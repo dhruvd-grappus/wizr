@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
-import 'package:wizr/core/utils/asset_paths.dart';
 
 class LevelTile extends StatelessWidget {
   const LevelTile({
