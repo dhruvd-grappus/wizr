@@ -88,34 +88,7 @@ class CourseFiltersSheet extends StatelessWidget {
           debugPrint('callback');
         },
       ),
-      RadioFilterGroup(
-        title: 'Ratings'.toUpperCase(),
-        isExpanded: true,
-        filterValues: const [4, 3, 2, 1]
-            .map(
-              (e) => FilterValue(
-                filter: e,
-                customWidget: (e) => Row(
-                  children: [
-                    Text(
-                      '$e & up',
-                      style: context.textTheme.bodyMedium!
-                          .withColor(AppColors.purpleText),
-                    ),
-                    const SizedBox(
-                      width: 9,
-                    ),
-                    for (var i = 0; i < e; i++)
-                      SvgPicture.asset(AssetIcons.star)
-                  ],
-                ),
-              ),
-            )
-            .toList(),
-        onSelected: (_) {
-          debugPrint('callback');
-        },
-      ),
+      _dummyRadioFilterGroup(context),
       CheckboxFilterGroup(
         title: 'DURATION',
         filterValues: const [FilterValue(filter: 'Beginner')],
@@ -131,5 +104,35 @@ class CourseFiltersSheet extends StatelessWidget {
         },
       ),
     ];
+  }
+
+  RadioFilterGroup _dummyRadioFilterGroup(BuildContext context) {
+    return RadioFilterGroup(
+      title: 'Ratings'.toUpperCase(),
+      isExpanded: true,
+      filterValues: const [4, 3, 2, 1]
+          .map(
+            (e) => FilterValue(
+              filter: e,
+              customWidget: (e) => Row(
+                children: [
+                  Text(
+                    '$e & up',
+                    style: context.textTheme.bodyMedium!
+                        .withColor(AppColors.purpleText),
+                  ),
+                  const SizedBox(
+                    width: 9,
+                  ),
+                  for (var i = 0; i < e; i++) SvgPicture.asset(AssetIcons.star)
+                ],
+              ),
+            ),
+          )
+          .toList(),
+      onSelected: (_) {
+        debugPrint('callback');
+      },
+    );
   }
 }

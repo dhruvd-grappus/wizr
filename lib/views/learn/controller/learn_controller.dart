@@ -5,14 +5,14 @@ import 'package:wizr/views/learn/model/course_model.dart';
 
 class LearnController extends GetxController {
   RxInt intCompareCourseCount = 0.obs;
-  RxList<CourseModel> selectedComparisionList = <CourseModel>[].obs;
+  RxList<CourseModel> selectedComparisonList = <CourseModel>[].obs;
 
-  void updateCourseComare(CourseModel course) {
-    if (selectedComparisionList.contains(course)) {
-      selectedComparisionList.remove(course);
+  void updateCourseCompare(CourseModel course) {
+    if (selectedComparisonList.contains(course)) {
+      selectedComparisonList.remove(course);
     } else {
-      if (selectedComparisionList.length < 3) {
-        selectedComparisionList.add(course);
+      if (selectedComparisonList.length < 3) {
+        selectedComparisonList.add(course);
       } else {
         Fluttertoast.showToast(msg: 'Maximum 3 course can be compared once');
       }

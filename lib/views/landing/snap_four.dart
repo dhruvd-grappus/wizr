@@ -79,7 +79,10 @@ class SnapFour extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           const Text(
-                            'Receive unbiased and personalized course\nrecommendations from across India and the\nworld. Filter, compare and enrol',
+                            'Receive unbiased and personalized'
+                            ' course\nrecommendations '
+                            'from across India and the\nworld. Filter, '
+                            'compare and enrol',
                             style: TextStyle(
                               fontFamily: 'Inter',
                               fontWeight: FontWeight.w500,
@@ -143,7 +146,8 @@ class SnapFour extends StatelessWidget {
                       ),
                       SizedBox(height: 15.h),
                       const Text(
-                        'To find a course with ease, choose from our\ncurated collection.',
+                        'To find a course with ease, choose from'
+                        ' our\ncurated collection.',
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w500,

@@ -8,17 +8,17 @@ import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/rounded_bottom_sheet.dart';
 import 'package:wizr/views/learn/controller/learn_controller.dart';
-import 'package:wizr/views/learn/widgets/course_comparsion/course_comparision_screen.dart';
+import 'package:wizr/views/learn/widgets/course_comparison/course_comparison_screen.dart';
 
-class CourseComparsionButton extends StatelessWidget {
-  CourseComparsionButton({super.key});
+class CourseComparisonButton extends StatelessWidget {
+  CourseComparisonButton({super.key});
   final LearnController learnController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () {
-        if (learnController.selectedComparisionList.isEmpty) {
+        if (learnController.selectedComparisonList.isEmpty) {
           return const SizedBox.shrink();
         }
 
@@ -50,7 +50,8 @@ class CourseComparsionButton extends StatelessWidget {
                 ),
                 width: 144.w,
                 child: Text(
-                  '${learnController.selectedComparisionList.length} ${context.l10n.courseAddedtocompare}',
+                  '${learnController.selectedComparisonList.length}'
+                  ' ${context.l10n.courseAddedtocompare}',
                   style: context.textTheme.labelSmall
                       ?.copyWith(color: AppColors.purpleText),
                 ),
@@ -62,7 +63,7 @@ class CourseComparsionButton extends StatelessWidget {
                     onTap: () {
                       showRoundedBottomSheet(
                         context,
-                        CourseComparisionScreen(),
+                        CourseComparisonScreen(),
                       );
                     },
                     child: AnimatedContainer(
@@ -72,10 +73,9 @@ class CourseComparsionButton extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
                       decoration: BoxDecoration(
-                        color:
-                            learnController.selectedComparisionList.length > 1
-                                ? AppColors.purpleText
-                                : AppColors.purpleBackground,
+                        color: learnController.selectedComparisonList.length > 1
+                            ? AppColors.purpleText
+                            : AppColors.purpleBackground,
                         borderRadius: BorderRadius.circular(28),
                       ),
                       child: Row(
@@ -85,7 +85,7 @@ class CourseComparsionButton extends StatelessWidget {
                             context.l10n.compare,
                             style: context.textTheme.labelSmall!.copyWith(
                               color: learnController
-                                          .selectedComparisionList.length >
+                                          .selectedComparisonList.length >
                                       1
                                   ? Colors.white
                                   : AppColors.midnightGreyDark,
@@ -93,8 +93,9 @@ class CourseComparsionButton extends StatelessWidget {
                           ),
                           SvgPicture.asset(
                             AssetIcons.arrowUp,
+                            // ignore: deprecated_member_use
                             color:
-                                learnController.selectedComparisionList.length >
+                                learnController.selectedComparisonList.length >
                                         1
                                     ? Colors.white
                                     : AppColors.midnightGreyDark,

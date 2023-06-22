@@ -16,6 +16,7 @@ class AssetImages {
       '${imageBasePath}img_account_verified.png';
   static const String selfieInstruction = '${imageBasePath}img_selfie_man.png';
   static const String faceOverlay = '${imageBasePath}face_scan_overlay.svg';
+  static const String online = '${imageBasePath}img_online.png';
 }
 
 class AssetIcons {
@@ -64,4 +65,7 @@ class AssetIcons {
   static const String sealCheck = '${iconBasePath}seal-check.svg';
   static const String arrowUp = '${iconBasePath}arrow_up.svg';
   static const String arrowDown = '${iconBasePath}arrow_down.svg';
+  static const String icOnline = '${iconBasePath}ic_online.svg';
+  static const String icOffline = '${iconBasePath}ic_offline.svg';
+  static const String icFlexible = '${iconBasePath}ic_flexible.svg';
 }

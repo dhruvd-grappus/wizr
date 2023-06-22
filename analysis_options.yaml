@@ -36,9 +36,11 @@ dart_code_metrics:
     - prefer-immediate-return
     - prefer-conditional-expressions
     - no-equal-then-else
+    - lines_longer_than_80_chars
 
 linter:
   rules:
     public_member_api_docs: false
     flutter_style_todos: false
-    
+
+

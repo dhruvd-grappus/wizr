@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d80239d-1688-4ad6-8977-203a225d7e8d" name="Changes" comment="added screen utils for responsive page and font size.">
-      <change beforePath="$PROJECT_DIR$/lib/views/authentication/otp_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/authentication/otp_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/authentication/phone_login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/authentication/phone_login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/preferred_learning_mode_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/preferred_learning_mode_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/landing/landing_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/landing/landing_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/learn/learn_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/learn/learn_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/widgets/rotated_chip.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/widgets/rotated_chip.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,16 +52,17 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/icons" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icons" />
+      <recent name="$PROJECT_DIR$/lib/views/course_recommendations/widgets" />
+      <recent name="$PROJECT_DIR$/lib/views/course_recommendations" />
       <recent name="$PROJECT_DIR$/lib/views/landing" />
       <recent name="$PROJECT_DIR$/lib/views/landing/widgets" />
-      <recent name="$PROJECT_DIR$/lib/views/kyc/widgets" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$/assets/icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/views/widgets" />
@@ -91,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686893790504</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added ui of explore course section.">
+      <created>1687404229408</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687404229408</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +124,7 @@
     <MESSAGE value="added landing-page ui." />
     <MESSAGE value="added studio configs" />
     <MESSAGE value="added screen utils for responsive page and font size." />
-    <option name="LAST_COMMIT_MESSAGE" value="added screen utils for responsive page and font size." />
+    <MESSAGE value="added ui of explore course section." />
+    <option name="LAST_COMMIT_MESSAGE" value="added ui of explore course section." />
   </component>
 </project>

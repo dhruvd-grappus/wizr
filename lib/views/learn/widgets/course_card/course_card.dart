@@ -58,19 +58,19 @@ class CourseCard extends StatelessWidget {
               Obx(() {
                 return InkWell(
                   onTap: () {
-                    learnController.updateCourseComare(courseModel);
+                    learnController.updateCourseCompare(courseModel);
                   },
                   child: Row(
                     children: [
                       Text(
-                        learnController.selectedComparisionList
+                        learnController.selectedComparisonList
                                 .contains(courseModel)
                             ? context.l10n.shortlistedForComparision
                             : context.l10n.compare,
                         style: context.textTheme.bodyMedium!
                             .withColor(AppColors.purpleText),
                       ),
-                      if (learnController.selectedComparisionList
+                      if (learnController.selectedComparisonList
                           .contains(courseModel))
                         Container(
                           padding: const EdgeInsets.only(left: 4),
