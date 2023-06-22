@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   bloc: ^8.1.2
+  device_preview: ^1.1.0
   dio: ^5.1.2
   face_camera: ^0.0.7
   flutter:
