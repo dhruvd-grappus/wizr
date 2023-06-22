@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:wizr/core/widgets/app_header.dart';
+import 'package:wizr/views/learn/controller/learn_controller.dart';
 import 'package:wizr/views/learn/widgets/all_courses_list.dart';
 import 'package:wizr/views/learn/widgets/course_categories.dart';
 import 'package:wizr/views/learn/widgets/course_category_info.dart';
+import 'package:wizr/views/learn/widgets/course_comparsion/course_comparsion_button.dart';
 import 'package:wizr/views/learn/widgets/course_filters/apply_filter_button.dart';
 import 'package:wizr/views/learn/widgets/top_course_recommendations.dart';
 
 class LearnPage extends StatelessWidget {
-  const LearnPage({super.key});
-
+  LearnPage({super.key});
+  final LearnController learnController = Get.put(LearnController());
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -42,10 +45,23 @@ class LearnPage extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          bottom: 90.h,
-          child: const ApplyFilterButton(isSheetOpened: false),
-        )
+        Obx(
+          () {
+            return AnimatedPositioned(
+              duration: const Duration(milliseconds: 300),
+              bottom: learnController.selectedComparisionList.isNotEmpty
+                  ? 50.h
+                  : 90.h,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const ApplyFilterButton(isSheetOpened: false),
+                  CourseComparsionButton(),
+                ],
+              ),
+            );
+          },
+        ),
       ],
     );
   }
