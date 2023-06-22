@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wizr/core/theme/typography/text_styles.dart';
+import 'package:wizr/core/utils/responsive_utils.dart';
 
 class RotatedChip extends StatelessWidget {
   const RotatedChip({

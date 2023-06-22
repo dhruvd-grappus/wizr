@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d80239d-1688-4ad6-8977-203a225d7e8d" name="Changes" comment="added ui of explore course section.">
+    <list default="true" id="1d80239d-1688-4ad6-8977-203a225d7e8d" name="Changes" comment="added screen utils for responsive page and font size.">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/comfort_level_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/comfort_level_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/course_recommendations_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/course_recommendations_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/pick_skill_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/pick_skill_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/widgets/level_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/widgets/level_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/landing/snap_three.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/landing/snap_three.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/preferred_learning_mode_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/preferred_learning_mode_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/landing/landing_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/landing/landing_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/learn/learn_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/learn/learn_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/widgets/rotated_chip.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/widgets/rotated_chip.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/icons" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />

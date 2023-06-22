@@ -133,10 +133,10 @@ final router = GoRouter(
           ),
         ),
         GoRoute(
-          name: RouteNames.learnPage,
-          path: '/${RouteNames.learnPage}',
+          name: RouteNames.learn2Page,
+          path: '/${RouteNames.learn2Page}',
           pageBuilder: (_, __) => CustomTransitionPage(
-            child: const LearnPage(),
+            child: const UnderDevelopment(name: 'Learn'),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0, 1);
