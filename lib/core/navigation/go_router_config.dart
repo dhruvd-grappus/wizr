@@ -5,7 +5,12 @@ import 'package:wizr/views/authentication/otp_page.dart';
 import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/authentication/signup_page.dart';
 import 'package:wizr/views/authentication/user_profession.dart';
-import 'package:wizr/views/course_recommendations/course_recommendations.dart';
+import 'package:wizr/views/course_recommendations/choose_subject_page.dart';
+import 'package:wizr/views/course_recommendations/comfort_level_page.dart';
+import 'package:wizr/views/course_recommendations/course_recommendations_page.dart';
+import 'package:wizr/views/course_recommendations/pick_skill_page.dart';
+import 'package:wizr/views/course_recommendations/preferred_learning_mode_page.dart';
+import 'package:wizr/views/course_recommendations/spend_time_for_learning_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/kyc/account_verified_page.dart';
@@ -32,6 +37,8 @@ part 'kyc_routes.dart';
 // Keys
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> _shellNavigatorKey =
+    GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> _shellNavigatorKey2 =
     GlobalKey<NavigatorState>();
 
 class RouteNames {
@@ -98,5 +105,129 @@ final router = GoRouter(
         transitionDuration: const Duration(milliseconds: 600),
       ),
     ),
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (_, __, child) {
+        return HomePage(child: child);
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          name: RouteNames.discoverPage,
+          path: '/${RouteNames.discoverPage}',
+          parentNavigatorKey: _shellNavigatorKey,
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const UnderDevelopment(name: 'Discover'),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0, 1);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.learnPage,
+          path: '/${RouteNames.learnPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const LearnPage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0, 1);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.landingPage,
+          path: '/',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const LandingPage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0, 1);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.financePage,
+          path: '/${RouteNames.financePage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const FinancePage(), //const KycEmployeePage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0, 1);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.growPage,
+          path: '/${RouteNames.growPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const UnderDevelopment(name: 'Grow'),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(0, 1);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+      ],
+    ),
+    /*GoRoute(
+      name: RouteNames.financeHomePage,
+      path: '/',
+      builder: (context, state) => const FinancePage(),
+    ),*/
   ],
 );

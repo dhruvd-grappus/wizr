@@ -44,7 +44,7 @@ class SkillCard extends StatelessWidget {
                 Positioned(
                   top: 13.87.h,
                   right: 13.87.w,
-                  child: const Icon(Icons.info_outline, color: Colors.black),
+                  child: Icon(Icons.info_outline, color: Colors.black),
                 ),
               ],
             ),

@@ -10,26 +10,24 @@ class PickSkillPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
-            Text(
-              'Pick a skill with Teaching\nand Acdemics',
-              style: context.textTheme.headlineMedium?.size25,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 28.h),
-            GridView.builder(
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
+          Text(
+            'Pick a skill with Teaching\nand Acdemics',
+            style: context.textTheme.headlineMedium?.size25,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 28.h),
+          GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 20,
-                childAspectRatio: 1.36,
+                childAspectRatio: 1.36
               ),
               itemCount: 20,
               itemBuilder: (BuildContext context, int index) {
@@ -37,10 +35,8 @@ class PickSkillPage extends StatelessWidget {
                   name: 'Project Management',
                   onTap: () => goToNextPage(context),
                 );
-              },
-            ),
-          ],
-        ),
+              }),
+        ],
       ),
     );
   }

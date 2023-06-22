@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wizr/core/navigation/go_router_config.dart';
+import 'package:go_router/go_router.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 
 class SnapThree extends StatelessWidget {
   const SnapThree({super.key});
@@ -187,8 +189,7 @@ class SnapThree extends StatelessWidget {
                                     /*Fluttertoast.showToast(
                                       msg: 'Under Development',
                                     );*/
-                                    context
-                                        .goNamed(RouteNames.chooseSubjectPage);
+                                    context.goNamed(RouteNames.chooseSubjectPage);
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: const Color(0xff1D1B21),

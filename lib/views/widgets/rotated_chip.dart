@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wizr/core/theme/typography/text_styles.dart';
-import 'package:wizr/core/utils/responsive_utils.dart';
 
 class RotatedChip extends StatelessWidget {
   const RotatedChip({
@@ -8,7 +6,7 @@ class RotatedChip extends StatelessWidget {
     super.key,
     this.textColor = Colors.black,
     this.chipColor = Colors.white,
-    this.highlightColor = Colors.transparent,
+    this.highlightColor =  Colors.transparent,
     this.onTap,
     this.actionIconColor,
     this.angle = 0,

@@ -11,239 +11,233 @@ class ChooseSubjectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        context.goNamed(RouteNames.landingPage);
-        return false;
-      },
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            children: [
-              Text(
-                'Choose your subject for\nskilling',
-                style: context.textTheme.headlineMedium?.size25,
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 28.h),
-              Wrap(
-                runSpacing: 12.h,
-                spacing: 12.w,
-                alignment: WrapAlignment.center,
-                children: <Widget>[
-                  RotatedChip(
-                    name: 'IT & Development',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Computer Science',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Business Management',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Design',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Data Science',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Teaching & Academics',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Marketing',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Linguistics',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'BFSI',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Travel & Hospitality',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Engineering',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Personal Development',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Arts',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Test & Preparation',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Science',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Beauty and Wellness',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Healthcare',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Human Resource',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                  RotatedChip(
-                    name: 'Law',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black2,
-                    ),
-                    chipColor: AppColors.purpleBackground,
-                    highlightColor: AppColors.yellow,
-                    radius: 12,
-                    onTap: () => goToNextPage(context),
-                  ),
-                ],
-              ),
-              SizedBox(height: 90.h),
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
+          Text(
+            'Choose your subject for\nskilling',
+            style: context.textTheme.headlineMedium?.size25,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 28.h),
+          Wrap(
+            runSpacing: 12.h,
+            spacing: 12.w,
+            alignment: WrapAlignment.center,
+            children: <Widget>[
               RotatedChip(
-                name: 'Take our Career Discovery Quiz',
+                name: 'IT & Development',
                 labelStyle: context.textTheme.bodyMedium?.copyWith(
                   color: AppColors.black2,
                 ),
-                chipColor: const Color(0xFFDBDADC),
+                chipColor: AppColors.purpleBackground,
                 highlightColor: AppColors.yellow,
-                radius: 10,
+                radius: 12,
+                onTap: () => goToNextPage(context),
               ),
-              SizedBox(height: 60.h),
+              RotatedChip(
+                name: 'Computer Science',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Business Management',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Design',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Data Science',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Teaching & Academics',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Marketing',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Linguistics',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'BFSI',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Travel & Hospitality',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Engineering',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Personal Development',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Arts',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Test & Preparation',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Science',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Beauty and Wellness',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Healthcare',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Human Resource',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
+              RotatedChip(
+                name: 'Law',
+                labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  color: AppColors.black2,
+                ),
+                chipColor: AppColors.purpleBackground,
+                highlightColor: AppColors.yellow,
+                radius: 12,
+                onTap: () => goToNextPage(context),
+              ),
             ],
           ),
-        ),
+          SizedBox(height: 90.h),
+          RotatedChip(
+            name: 'Take our Carrer Discovery Quiz',
+            labelStyle: context.textTheme.bodyMedium?.copyWith(
+              color: AppColors.black2,
+            ),
+            chipColor: const Color(0xFFDBDADC),
+            highlightColor: AppColors.yellow,
+            radius: 10,
+            onTap: () {
+
+            },
+          ),
+          SizedBox(height: 60.h),
+        ],
       ),
     );
   }
 
   void goToNextPage(BuildContext context) {
-    context.pushNamed(RouteNames.pickSkillPage);
+    context.goNamed(RouteNames.pickSkillPage);
   }
 }

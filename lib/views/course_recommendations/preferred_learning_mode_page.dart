@@ -13,61 +13,59 @@ class PreferredLearningModePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
-            Text(
-              'What is your preferred\nlearning mode?',
-              style: context.textTheme.headlineMedium?.size25,
-              textAlign: TextAlign.center,
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
+          Text(
+            'What is your preferred\nlearning mode?',
+            style: context.textTheme.headlineMedium?.size25,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 20.h),
+          Text(
+            'Before we can recommend you the right course,\nwe’d like to know you better.',
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: AppColors.purpleText,
             ),
-            SizedBox(height: 20.h),
-            Text(
-              'Before we can recommend you the right course,'
-              '\nwe’d like to know you better.',
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: AppColors.purpleText,
-              ),
-              textAlign: TextAlign.center,
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 40.h),
+          LevelTile(
+            label: 'Online',
+            bodyText: 'I prefer learning from the comfort of my house',
+            iconPath: AssetIcons.icOnline,
+            onTap: () => goToNextPage(context),
+          ),
+          SizedBox(height: 22.h),
+          LevelTile(
+            label: 'Offline',
+            bodyText: 'I want to attend in class courses to upskill myself',
+            iconPath: AssetIcons.icOffline,
+            onTap: () => goToNextPage(context),
+          ),
+          SizedBox(height: 22.h),
+          LevelTile(
+            label: 'I’m flexible',
+            bodyText: 'I am open to hybrid modes of learning , as long as I find he course useful',
+            iconPath: AssetIcons.icFlexible,
+            onTap: () => goToNextPage(context),
+          ),
+          SizedBox(height: 60.h),
+          RotatedChip(
+            name: 'Not Sure? Take our Skill Assesssment',
+            labelStyle: context.textTheme.bodyMedium?.copyWith(
+              color: AppColors.black2,
             ),
-            SizedBox(height: 40.h),
-            LevelTile(
-              label: 'Online',
-              bodyText: 'I prefer learning from the comfort of my house',
-              iconPath: AssetIcons.icOnline,
-              onTap: () => goToNextPage(context, 'Online'),
-            ),
-            SizedBox(height: 22.h),
-            LevelTile(
-              label: 'Offline',
-              bodyText: 'I want to attend in class courses to up-skill myself',
-              iconPath: AssetIcons.icOffline,
-              onTap: () => goToNextPage(context, 'Offline'),
-            ),
-            SizedBox(height: 22.h),
-            LevelTile(
-              label: 'I’m flexible',
-              bodyText: 'I am open to hybrid modes of learning ,'
-                  ' as long as I find he course useful',
-              iconPath: AssetIcons.icFlexible,
-              onTap: () => goToNextPage(context, 'Flexible'),
-            ),
-            SizedBox(height: 60.h),
-            RotatedChip(
-              name: 'Not Sure? Take our Skill Assessment',
-              labelStyle: context.textTheme.bodyMedium?.copyWith(
-                color: AppColors.black2,
-              ),
-              chipColor: const Color(0xFFDBDADC),
-              highlightColor: AppColors.yellow,
-              radius: 10,
-            ),
-            SizedBox(height: 20.h),
-          ],
-        ),
+            chipColor: const Color(0xFFDBDADC),
+            highlightColor: AppColors.yellow,
+            radius: 10,
+            onTap: () {
+
+            },
+          ),
+          SizedBox(height: 20.h),
+        ],
       ),
     );
   }

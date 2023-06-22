@@ -18,9 +18,10 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // snapped widgets
     final snapWidgets = <Widget>[
+      const SnapThree(),
       const SnapOne(),
       const SnapTwo(),
-      const SnapThree(),
+      //const SnapThree(),
       const SnapFour(),
       const SnapFive(),
       const SnapSix(),
