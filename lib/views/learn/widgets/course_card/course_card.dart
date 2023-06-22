@@ -28,7 +28,7 @@ class CourseCard extends StatelessWidget {
   final double bottomMargin;
   final CourseModel courseModel;
 
-  final LearnController learnController = Get.put(LearnController());
+  final LearnController learnController = Get.find();
 
   @override
   Widget build(BuildContext context) {

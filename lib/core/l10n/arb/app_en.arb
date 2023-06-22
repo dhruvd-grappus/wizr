@@ -172,7 +172,10 @@
     "totalCost":"Total Cost",
     "viewDetails":"View details",
     "applyFilters":"Apply Filters",
-    "courseFilters":"Course Filters"
+    "courseFilters":"Course Filters",
+    "courseAddedtocompare" : "course added to compare",
+    "dismiss" : "Dismiss",
+    "enrolNow" : "Enrol now"
 
 
 

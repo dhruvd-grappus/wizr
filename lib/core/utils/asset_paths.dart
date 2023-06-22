@@ -62,4 +62,6 @@ class AssetIcons {
   static const String like = '${iconBasePath}ic_like.svg';
   static const String play = '${iconBasePath}ic_play.svg';
   static const String sealCheck = '${iconBasePath}seal-check.svg';
+  static const String arrowUp = '${iconBasePath}arrow_up.svg';
+  static const String arrowDown = '${iconBasePath}arrow_down.svg';
 }
