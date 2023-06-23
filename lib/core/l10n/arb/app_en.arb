@@ -183,7 +183,19 @@
     "liveInstructor":"Live instructors",
     "imFlexible":"I‘m flexible",
     "tellUsYourPincode":"Tell us your pincode",
-    "apply":"Apply"
+    "apply":"Apply",
+    "fullTime":"Full time",
+    "fullTimeDesc":"I want to learn throughout the week",
+    "onlyWeekend":"Only weekends",
+    "onlyWeekendDescription":"I can only take out time on the weekends",
+    "weekendAndLateEvening":"Weekends and late evenings",
+    "weekendAnEveningDesc":"I can learn post office hours every day",
+
+    "imFlexibleDesc":"I am okay with all the above options",
+    "youAreAllSet":"You’re all set!",
+    "weAreFindingBestMatches":"We are finding the three best matches for your preferences...",
+    "addingAPinchOfMagic":"Adding a pinch of magic"
+
 
 
 

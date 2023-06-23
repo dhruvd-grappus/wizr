@@ -17,6 +17,7 @@ class AssetImages {
   static const String selfieInstruction = '${imageBasePath}img_selfie_man.png';
   static const String faceOverlay = '${imageBasePath}face_scan_overlay.svg';
   static const String online = '${imageBasePath}img_online.png';
+  static const String pinch = '${imageBasePath}img_pinch.png';
 }
 
 class AssetIcons {

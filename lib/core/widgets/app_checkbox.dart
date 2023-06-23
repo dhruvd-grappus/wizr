@@ -14,6 +14,7 @@ class AppCheckBox extends StatefulWidget {
     this.text,
     this.borderColor,
     this.uncheckedColor,
+    this.center = false,
   });
 
   final Widget? widget;
@@ -22,7 +23,7 @@ class AppCheckBox extends StatefulWidget {
   final bool value;
   final Color? borderColor;
   final Color? uncheckedColor;
-
+  final bool center;
   @override
   State<AppCheckBox> createState() => _AppCheckBoxState();
 }
@@ -49,6 +50,8 @@ class _AppCheckBoxState extends State<AppCheckBox> {
         ); // Notify the parent about the selected value
       },
       child: Row(
+        mainAxisAlignment:
+            widget.center ? MainAxisAlignment.center : MainAxisAlignment.start,
         children: [
           AnimatedContainer(
             duration: const Duration(milliseconds: 200),
