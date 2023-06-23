@@ -55,7 +55,7 @@ abstract class CustomTextStyles {
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: Colors.black,
-    letterSpacing: 0.02,
+    letterSpacing: 0.03,
   );
 
   static TextStyle displayLarge = _patronStyle.copyWith(

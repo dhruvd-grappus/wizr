@@ -12,10 +12,10 @@ import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/rounded_bottom_sheet.dart';
 import 'package:wizr/views/learn/controller/learn_controller.dart';
-import 'package:wizr/views/learn/widgets/course_comparsion/common_course_compare_card.dart';
+import 'package:wizr/views/learn/widgets/course_comparison/common_course_compare_card.dart';
 
-class CourseComparisionScreen extends StatelessWidget {
-  CourseComparisionScreen({super.key});
+class CourseComparisonScreen extends StatelessWidget {
+  CourseComparisonScreen({super.key});
   final LearnController learnController = Get.find();
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,9 @@ class CourseComparisionScreen extends StatelessWidget {
                       Obx(
                         () {
                           return Text(
-                            'Comparing ${learnController.selectedComparisionList.length} courses',
+                            'Comparing'
+                            ' ${learnController.selectedComparisonList.length}'
+                            ' courses',
                             style: context.textTheme.headlineSmall,
                           );
                         },
@@ -59,7 +61,8 @@ class CourseComparisionScreen extends StatelessWidget {
                           color: AppColors.purpleBackground,
                         ),
                         child: Center(
-                            child: SvgPicture.asset(AssetIcons.arrowDown)),
+                          child: SvgPicture.asset(AssetIcons.arrowDown),
+                        ),
                       )
                     ],
                   ),
@@ -97,10 +100,10 @@ class CourseEnrollSection extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(
-            controller.selectedComparisionList.length,
+            controller.selectedComparisonList.length,
             (index) => SizedBox(
               width: (context.screenWidth /
-                      controller.selectedComparisionList.length) -
+                      controller.selectedComparisonList.length) -
                   32.w,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w),
@@ -108,10 +111,10 @@ class CourseEnrollSection extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        controller.updateCourseComare(
-                          controller.selectedComparisionList[index],
+                        controller.updateCourseCompare(
+                          controller.selectedComparisonList[index],
                         );
-                        if (controller.selectedComparisionList.isEmpty) {
+                        if (controller.selectedComparisonList.isEmpty) {
                           context.pop();
                         }
                       },
@@ -122,7 +125,7 @@ class CourseEnrollSection extends StatelessWidget {
                           Expanded(
                             child: Text(
                               controller
-                                  .selectedComparisionList[index].courseTitle,
+                                  .selectedComparisonList[index].courseTitle,
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
                               style: context.textTheme.displayLarge,

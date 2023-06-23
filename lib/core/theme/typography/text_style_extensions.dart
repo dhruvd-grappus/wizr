@@ -55,6 +55,14 @@ extension FontSizeExtension on TextStyle {
     return copyWith(fontSize: 18);
   }
 
+  TextStyle get size20 {
+    return copyWith(fontSize: 20);
+  }
+
+  TextStyle get size25 {
+    return copyWith(fontSize: 25);
+  }
+
   TextStyle responsiveFont(BuildContext context) {
     return copyWith(
       fontSize: fontSize?.toResponsiveHeight(context),

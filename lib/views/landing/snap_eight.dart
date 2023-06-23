@@ -52,7 +52,8 @@ class SnapEight extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           const Text(
-            "WiZR has been doing a bunch of things\nand stuff and here are a bunch of stats\nthat'll eventually need some",
+            'WiZR has been doing a bunch of things\nand stuff and here '
+            "are a bunch of stats\nthat'll eventually need some",
             style: TextStyle(
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,

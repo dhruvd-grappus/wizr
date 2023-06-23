@@ -20,6 +20,8 @@ class AppColors extends MaterialColor {
   static const eggShell = Color(0xFFF0EAE4);
   static const midnightGrey = Color(0xFFEDF0F1);
   static const midnightGreyDark = Color(0xFF838F97);
+
+  /// FF50495A
   static const purpleText = Color(0xff50495A);
   static const purple1 = Color(0xffA198AC);
   static const purpleBackground = Color(0xffF5F4F6);
@@ -28,6 +30,7 @@ class AppColors extends MaterialColor {
   static const brick = Color(0xffB7704E);
   static const sageGreen = Color(0xff7E9392);
   static const lightBrown = Color(0xffE1D7C9);
+  static const black2 = Color(0xff211D0C);
 }
 
 extension ColorExtension on String {

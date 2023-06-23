@@ -63,7 +63,9 @@ class SnapSix extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'Break free from financial limitations! Unlock\nyour success with an instant credit line for\ncourses and productivity tools.',
+                      'Break free from financial limitations! Unlock\nyour'
+                      ' success with an instant credit line'
+                      ' for\ncourses and productivity tools.',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
@@ -138,7 +140,9 @@ class SnapSix extends StatelessWidget {
                         ),
                         const SizedBox(height: 15),
                         const Text(
-                          'Unlock financial flexibility and convenience with\na credit line get access to funds whenever you\nneed them!',
+                          'Unlock financial flexibility and convenience with\na'
+                          ' credit line get access to funds whenever'
+                          ' you\nneed them!',
                           style: TextStyle(
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w500,

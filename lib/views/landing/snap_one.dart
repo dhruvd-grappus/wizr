@@ -50,7 +50,8 @@ class SnapOne extends StatelessWidget {
                       ),
                       SizedBox(height: 8),
                       Text(
-                        "Find your dream career!\nDiscover what you're great at!",
+                        'Find your dream career!\nDiscover'
+                        " what you're great at!",
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w700,

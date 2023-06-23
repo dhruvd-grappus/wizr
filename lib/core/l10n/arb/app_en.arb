@@ -175,7 +175,16 @@
     "courseFilters":"Course Filters",
     "courseAddedtocompare" : "course added to compare",
     "dismiss" : "Dismiss",
-    "enrolNow" : "Enrol now"
+    "enrolNow" : "Enrol now",
+    "timeToSpendLearning":"How much time would you\nbe able to spend for\nlearning?",
+    "weWouldLikeToKnowYouBetter":"Before we can recommend you the right course,\nwe’d like to know you better.",
+    "whatIsLearningPreferenceMode":"What is your learning preference mode?",
+    "selfPaced":"Self-paced",
+    "liveInstructor":"Live instructors",
+    "imFlexible":"I‘m flexible",
+    "tellUsYourPincode":"Tell us your pincode",
+    "apply":"Apply"
+
 
 
 

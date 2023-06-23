@@ -11,10 +11,12 @@ class CurvedTextFormField extends StatefulWidget {
     super.key,
     this.hint,
     this.fillColor,
+    this.suffix,
     this.enabled = true,
     this.autofocus = false,
     this.textInputType = TextInputType.name,
   });
+  final Widget? suffix;
   final TextEditingController controller;
   final String? hint;
   final Widget? prefix;
@@ -74,6 +76,7 @@ class _CurvedTextFormFieldState extends State<CurvedTextFormField> {
           prefixIconConstraints: const BoxConstraints(),
           hintStyle: context.textTheme.labelMedium!
               .withColor(AppColors.purpleText.withOpacity(0.5)),
+          suffixIcon: widget.suffix,
           prefixIcon: widget.prefix,
         ),
       ),

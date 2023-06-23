@@ -38,16 +38,17 @@ class _StarRaterState extends State<StarRater> {
             child: SvgPicture.asset(
               AssetIcons.star,
               // ignore: deprecated_member_use
-              color: index == 0 && rating == 0
-                  ? AppColors.yellow
-                  : index <= rating - 1
-                      ? AppColors.yellow
-                      : AppColors.greyTextColor,
+              color:
+                  index == 0 && rating == 0 ? AppColors.yellow : _color(index),
               fit: BoxFit.fitWidth,
             ),
           ),
         ),
       ),
     );
+  }
+
+  Color _color(int index) {
+    return index <= rating - 1 ? AppColors.yellow : AppColors.greyTextColor;
   }
 }

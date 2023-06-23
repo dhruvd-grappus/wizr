@@ -30,7 +30,7 @@ class CourseCategories extends StatelessWidget {
             itemBuilder: (_, index, animation) => SlideTransition(
               position: Tween<Offset>(
                 begin: const Offset(-1, 0),
-                end: const Offset(0, 0),
+                end: Offset.zero,
               ).animate(animation),
               child: GestureDetector(
                 onTap: () {

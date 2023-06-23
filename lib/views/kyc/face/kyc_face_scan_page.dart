@@ -103,7 +103,8 @@ class KycFaceScanPage extends StatelessWidget {
                                         width: 8,
                                       ),
                                       Text(
-                                        '$scanPercentage% ${context.l10n.complete}',
+                                        '$scanPercentage% '
+                                        '${context.l10n.complete}',
                                         style: context
                                             .textTheme.bodyMedium!.white
                                             .copyWith(

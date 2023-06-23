@@ -63,7 +63,9 @@ class SnapSeven extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'Fuel your growth with inspiring content!\nListen to podcasts, receive mentor advice,\nand gain insights from our blog.',
+                      'Fuel your growth with inspiring content!\nListen'
+                      ' to podcasts, receive mentor advice'
+                      '\nand gain insights from our blog.',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
@@ -174,7 +176,8 @@ class SnapSeven extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 19)
                         .copyWith(top: 24),
                     child: const Text(
-                      'Listen to skilling certification holders share their\ntransformative stories.',
+                      'Listen to skilling certification holders'
+                      ' share their\ntransformative stories.',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,

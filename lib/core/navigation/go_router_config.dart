@@ -4,6 +4,12 @@ import 'package:wizr/views/authentication/otp_page.dart';
 import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/authentication/signup_page.dart';
 import 'package:wizr/views/authentication/user_profession.dart';
+import 'package:wizr/views/course_recommendations/choose_subject_page.dart';
+import 'package:wizr/views/course_recommendations/comfort_level_page.dart';
+import 'package:wizr/views/course_recommendations/course_recommendations_page.dart';
+import 'package:wizr/views/course_recommendations/pick_skill_page.dart';
+import 'package:wizr/views/course_recommendations/preferred_learning_mode_page.dart';
+import 'package:wizr/views/course_recommendations/spend_time_for_learning_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/kyc/account_verified_page.dart';
@@ -41,6 +47,7 @@ class RouteNames {
   static const baseHome = 'base-home';
   static const discoverPage = 'discover';
   static const learnPage = 'learn';
+  static const learn2Page = 'learn2';
   static const landingPage = 'home';
   static const financePage = 'finance';
   static const growPage = 'grow';
@@ -55,6 +62,12 @@ class RouteNames {
   static const accountVerified = 'account-verified';
   static const kycUploadPhotoPage = 'kyc-upload-photo';
   static const kycFaceScanPage = 'kyc-face-scan';
+  static const courseRecommendationPage = 'course-recommendation';
+  static const chooseSubjectPage = 'choose-subject';
+  static const pickSkillPage = 'pick-skill';
+  static const comfortLevelPage = 'comfort-level';
+  static const preferredLearningModePage = 'preferred-learning-mode';
+  static const spendTimeForLearningPage = 'spend-time-for-learning';
 }
 
 // GoRouter configuration
@@ -198,10 +211,10 @@ final router = GoRouter(
           ),
         ),
         GoRoute(
-          name: RouteNames.learnPage,
-          path: '/${RouteNames.learnPage}',
+          name: RouteNames.learn2Page,
+          path: '/${RouteNames.learn2Page}',
           pageBuilder: (_, __) => CustomTransitionPage(
-            child: LearnPage(),
+            child: const UnderDevelopment(name: 'Learn'),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               const begin = Offset(0, 1);
@@ -287,11 +300,146 @@ final router = GoRouter(
         ),
       ],
     ),
-    /*GoRoute(
-      name: RouteNames.financeHomePage,
-      path: '/',
-      builder: (context, state) => const FinancePage(),
-    ),*/
+    ShellRoute(
+      builder: (_, __, child) {
+        return CourseRecommendationsPage(child: child);
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          name: RouteNames.chooseSubjectPage,
+          path: '/${RouteNames.chooseSubjectPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const ChooseSubjectPage(), //const KycEmployeePage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(1, 0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.pickSkillPage,
+          path: '/${RouteNames.pickSkillPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const PickSkillPage(), //const KycEmployeePage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(1, 0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.comfortLevelPage,
+          path: '/${RouteNames.comfortLevelPage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const ComfortLevelPage(), //const KycEmployeePage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(1, 0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.preferredLearningModePage,
+          path: '/${RouteNames.preferredLearningModePage}',
+          pageBuilder: (_, __) => CustomTransitionPage(
+            child: const PreferredLearningModePage(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(1, 0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+        GoRoute(
+          name: RouteNames.spendTimeForLearningPage,
+          path: '/${RouteNames.spendTimeForLearningPage}',
+          pageBuilder: (_, state) => CustomTransitionPage(
+            child: SpendTimeForLearningPage(
+              modeOfLearning: state.queryParameters['mode']!,
+            ),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              const begin = Offset(1, 0);
+              const end = Offset.zero;
+              const curve = Curves.ease;
+
+              final tween =
+                  Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+              return SlideTransition(
+                position: animation.drive(tween),
+                child: child,
+              );
+            },
+            transitionDuration: const Duration(milliseconds: 600),
+          ),
+        ),
+      ],
+    ),
+    GoRoute(
+      name: RouteNames.learnPage,
+      path: '/${RouteNames.learnPage}',
+      pageBuilder: (_, __) => CustomTransitionPage(
+        child: LearnPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1, 0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+
+          final tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 600),
+      ),
+    ),
   ],
 );
 

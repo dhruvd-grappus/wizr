@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 
@@ -10,6 +8,7 @@ class RotatedChip extends StatelessWidget {
     super.key,
     this.textColor = Colors.black,
     this.chipColor = Colors.white,
+    this.highlightColor = Colors.transparent,
     this.onTap,
     this.actionIconColor,
     this.angle = 0,
@@ -22,6 +21,7 @@ class RotatedChip extends StatelessWidget {
   final String name;
   final Color? textColor;
   final Color? chipColor;
+  final Color? highlightColor;
   final VoidCallback? onTap;
   final Color? actionIconColor;
   final double? angle;
@@ -33,33 +33,36 @@ class RotatedChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Transform.rotate(
       angle: angle!,
-      child: InkWell(
-        onTap: () {
-          Fluttertoast.showToast(msg: name);
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: chipColor,
-            borderRadius: BorderRadius.circular(radius.h),
-          ),
-          padding: padding ??
-              const EdgeInsets.fromLTRB(20, 14, 20, 14).responsive(context),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                name,
-                style: labelStyle ??
-                    TextStyle(
-                      fontFamily: 'Patron',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      color: textColor,
-                    ).responsiveFont(context),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            splashColor: highlightColor,
+            highlightColor: highlightColor,
+            child: Ink(
+              color: chipColor,
+              padding: padding ??
+                  const EdgeInsets.fromLTRB(20, 14, 20, 14).responsive(context),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    name,
+                    style: labelStyle ??
+                        TextStyle(
+                          fontFamily: 'Patron',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: textColor,
+                        ).responsiveFont(context),
+                  ),
+                  if (tailWidget != null) const SizedBox(width: 6),
+                  if (tailWidget != null) tailWidget!,
+                ],
               ),
-              if (tailWidget != null) const SizedBox(width: 6),
-              if (tailWidget != null) tailWidget!,
-            ],
+            ),
           ),
         ),
       ),

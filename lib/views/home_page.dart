@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         context.pushNamed(RouteNames.discoverPage);
       case 1:
-        context.pushNamed(RouteNames.learnPage);
+        context.pushNamed(RouteNames.learn2Page);
       case 2:
         context.pushNamed(RouteNames.landingPage);
       case 3:
