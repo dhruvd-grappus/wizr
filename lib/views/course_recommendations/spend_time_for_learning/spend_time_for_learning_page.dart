@@ -8,11 +8,20 @@ import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
 import 'package:wizr/core/widgets/form_fields.dart';
+import 'package:wizr/views/course_recommendations/spend_time_for_learning/widgets/learning_time_choices_widget.dart';
 import 'package:wizr/views/course_recommendations/widgets/highlighted_fold_card.dart';
 
-class SpendTimeForLearningPage extends StatelessWidget {
+class SpendTimeForLearningPage extends StatefulWidget {
   const SpendTimeForLearningPage({required this.modeOfLearning, super.key});
   final String modeOfLearning;
+
+  @override
+  State<SpendTimeForLearningPage> createState() =>
+      _SpendTimeForLearningPageState();
+}
+
+class _SpendTimeForLearningPageState extends State<SpendTimeForLearningPage> {
+  final ValueNotifier<bool> hasSelectedPreferenceMode = ValueNotifier(false);
   @override
   Widget build(BuildContext context) {
     final bottom2 = MediaQuery.of(context).viewInsets.bottom;
@@ -39,18 +48,30 @@ class SpendTimeForLearningPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 40.h),
-            HighlightedFoldCard(
-              assetImage: AssetImages.online,
-              title: 'I want to learn $modeOfLearning',
+            ValueListenableBuilder(
+              valueListenable: hasSelectedPreferenceMode,
+              builder: (_, hasSelectedPreferenceMode, __) {
+                if (hasSelectedPreferenceMode) {
+                  return const LearningTimeChoicesWidget();
+                }
+                return Column(
+                  children: [
+                    HighlightedFoldCard(
+                      assetImage: AssetImages.online,
+                      title: 'I want to learn ${widget.modeOfLearning}',
+                    ),
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 250),
+                      height: bottom2 == 0 ? 64 : 40,
+                    ),
+                    if (widget.modeOfLearning == 'Offline')
+                      _FormForOffline(this.hasSelectedPreferenceMode)
+                    else
+                      _FormForOnline(this.hasSelectedPreferenceMode),
+                  ],
+                );
+              },
             ),
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 250),
-              height: bottom2 == 0 ? 64 : 40,
-            ),
-            if (modeOfLearning == 'Offline')
-              const _FormForOffline()
-            else
-              const _FormForOnline(),
             const SizedBox(height: 50)
           ],
         ),
@@ -64,8 +85,8 @@ class SpendTimeForLearningPage extends StatelessWidget {
 }
 
 class _FormForOffline extends StatelessWidget {
-  const _FormForOffline();
-
+  const _FormForOffline(this.hasSelectedMode);
+  final ValueNotifier<bool> hasSelectedMode;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -89,7 +110,7 @@ class _FormForOffline extends StatelessWidget {
             suffix: SizedBox(
               width: 70.w,
               child: GestureDetector(
-                onTap: () => context.goNamed(RouteNames.learnPage),
+                onTap: () => hasSelectedMode.value = true,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -138,8 +159,8 @@ class _FormForOffline extends StatelessWidget {
 }
 
 class _FormForOnline extends StatelessWidget {
-  const _FormForOnline();
-
+  const _FormForOnline(this.hasSelectedMode);
+  final ValueNotifier<bool> hasSelectedMode;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -157,7 +178,7 @@ class _FormForOnline extends StatelessWidget {
           ]
               .map(
                 (e) => GestureDetector(
-                  onTap: () => context.goNamed(RouteNames.learnPage),
+                  onTap: () => hasSelectedMode.value = true,
                   child: Container(
                     width: 342.w,
                     margin: EdgeInsets.only(bottom: 20.h),
