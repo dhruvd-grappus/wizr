@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:wizr/core/navigation/go_router_config.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/views/course_recommendations/widgets/skill_card.dart';
 
 class PickSkillPage extends StatelessWidget {
-  const PickSkillPage({super.key});
+  const PickSkillPage({
+    required this.next, super.key,
+  });
+
+  final VoidCallback next;
 
   @override
   Widget build(BuildContext context) {
@@ -20,22 +23,33 @@ class PickSkillPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 28.h),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 16,
-              crossAxisSpacing: 20,
-              childAspectRatio: 1.36,
+          AnimationLimiter(
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 20,
+                childAspectRatio: 1.36,
+              ),
+              itemCount: 20,
+              itemBuilder: (BuildContext context, int index) {
+                return AnimationConfiguration.staggeredGrid(
+                  position: index,
+                  duration: const Duration(milliseconds: 375),
+                  columnCount: 2,
+                  child: ScaleAnimation(
+                    child: FadeInAnimation(
+                      child: SkillCard(
+                        name: 'Project Management',
+                        onTap: () => goToNextPage(context),
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
-            itemCount: 20,
-            itemBuilder: (BuildContext context, int index) {
-              return SkillCard(
-                name: 'Project Management',
-                onTap: () => goToNextPage(context),
-              );
-            },
           ),
         ],
       ),
@@ -43,6 +57,7 @@ class PickSkillPage extends StatelessWidget {
   }
 
   void goToNextPage(BuildContext context) {
-    context.pushNamed(RouteNames.comfortLevelPage);
+    //context.pushNamed(RouteNames.comfortLevelPage);
+    next.call();
   }
 }

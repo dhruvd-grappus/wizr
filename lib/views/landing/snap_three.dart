@@ -189,7 +189,7 @@ class SnapThree extends StatelessWidget {
                                     /*Fluttertoast.showToast(
                                       msg: 'Under Development',
                                     );*/
-                                    context.goNamed(RouteNames.chooseSubjectPage);
+                                    context.pushNamed(RouteNames.courseRecommendationPage);
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: const Color(0xff1D1B21),

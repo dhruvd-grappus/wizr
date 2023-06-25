@@ -5,12 +5,7 @@ import 'package:wizr/views/authentication/otp_page.dart';
 import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/authentication/signup_page.dart';
 import 'package:wizr/views/authentication/user_profession.dart';
-import 'package:wizr/views/course_recommendations/choose_subject_page.dart';
-import 'package:wizr/views/course_recommendations/comfort_level_page.dart';
 import 'package:wizr/views/course_recommendations/course_recommendations_page.dart';
-import 'package:wizr/views/course_recommendations/pick_skill_page.dart';
-import 'package:wizr/views/course_recommendations/preferred_learning_mode_page.dart';
-import 'package:wizr/views/course_recommendations/spend_time_for_learning_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
 import 'package:wizr/views/kyc/account_verified_page.dart';
@@ -78,6 +73,8 @@ class RouteNames {
 // GoRouter configuration
 final router = GoRouter(
   navigatorKey: _rootNavigatorKey,
+  debugLogDiagnostics: true,
+  initialLocation: '/',
   routes: [
     ...kycRoutes,
     dashboardShellRoute,

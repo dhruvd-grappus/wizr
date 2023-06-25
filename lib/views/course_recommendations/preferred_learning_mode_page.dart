@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:wizr/core/navigation/go_router_config.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
@@ -9,7 +8,11 @@ import 'package:wizr/views/course_recommendations/widgets/level_tile.dart';
 import 'package:wizr/views/widgets/rotated_chip.dart';
 
 class PreferredLearningModePage extends StatelessWidget {
-  const PreferredLearningModePage({super.key});
+  const PreferredLearningModePage({
+    required this.next, super.key,
+  });
+
+  final VoidCallback next;
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +50,14 @@ class PreferredLearningModePage extends StatelessWidget {
           SizedBox(height: 22.h),
           LevelTile(
             label: 'I’m flexible',
-            bodyText: 'I am open to hybrid modes of learning , as long as I find he course useful',
+            bodyText:
+                'I am open to hybrid modes of learning , as long as I find he course useful',
             iconPath: AssetIcons.icFlexible,
             onTap: () => goToNextPage(context),
           ),
           SizedBox(height: 60.h),
           RotatedChip(
-            name: 'Not Sure? Take our Skill Assesssment',
+            name: 'Not Sure? Take our Skill Assessment',
             labelStyle: context.textTheme.bodyMedium?.copyWith(
               color: AppColors.black2,
             ),
@@ -61,7 +65,7 @@ class PreferredLearningModePage extends StatelessWidget {
             highlightColor: AppColors.yellow,
             radius: 10,
             onTap: () {
-
+              Fluttertoast.showToast(msg: 'Take our Skill Assessment');
             },
           ),
           SizedBox(height: 20.h),
@@ -71,9 +75,9 @@ class PreferredLearningModePage extends StatelessWidget {
   }
 
   void goToNextPage(BuildContext context, String mode) {
-    context.pushNamed(
+    //context.pushNamed(
       RouteNames.spendTimeForLearningPage,
-      queryParameters: {'mode': mode},
-    );
+      queryParameters: {'mode': mode},);
+    next.call();
   }
 }
