@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
 
