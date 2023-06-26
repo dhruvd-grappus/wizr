@@ -7,7 +7,7 @@ import 'package:wizr/views/course_recommendations/choose_subject_page.dart';
 import 'package:wizr/views/course_recommendations/comfort_level_page.dart';
 import 'package:wizr/views/course_recommendations/pick_skill_page.dart';
 import 'package:wizr/views/course_recommendations/preferred_learning_mode_page.dart';
-import 'package:wizr/views/course_recommendations/spend_time_for_learning_page.dart';
+import 'package:wizr/views/course_recommendations/spend_time_for_learning/spend_time_for_learning_page.dart';
 
 class CourseRecommendationsPage extends StatefulWidget {
   const CourseRecommendationsPage({super.key});
@@ -20,6 +20,8 @@ class CourseRecommendationsPage extends StatefulWidget {
 class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
   var _currentStep = 1;
   final PageController pageController = PageController();
+
+  String learningMode = 'Online';
   Future<bool> goToPreviousPage() async {
     if (pageController.hasClients) {
       if ((pageController.page ?? 0) >= 1) {
@@ -63,18 +65,18 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
                   onPageChanged: _onPageChanged,
                   children: [
                     ChooseSubjectPage(
-                      next: goToNextPage,
+                      next: () => goToNextPage(' '),
                     ),
                     PickSkillPage(
-                      next: goToNextPage,
+                      next: () => goToNextPage(' '),
                     ),
                     ComfortLevelPage(
-                      next: goToNextPage,
+                      next: () => goToNextPage(' '),
                     ),
                     PreferredLearningModePage(
                       next: goToNextPage,
                     ),
-                    const SpendTimeForLearningPage()
+                    SpendTimeForLearningPage(modeOfLearning: learningMode,)
                   ],
                 ),
               ),
@@ -90,7 +92,10 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
     });
   }
 
-  void goToNextPage() {
+  void goToNextPage(String? mode) {
+    setState(() {
+      learningMode = mode!;
+    });
     pageController.animateToPage(
       _currentStep,
       duration: const Duration(milliseconds: 250),

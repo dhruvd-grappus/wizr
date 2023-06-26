@@ -120,10 +120,10 @@ class _AnimatedPrimaryButtonState extends State<AnimatedPrimaryButton>
           ),
           padding: widget.padding ??
               EdgeInsets.fromLTRB(
-                20.w,
-                14.h,
-                20.w,
-                14.h,
+                18.w,
+                13.h,
+                18.w,
+                13.h,
               ),
           child: Align(
             child: textNormal,
@@ -143,10 +143,10 @@ class _AnimatedPrimaryButtonState extends State<AnimatedPrimaryButton>
             ),
             padding: widget.padding ??
                 EdgeInsets.fromLTRB(
-                  20.w,
-                  14.h,
-                  20.w,
-                  14.h,
+                  18.w,
+                  13.h,
+                  18.w,
+                  13.h,
                 ),
             child: Align(
               child: textNormal,
@@ -165,7 +165,7 @@ class _AnimatedPrimaryButtonState extends State<AnimatedPrimaryButton>
       width: widget.width,
       height: widget.height,
       constraints: BoxConstraints(
-        minHeight: 50.h,
+        minHeight: 40.h,
         minWidth: 63.w,
       ),
       margin: widget.margin,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 
@@ -8,7 +7,7 @@ class LevelTile extends StatefulWidget {
   const LevelTile({
     required this.label,
     required this.bodyText,
-    required this.iconPath,
+    required this.imgPath,
     super.key,
     this.backgroundColor = AppColors.purpleBackground,
     this.highlightColor = AppColors.yellow,
@@ -19,7 +18,7 @@ class LevelTile extends StatefulWidget {
 
   final String label;
   final String bodyText;
-  final String iconPath;
+  final String imgPath;
   final Color backgroundColor;
   final Color highlightColor;
   final Duration animationDuration;
@@ -78,8 +77,8 @@ class _LevelTileState extends State<LevelTile> with TickerProviderStateMixin {
               padding: const EdgeInsets.fromLTRB(16, 10, 12, 10),
               child: Row(
                 children: [
-                  SvgPicture.asset(
-                    widget.iconPath,
+                  Image.asset(
+                    widget.imgPath,
                     width: 90,
                     fit: BoxFit.fill,
                   ),

@@ -9,7 +9,8 @@ import 'package:wizr/views/widgets/rotated_chip.dart';
 
 class ChooseSubjectPage extends StatelessWidget {
   const ChooseSubjectPage({
-    required this.next, super.key,
+    required this.next,
+    super.key,
   });
 
   final VoidCallback next;
@@ -32,7 +33,7 @@ class ChooseSubjectPage extends StatelessWidget {
               spacing: 12.w,
               alignment: WrapAlignment.center,
               children: AnimationConfiguration.toStaggeredList(
-                duration: const Duration(milliseconds: 350),
+                duration: const Duration(milliseconds: 300),
                 childAnimationBuilder: (widget) => SlideAnimation(
                   horizontalOffset: 50,
                   child: FadeInAnimation(
@@ -236,6 +237,7 @@ class ChooseSubjectPage extends StatelessWidget {
           ),
           SizedBox(height: 90.h),
           AnimatedPrimaryButton(
+            height: 40,
             margin: EdgeInsets.only(left: 50.w, right: 40.w),
             text: 'Take our Carrier Discovery Quiz',
             textStyle: context.textTheme.bodyMedium?.copyWith(
@@ -244,7 +246,7 @@ class ChooseSubjectPage extends StatelessWidget {
             color: const Color(0xFFDBDADC),
             borderRadius: 10,
             onPressed: () {
-Fluttertoast.showToast(msg: 'Take our Carrier Discovery Quiz');
+              Fluttertoast.showToast(msg: 'Take our Carrier Discovery Quiz');
             },
           ),
           SizedBox(height: 60.h),

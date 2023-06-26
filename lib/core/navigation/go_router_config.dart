@@ -5,6 +5,7 @@ import 'package:wizr/views/authentication/otp_page.dart';
 import 'package:wizr/views/authentication/phone_login_page.dart';
 import 'package:wizr/views/authentication/signup_page.dart';
 import 'package:wizr/views/authentication/user_profession.dart';
+import 'package:wizr/views/course_recommendations/course_quiz_completed_page.dart';
 import 'package:wizr/views/course_recommendations/course_recommendations_page.dart';
 import 'package:wizr/views/finance/finance_page.dart';
 import 'package:wizr/views/home_page.dart';
@@ -78,7 +79,48 @@ final router = GoRouter(
   routes: [
     ...kycRoutes,
     dashboardShellRoute,
-    courseRecommendationShellRoute,
+    GoRoute(
+      name: RouteNames.courseRecommendationPage,
+      path: '/${RouteNames.courseRecommendationPage}',
+      pageBuilder: (_, __) => CustomTransitionPage(
+        child: const CourseRecommendationsPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1, 0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+
+          final tween =
+          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 600),
+      ),
+    ),
+    GoRoute(
+      name: RouteNames.courseQuizCompletedPage,
+      path: '/${RouteNames.courseQuizCompletedPage}',
+      pageBuilder: (_, __) => CustomTransitionPage(
+        child: const CourseQuizCompletedPage(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1, 0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+
+          final tween =
+          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 600),
+      ),
+    ),
     GoRoute(
       name: RouteNames.learnPage,
       path: '/${RouteNames.learnPage}',
@@ -100,7 +142,7 @@ final router = GoRouter(
         transitionDuration: const Duration(milliseconds: 600),
       ),
     ),
-    ShellRoute(
+    /*ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (_, __, child) {
         return HomePage(child: child);
@@ -218,7 +260,7 @@ final router = GoRouter(
           ),
         ),
       ],
-    ),
+    ),*/
     /*GoRoute(
       name: RouteNames.financeHomePage,
       path: '/',

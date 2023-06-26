@@ -14,7 +14,12 @@ import 'package:wizr/core/widgets/form_fields.dart';
 import 'package:wizr/views/authentication/widgets/profession_card.dart';
 
 class UserProfessionPage extends StatelessWidget {
-  const UserProfessionPage({super.key});
+  const UserProfessionPage({
+    super.key,
+    this.isFromCourseExplore = false,
+  });
+
+  final bool isFromCourseExplore;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,13 @@ class UserProfessionPage extends StatelessWidget {
       child: Scaffold(
         bottomSheet: PrimaryButton(
           label: context.l10n.continueBtnLabel,
-          onTap: () => context.pushNamed(RouteNames.kycEmployeePage),
+          onTap: () {
+            if (isFromCourseExplore) {
+              context.pushNamed(RouteNames.courseRecommendationPage);
+            } else {
+              context.pushNamed(RouteNames.kycEmployeePage);
+            }
+          },
         ),
         backgroundColor: Colors.white,
         body: Stack(
@@ -79,7 +90,9 @@ class UserProfessionPage extends StatelessWidget {
                           topRight: Radius.circular(20),
                         ),
                       ),
-                      child: const ProfessionBody(),
+                      child: ProfessionBody(
+                        isFromCourseExplore: isFromCourseExplore,
+                      ),
                     ),
                     SizedBox(height: 16.toResponsiveHeight(context)),
                   ],
@@ -94,7 +107,11 @@ class UserProfessionPage extends StatelessWidget {
 }
 
 class ProfessionBody extends StatefulWidget {
-  const ProfessionBody({super.key});
+  const ProfessionBody({
+    required this.isFromCourseExplore, super.key,
+  });
+
+  final bool isFromCourseExplore;
 
   @override
   State<ProfessionBody> createState() => _ProfessionBodyState();
@@ -103,6 +120,7 @@ class ProfessionBody extends StatefulWidget {
 class _ProfessionBodyState extends State<ProfessionBody> {
   ProfessionType professionType = ProfessionType.unknown;
   final TextEditingController nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -157,11 +175,22 @@ class _ProfessionBodyState extends State<ProfessionBody> {
               ),
             ),
           const SizedBox(height: 20),
-          if (professionType == ProfessionType.student)
+          if (professionType == ProfessionType.student &&
+              widget.isFromCourseExplore) ...{
+            CurvedDropdownField(
+              dropDownHint: Text(
+                'Post graduate',
+                style: context.textTheme.labelMedium!
+                    .withColor(AppColors.purpleText.withOpacity(0.5)),
+              ),
+            ),
+          }
+          else if (professionType == ProfessionType.student) ...{
             CurvedTextFormField(
               controller: nameController,
               hint: 'Enter your first name',
             ),
+          },
           if (professionType == ProfessionType.professional)
             Column(
               children: [

@@ -5,12 +5,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
+import 'package:wizr/core/widgets/animated_primary_button.dart';
 import 'package:wizr/views/course_recommendations/widgets/level_tile.dart';
-import 'package:wizr/views/widgets/rotated_chip.dart';
 
 class ComfortLevelPage extends StatelessWidget {
   const ComfortLevelPage({
-    required this.next, super.key,
+    required this.next,
+    super.key,
   });
 
   final VoidCallback next;
@@ -39,7 +40,7 @@ class ComfortLevelPage extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: AnimationConfiguration.toStaggeredList(
-                duration: const Duration(milliseconds: 800),
+                duration: const Duration(milliseconds: 600),
                 childAnimationBuilder: (widget) => FadeInAnimation(
                   child: widget,
                 ),
@@ -48,14 +49,14 @@ class ComfortLevelPage extends StatelessWidget {
                     label: 'Basic',
                     bodyText:
                         'Introduction to a subject, minimal skill and knowledge.',
-                    iconPath: AssetIcons.icOnline,
+                    imgPath: AssetImages.imgbasicLevel,
                     onTap: () => goToNextPage(context),
                   ),
                   SizedBox(height: 22.h),
                   LevelTile(
                     label: 'Intermediate',
                     bodyText: 'Moderate or middle-level skill and knowledge.',
-                    iconPath: AssetIcons.icOffline,
+                    imgPath: AssetImages.imgIntermediateLevel,
                     onTap: () => goToNextPage(context),
                   ),
                   SizedBox(height: 22.h),
@@ -63,19 +64,20 @@ class ComfortLevelPage extends StatelessWidget {
                     label: 'Advance',
                     bodyText:
                         'Extensive experience and high level of  skill and knowledge.',
-                    iconPath: AssetIcons.icFlexible,
+                    imgPath: AssetImages.imgAdvanceLevel,
                     onTap: () => goToNextPage(context),
                   ),
-                  SizedBox(height: 20.h),
-                  RotatedChip(
-                    name: 'Not Sure? Take our Skill Assessment',
-                    labelStyle: context.textTheme.bodyMedium?.copyWith(
+                  SizedBox(height: 30.h),
+                  AnimatedPrimaryButton(
+                    height: 40,
+                    margin: EdgeInsets.only(left: 30.w, right: 30.w),
+                    text: 'Not Sure? Take our Skill Assessment',
+                    textStyle: context.textTheme.bodyMedium?.copyWith(
                       color: AppColors.black2,
                     ),
-                    chipColor: const Color(0xFFDBDADC),
-                    highlightColor: AppColors.yellow,
-                    radius: 10,
-                    onTap: () {
+                    color: const Color(0xFFDBDADC),
+                    borderRadius: 10,
+                    onPressed: () {
                       Fluttertoast.showToast(msg: 'Take our Skill Assessment');
                     },
                   ),

@@ -37,7 +37,7 @@ class PickSkillPage extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return AnimationConfiguration.staggeredGrid(
                   position: index,
-                  duration: const Duration(milliseconds: 375),
+                  duration: const Duration(milliseconds: 450),
                   columnCount: 2,
                   child: ScaleAnimation(
                     child: FadeInAnimation(
