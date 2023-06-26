@@ -10,9 +10,11 @@ class LearnController extends GetxController {
   void updateCourseCompare(CourseModel course) {
     if (selectedComparisonList.contains(course)) {
       selectedComparisonList.remove(course);
+      intCompareCourseCount.value = selectedComparisonList.length;
     } else {
       if (selectedComparisonList.length < 3) {
         selectedComparisonList.add(course);
+        intCompareCourseCount.value = selectedComparisonList.length;
       } else {
         Fluttertoast.showToast(msg: 'Maximum 3 course can be compared once');
       }

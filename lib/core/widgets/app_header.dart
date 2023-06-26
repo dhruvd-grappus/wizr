@@ -1,24 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
 
 class AppHeader extends StatelessWidget {
-  const AppHeader({super.key});
+  const AppHeader({
+    super.key,
+    this.isBack = false,
+    this.isLanding = false,
+  });
+  final bool isBack;
+  final bool isLanding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      child: const Row(
+      child: Row(
         children: [
-          AppLogo(),
-          Spacer(),
-          HeaderLogo(
+          if (isBack || isLanding)
+            IconButton(
+              onPressed: () {
+                isLanding
+                    ? context.goNamed(RouteNames.landingPage)
+                    : context.pop();
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: AppColors.black,
+              ),
+            ),
+          const AppLogo(),
+          const Spacer(),
+          const HeaderLogo(
             iconPath: AssetIcons.globalSearch,
           ),
-          SizedBox(width: 6),
-          HeaderLogo(
+          const SizedBox(width: 6),
+          const HeaderLogo(
             iconPath: AssetIcons.hamburgerMenu,
             color: AppColors.eggShell,
           ),
