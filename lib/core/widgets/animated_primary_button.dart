@@ -12,6 +12,7 @@ class AnimatedPrimaryButton extends StatefulWidget {
     required this.onPressed,
     super.key,
     this.textStyle,
+    this.selectedTextStyle,
     this.height = 50,
     this.width,
     this.isActive,
@@ -30,6 +31,7 @@ class AnimatedPrimaryButton extends StatefulWidget {
 
   final String text;
   final TextStyle? textStyle;
+  final TextStyle? selectedTextStyle;
   final double? height;
   final double? width;
   final bool? isActive;
@@ -92,9 +94,21 @@ class _AnimatedPrimaryButtonState extends State<AnimatedPrimaryButton>
   Widget build(BuildContext context) {
     final textNormal = Text(
       widget.text,
-      maxLines: 1,
+      maxLines: 2,
       overflow: TextOverflow.ellipsis,
       style: widget.textStyle ??
+          (context.textTheme.labelLarge!.responsiveFont(context).copyWith(
+                color: widget.onPressed != null
+                    ? Colors.white
+                    : AppColors.midnightGreyDark,
+              )),
+    );
+
+    final textSelected = Text(
+      widget.text,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      style: widget.selectedTextStyle ??
           (context.textTheme.labelLarge!.responsiveFont(context).copyWith(
                 color: widget.onPressed != null
                     ? Colors.white
@@ -149,7 +163,7 @@ class _AnimatedPrimaryButtonState extends State<AnimatedPrimaryButton>
                     13.h,
                   ),
               child: Align(
-                child: textNormal,
+                child: textSelected,
               ),
             ),
             builder: (context, child) {

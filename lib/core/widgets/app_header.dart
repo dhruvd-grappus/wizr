@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
 
@@ -10,9 +8,11 @@ class AppHeader extends StatelessWidget {
     super.key,
     this.isBack = false,
     this.isLanding = false,
+    this.onBackPress,
   });
   final bool isBack;
   final bool isLanding;
+  final VoidCallback? onBackPress;
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +22,7 @@ class AppHeader extends StatelessWidget {
         children: [
           if (isBack || isLanding)
             IconButton(
-              onPressed: () {
-                isLanding
-                    ? context.goNamed(RouteNames.landingPage)
-                    : context.pop();
-              },
+              onPressed: onBackPress,padding: EdgeInsets.zero,
               icon: const Icon(
                 Icons.arrow_back_ios,
                 color: AppColors.black,

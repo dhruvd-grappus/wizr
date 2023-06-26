@@ -85,6 +85,7 @@ final router = GoRouter(
     GoRoute(
       name: RouteNames.courseRecommendationPage,
       path: '/${RouteNames.courseRecommendationPage}',
+      parentNavigatorKey: _rootNavigatorKey,
       pageBuilder: (_, __) => CustomTransitionPage(
         child: const CourseRecommendationsPage(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -106,6 +107,7 @@ final router = GoRouter(
     GoRoute(
       name: RouteNames.courseQuizCompletedPage,
       path: '/${RouteNames.courseQuizCompletedPage}',
+      parentNavigatorKey: _rootNavigatorKey,
       pageBuilder: (_, __) => CustomTransitionPage(
         child: const CourseQuizCompletedPage(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {

@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a568579-de8b-4055-bd75-dc58fd150389" name="Changes" comment="fix learning mode image issue." />
+    <list default="true" id="6a568579-de8b-4055-bd75-dc58fd150389" name="Changes" comment="added screen utils for responsive page and font size.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/navigation/kyc_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/kyc_routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/widgets/animated_primary_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/animated_primary_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/widgets/app_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/app_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/course_recommendations_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/course_recommendations_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/spend_time_for_learning/spend_time_for_learning_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/spend_time_for_learning/spend_time_for_learning_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/learn/learn_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/learn/learn_page.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

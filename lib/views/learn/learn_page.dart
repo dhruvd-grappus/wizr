@@ -14,7 +14,9 @@ import 'package:wizr/views/learn/widgets/top_course_recommendations.dart';
 
 class LearnPage extends StatelessWidget {
   LearnPage({super.key});
+
   final LearnController learnController = Get.put(LearnController());
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -32,7 +34,11 @@ class LearnPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const AppHeader(isLanding: true),
+                    AppHeader(
+                      isLanding: true,
+                      onBackPress: () =>
+                          context.goNamed(RouteNames.landingPage),
+                    ),
                     CourseCategories(),
                     Expanded(
                       child: SingleChildScrollView(
