@@ -52,39 +52,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      extendBody: true,
-      bottomNavigationBar: WizrBottomNavigationBar(
-        selectedIndex: _selectedIndex,
-        domeCircleColor: const Color(0xffCBFB62),
-        borderRadius: BorderRadius.zero,
-        domeHeight: 17.h,
-        domeCircleSize: 45.h,
-        barColor: Colors.white,
-        onTabChange: _onItemTapped,
-        tabs: List.generate(
-          tabIcons.length,
-          (index) => WizrTab(
-            icon: Transform.rotate(
-              angle: _selectedIndex == index ? -17 * pi / 180 : 0,
-              child: SvgPicture.asset(
-                tabIcons[index],
-                color: _selectedIndex == index ? Colors.black : null,
+      body: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          extendBody: true,
+          bottomNavigationBar: WizrBottomNavigationBar(
+            selectedIndex: _selectedIndex,
+            domeCircleColor: const Color(0xffCBFB62),
+            borderRadius: BorderRadius.zero,
+            domeHeight: 17.h,
+            domeCircleSize: 45.h,
+            barColor: Colors.white,
+            onTabChange: _onItemTapped,
+            tabs: List.generate(
+              tabIcons.length,
+              (index) => WizrTab(
+                icon: Transform.rotate(
+                  angle: _selectedIndex == index ? -17 * pi / 180 : 0,
+                  child: SvgPicture.asset(
+                    tabIcons[index],
+                    color: _selectedIndex == index ? Colors.black : null,
+                  ),
+                ),
+                title: Text(
+                  tabTexts[index],
+                  style: context.textTheme.labelSmall!
+                      .withColor(
+                        _selectedIndex == index
+                            ? const Color(0xff161C20)
+                            : const Color(0xff838F97),
+                      )
+                      .responsiveFont(context),
+                ),
               ),
             ),
-            title: Text(
-              tabTexts[index],
-              style: context.textTheme.labelSmall!
-                  .withColor(
-                    _selectedIndex == index
-                        ? const Color(0xff161C20)
-                        : const Color(0xff838F97),
-                  )
-                  .responsiveFont(context),
-            ),
           ),
+          body: widget.child,
         ),
       ),
-      body: SafeArea(child: widget.child),
     );
   }
 }
