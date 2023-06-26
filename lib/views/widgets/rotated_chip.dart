@@ -29,6 +29,7 @@ class RotatedChip extends StatelessWidget {
   final TextStyle? labelStyle;
   final EdgeInsets? padding;
   final double radius;
+
   @override
   Widget build(BuildContext context) {
     return Transform.rotate(

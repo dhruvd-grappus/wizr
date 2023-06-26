@@ -1,6 +1,6 @@
 part of 'go_router_config.dart';
 
-final ShellRoute courseRecommendationShellRoute = ShellRoute(
+/*final ShellRoute courseRecommendationShellRoute = ShellRoute(
   builder: (_, __, child) {
     return CourseRecommendationsPage(child: child);
   },
@@ -119,4 +119,4 @@ final ShellRoute courseRecommendationShellRoute = ShellRoute(
           horizontalSlideTransitionPage(const CourseQuizCompletedPage()),
     )
   ],
-);
+);*/

@@ -131,7 +131,10 @@ class SignupButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return PrimaryButton(
       label: context.l10n.continueBtnLabel,
-      onTap: () => context.pushNamed(RouteNames.userProfessionPage),
+      onTap: () => context.pushNamed(
+        RouteNames.userProfessionPage,
+        extra: false,
+      ),
     );
   }
 }

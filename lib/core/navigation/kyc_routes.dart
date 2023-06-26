@@ -34,17 +34,65 @@ final kycRoutes = [
   GoRoute(
     name: RouteNames.signupPage,
     path: '/${RouteNames.signupPage}',
-    builder: (context, state) => const SignupPage(),
+    pageBuilder: (_, __) => CustomTransitionPage(
+      child: const SignupPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1, 0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        final tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 600),
+    ),
   ),
   GoRoute(
     name: RouteNames.otpPage,
     path: '/${RouteNames.otpPage}',
-    builder: (context, state) => const OtpPage(),
+    pageBuilder: (_, __) => CustomTransitionPage(
+      child: const OtpPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1, 0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        final tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 600),
+    ),
   ),
   GoRoute(
     name: RouteNames.phoneLoginPage,
     path: '/${RouteNames.phoneLoginPage}',
-    builder: (context, state) => const PhoneLoginPage(),
+    pageBuilder: (_, __) => CustomTransitionPage(
+      child: const PhoneLoginPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1, 0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        final tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 600),
+    ),
   ),
   GoRoute(
     name: RouteNames.kycIdentityProof,
@@ -84,7 +132,8 @@ final kycRoutes = [
   GoRoute(
     name: RouteNames.userProfessionPage,
     path: '/${RouteNames.userProfessionPage}',
-    builder: (context, state) => const UserProfessionPage(),
+    builder: (context, state) =>
+        UserProfessionPage(isFromCourseExplore: state.extra! as bool),
   ),
   GoRoute(
     name: RouteNames.kycEmployeePage,

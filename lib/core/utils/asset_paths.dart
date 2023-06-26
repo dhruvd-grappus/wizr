@@ -18,6 +18,13 @@ class AssetImages {
   static const String faceOverlay = '${imageBasePath}face_scan_overlay.svg';
   static const String online = '${imageBasePath}img_online.png';
   static const String pinch = '${imageBasePath}img_pinch.png';
+  static const String imgbasicLevel = '${imageBasePath}img_lvl_basic.png';
+  static const String imgIntermediateLevel =
+      '${imageBasePath}img_lvl_intermediate.png';
+  static const String imgAdvanceLevel = '${imageBasePath}img_lvl_advance.png';
+  static const String imgOnlinePref = '${imageBasePath}img_pref_online.png';
+  static const String imgOfflinePref = '${imageBasePath}img_pref_offline.png';
+  static const String imgFlexiblePref = '${imageBasePath}img_pref_flexible.png';
 }
 
 class AssetIcons {
@@ -66,7 +73,4 @@ class AssetIcons {
   static const String sealCheck = '${iconBasePath}seal-check.svg';
   static const String arrowUp = '${iconBasePath}arrow_up.svg';
   static const String arrowDown = '${iconBasePath}arrow_down.svg';
-  static const String icOnline = '${iconBasePath}ic_online.svg';
-  static const String icOffline = '${iconBasePath}ic_offline.svg';
-  static const String icFlexible = '${iconBasePath}ic_flexible.svg';
 }

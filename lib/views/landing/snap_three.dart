@@ -184,11 +184,10 @@ class SnapThree extends StatelessWidget {
                               children: [
                                 ElevatedButton(
                                   onPressed: () {
-                                    /*Fluttertoast.showToast(
-                                      msg: 'Under Development',
-                                    );*/
-                                    context
-                                        .goNamed(RouteNames.chooseSubjectPage);
+                                    context.pushNamed(
+                                      RouteNames.userProfessionPage,
+                                      extra: true,
+                                    );
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: const Color(0xff1D1B21),
