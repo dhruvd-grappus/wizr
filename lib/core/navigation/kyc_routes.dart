@@ -132,6 +132,7 @@ final kycRoutes = [
   GoRoute(
     name: RouteNames.userProfessionPage,
     path: '/${RouteNames.userProfessionPage}',
+    parentNavigatorKey: _rootNavigatorKey,
     builder: (context, state) =>
         UserProfessionPage(isFromCourseExplore: state.extra! as bool),
   ),

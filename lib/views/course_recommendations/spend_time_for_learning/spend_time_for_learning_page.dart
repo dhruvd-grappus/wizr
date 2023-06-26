@@ -7,12 +7,14 @@ import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/asset_paths.dart';
+import 'package:wizr/core/widgets/animated_primary_button.dart';
 import 'package:wizr/core/widgets/form_fields.dart';
 import 'package:wizr/views/course_recommendations/spend_time_for_learning/widgets/learning_time_choices_widget.dart';
 import 'package:wizr/views/course_recommendations/widgets/highlighted_fold_card.dart';
 
 class SpendTimeForLearningPage extends StatefulWidget {
   const SpendTimeForLearningPage({required this.modeOfLearning, super.key});
+
   final String modeOfLearning;
 
   @override
@@ -22,6 +24,7 @@ class SpendTimeForLearningPage extends StatefulWidget {
 
 class _SpendTimeForLearningPageState extends State<SpendTimeForLearningPage> {
   final ValueNotifier<bool> hasSelectedPreferenceMode = ValueNotifier(false);
+
   @override
   Widget build(BuildContext context) {
     final bottom2 = MediaQuery.of(context).viewInsets.bottom;
@@ -86,13 +89,15 @@ class _SpendTimeForLearningPageState extends State<SpendTimeForLearningPage> {
 
 class _FormForOffline extends StatelessWidget {
   const _FormForOffline(this.hasSelectedMode);
+
   final ValueNotifier<bool> hasSelectedMode;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          context.l10n.whatIsLearningPreferenceMode,
+          context.l10n.tellUsYourPincode,
           style: context.textTheme.displayLarge,
         ),
         SizedBox(height: 24.h),
@@ -160,7 +165,9 @@ class _FormForOffline extends StatelessWidget {
 
 class _FormForOnline extends StatelessWidget {
   const _FormForOnline(this.hasSelectedMode);
+
   final ValueNotifier<bool> hasSelectedMode;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -177,7 +184,24 @@ class _FormForOnline extends StatelessWidget {
             context.l10n.imFlexible
           ]
               .map(
-                (e) => GestureDetector(
+                (e) => AnimatedPrimaryButton(
+                  text: e,
+                  selectedTextStyle: context.textTheme.labelLarge!.white,
+                  textStyle: context.textTheme.labelLarge!.copyWith(
+                    color: const Color(0xFF2B1911),
+                  ),
+                  onPressed: () => hasSelectedMode.value = true,
+                  width: 342.w,
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  padding: EdgeInsets.symmetric(
+                    vertical: 18.h,
+                  ),
+                  borderRadius: 12,
+                  color: const Color(0xFFDAD8DD).withOpacity(0.5),
+                  selectedColor: const Color(0xFF50495A),
+                ),
+
+                /* GestureDetector(
                   onTap: () => hasSelectedMode.value = true,
                   child: Container(
                     width: 342.w,
@@ -199,7 +223,7 @@ class _FormForOnline extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
+                ),*/
               )
               .toList(),
         )

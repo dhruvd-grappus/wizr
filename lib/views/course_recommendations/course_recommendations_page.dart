@@ -31,11 +31,9 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
         );
         return false;
       } else {
-        //context.pop;
-        return false;
+        return true;
       }
     }
-    //context.goNamed(RouteNames.financePage);
     return false;
   }
 
@@ -49,7 +47,10 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
         body: SafeArea(
           child: Column(
             children: [
-              const AppHeader(isBack: true),
+              AppHeader(
+                isBack: true,
+                onBackPress: goToPreviousPage,
+              ),
               StepProgressIndicator(
                 totalSteps: 5,
                 currentStep: _currentStep,
