@@ -108,7 +108,8 @@ class UserProfessionPage extends StatelessWidget {
 
 class ProfessionBody extends StatefulWidget {
   const ProfessionBody({
-    required this.isFromCourseExplore, super.key,
+    required this.isFromCourseExplore,
+    super.key,
   });
 
   final bool isFromCourseExplore;
@@ -184,8 +185,7 @@ class _ProfessionBodyState extends State<ProfessionBody> {
                     .withColor(AppColors.purpleText.withOpacity(0.5)),
               ),
             ),
-          }
-          else if (professionType == ProfessionType.student) ...{
+          } else if (professionType == ProfessionType.student) ...{
             CurvedTextFormField(
               controller: nameController,
               hint: 'Enter your first name',

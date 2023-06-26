@@ -8,7 +8,7 @@ class RotatedChip extends StatelessWidget {
     super.key,
     this.textColor = Colors.black,
     this.chipColor = Colors.white,
-    this.highlightColor =  Colors.transparent,
+    this.highlightColor = Colors.transparent,
     this.onTap,
     this.actionIconColor,
     this.angle = 0,
@@ -29,6 +29,7 @@ class RotatedChip extends StatelessWidget {
   final TextStyle? labelStyle;
   final EdgeInsets? padding;
   final double radius;
+
   @override
   Widget build(BuildContext context) {
     return Transform.rotate(

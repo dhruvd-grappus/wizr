@@ -130,35 +130,36 @@ class _AnimatedPrimaryButtonState extends State<AnimatedPrimaryButton>
           ),
         ),
         if (widget.onPressed != null)
-        AnimatedBuilder(
-          animation: _controller,
-          child: Container(
-            decoration: BoxDecoration(
-              color: widget.selectedColor,
-              border: Border.all(
-                color: widget.borderColor,
-                width: widget.borderWidth,
-              ),
-              borderRadius: BorderRadius.circular(widget.borderRadius),
-            ),
-            padding: widget.padding ??
-                EdgeInsets.fromLTRB(
-                  18.w,
-                  13.h,
-                  18.w,
-                  13.h,
+          AnimatedBuilder(
+            animation: _controller,
+            child: Container(
+              decoration: BoxDecoration(
+                color: widget.selectedColor,
+                border: Border.all(
+                  color: widget.borderColor,
+                  width: widget.borderWidth,
                 ),
-            child: Align(
-              child: textNormal,
+                borderRadius: BorderRadius.circular(widget.borderRadius),
+              ),
+              padding: widget.padding ??
+                  EdgeInsets.fromLTRB(
+                    18.w,
+                    13.h,
+                    18.w,
+                    13.h,
+                  ),
+              child: Align(
+                child: textNormal,
+              ),
             ),
+            builder: (context, child) {
+              return ClipPath(
+                clipper:
+                    RectClipper(slideAnimation.value, widget.transitionType),
+                child: child,
+              );
+            },
           ),
-          builder: (context, child) {
-            return ClipPath(
-              clipper: RectClipper(slideAnimation.value, widget.transitionType),
-              child: child,
-            );
-          },
-        ),
       ],
     );
     return Container(

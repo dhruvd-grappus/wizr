@@ -26,8 +26,11 @@ import 'package:wizr/views/kyc/identity/kyc_upload_digitally_page.dart';
 import 'package:wizr/views/landing/landing_page.dart';
 import 'package:wizr/views/learn/learn_page.dart';
 import 'package:wizr/views/widgets/under_development.dart';
+
 part 'course_recommendation_shell_route.dart';
+
 part 'dashboard_shell_route.dart';
+
 part 'kyc_routes.dart';
 
 // Keys
@@ -90,7 +93,7 @@ final router = GoRouter(
           const curve = Curves.ease;
 
           final tween =
-          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
           return SlideTransition(
             position: animation.drive(tween),
@@ -111,7 +114,7 @@ final router = GoRouter(
           const curve = Curves.ease;
 
           final tween =
-          Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
           return SlideTransition(
             position: animation.drive(tween),

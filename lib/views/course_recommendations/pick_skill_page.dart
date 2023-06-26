@@ -6,7 +6,8 @@ import 'package:wizr/views/course_recommendations/widgets/skill_card.dart';
 
 class PickSkillPage extends StatelessWidget {
   const PickSkillPage({
-    required this.next, super.key,
+    required this.next,
+    super.key,
   });
 
   final VoidCallback next;

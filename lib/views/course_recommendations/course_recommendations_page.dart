@@ -22,6 +22,7 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
   final PageController pageController = PageController();
 
   String learningMode = 'Online';
+
   Future<bool> goToPreviousPage() async {
     if (pageController.hasClients) {
       if ((pageController.page ?? 0) >= 1) {
@@ -44,7 +45,8 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
       onWillPop: goToPreviousPage,
       child: Scaffold(
         backgroundColor: AppColors.white,
-        resizeToAvoidBottomInset: false,body: SafeArea(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
           child: Column(
             children: [
               const AppHeader(),
@@ -76,7 +78,9 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
                     PreferredLearningModePage(
                       next: goToNextPage,
                     ),
-                    SpendTimeForLearningPage(modeOfLearning: learningMode,)
+                    SpendTimeForLearningPage(
+                      modeOfLearning: learningMode,
+                    )
                   ],
                 ),
               ),
@@ -86,6 +90,7 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
       ),
     );
   }
+
   void _onPageChanged(int currentPage) {
     setState(() {
       _currentStep = currentPage + 1;

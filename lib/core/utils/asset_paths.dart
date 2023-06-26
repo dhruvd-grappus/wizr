@@ -19,7 +19,8 @@ class AssetImages {
   static const String online = '${imageBasePath}img_online.png';
   static const String pinch = '${imageBasePath}img_pinch.png';
   static const String imgbasicLevel = '${imageBasePath}img_lvl_basic.png';
-  static const String imgIntermediateLevel = '${imageBasePath}img_lvl_intermediate.png';
+  static const String imgIntermediateLevel =
+      '${imageBasePath}img_lvl_intermediate.png';
   static const String imgAdvanceLevel = '${imageBasePath}img_lvl_advance.png';
   static const String imgOnlinePref = '${imageBasePath}img_pref_online.png';
   static const String imgOfflinePref = '${imageBasePath}img_pref_offline.png';

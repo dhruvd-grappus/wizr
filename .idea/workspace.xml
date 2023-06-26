@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a568579-de8b-4055-bd75-dc58fd150389" name="Changes" comment="fix issues in courses ui to recommendations section">
-      <change afterPath="$PROJECT_DIR$/assets/images/img_lvl_advance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_lvl_basic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_lvl_intermediate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_pref_flexible.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_pref_offline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/img_pref_online.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/navigation/course_recommendation_shell_route.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/course_recommendation_shell_route.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/go_router_config.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/navigation/kyc_routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/navigation/kyc_routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/utils/asset_paths.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/utils/asset_paths.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/core/widgets/animated_primary_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/widgets/animated_primary_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/authentication/signup_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/authentication/signup_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/authentication/user_profession.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/authentication/user_profession.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/choose_subject_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/choose_subject_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/comfort_level_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/comfort_level_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/course_recommendations_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/course_recommendations_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/pick_skill_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/pick_skill_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/preferred_learning_mode_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/preferred_learning_mode_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/spend_time_for_learning_page.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/course_recommendations/widgets/level_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/course_recommendations/widgets/level_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/views/landing/snap_three.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/landing/snap_three.dart" afterDir="false" />
-    </list>
+    <list default="true" id="6a568579-de8b-4055-bd75-dc58fd150389" name="Changes" comment="fix learning mode image issue." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687406962488</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix learning mode image issue.">
+      <created>1687745657848</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687745657848</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +131,7 @@
     <MESSAGE value="added ui of explore course section." />
     <MESSAGE value="added courses ui to recommendations section" />
     <MESSAGE value="fix issues in courses ui to recommendations section" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix issues in courses ui to recommendations section" />
+    <MESSAGE value="fix learning mode image issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix learning mode image issue." />
   </component>
 </project>

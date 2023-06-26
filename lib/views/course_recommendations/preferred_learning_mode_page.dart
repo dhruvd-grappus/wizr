@@ -54,7 +54,8 @@ class PreferredLearningModePage extends StatelessWidget {
                   SizedBox(height: 22.h),
                   LevelTile(
                     label: 'Offline',
-                    bodyText: 'I want to attend in class courses to upskill myself',
+                    bodyText:
+                        'I want to attend in class courses to upskill myself',
                     imgPath: AssetImages.imgOfflinePref,
                     onTap: () => goToNextPage(context, 'Offline'),
                   ),
@@ -62,7 +63,7 @@ class PreferredLearningModePage extends StatelessWidget {
                   LevelTile(
                     label: 'I’m flexible',
                     bodyText:
-                    'I am open to hybrid modes of learning , as long as I find he course useful',
+                        'I am open to hybrid modes of learning , as long as I find he course useful',
                     imgPath: AssetImages.imgFlexiblePref,
                     onTap: () => goToNextPage(context, 'Flexible'),
                   ),

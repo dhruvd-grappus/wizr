@@ -35,11 +35,14 @@ class RectClipper extends CustomClipper<Path> {
         path.lineTo(size.width, size.height);
 
       case TransitionType.CENTER_ROUNDED:
-        path.addOval(Rect.fromCircle(
+        path.addOval(
+          Rect.fromCircle(
             center: Offset(size.width / 2, size.height / 2),
             radius:
-            sqrt((size.width * size.width) + (size.height * size.height)) *
-                clipFactor,),);
+                sqrt((size.width * size.width) + (size.height * size.height)) *
+                    clipFactor,
+          ),
+        );
     }
     path.close();
     return path;
