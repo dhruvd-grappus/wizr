@@ -151,6 +151,8 @@ class CourseCard extends StatelessWidget {
                     height: 32,
                     backgroundColor:
                         radius > 0 ? AppColors.purpleText : Colors.black,
+                    borderColor:
+                        radius > 0 ? AppColors.purpleText : Colors.black,
                     padding: EdgeInsets.symmetric(horizontal: 17.w),
                   )
                 ],

@@ -32,7 +32,7 @@ class LearnPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const AppHeader(),
+                    const AppHeader(isLanding: true),
                     CourseCategories(),
                     Expanded(
                       child: SingleChildScrollView(
@@ -59,8 +59,8 @@ class LearnPage extends StatelessWidget {
                   return AnimatedPositioned(
                     duration: const Duration(milliseconds: 300),
                     bottom: learnController.selectedComparisonList.isNotEmpty
-                        ? 50.h
-                        : 90.h,
+                        ? 0
+                        : 40.h,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

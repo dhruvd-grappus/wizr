@@ -72,9 +72,57 @@ class CourseComparisonScreen extends StatelessWidget {
                   children: [
                     CourseEnrollSection(),
                     SizedBox(height: 40.h),
-                    const CommonCourseCompareCard(
+                    CommonCourseCompareCard(
                       title: 'Provider',
-                    )
+                      imagePath: 'assets/images/test_course_brand.png',
+                      cardType: CourseComareCardType.image,
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Mode of Classes',
+                      bodyText: 'Online',
+                      cardType: CourseComareCardType.checkIcon,
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Level',
+                      bodyText: 'Beginner',
+                      cardType: CourseComareCardType.checkIcon,
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Certification',
+                      bodyText: 'Bootcamp Degree',
+                      cardType: CourseComareCardType.checkIcon,
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Peer Review',
+                      bodyText: 'Available',
+                      cardType: CourseComareCardType.checkIcon,
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Duration',
+                      bodyText: '04 Months',
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Course Effort',
+                      bodyText: '2 hrs/week',
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Learning Mode',
+                      bodyText: 'Live with Instructor',
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Language',
+                      bodyText: 'English, Hindi, Telugu',
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Scholarship',
+                      bodyText: 'Available',
+                      cardType: CourseComareCardType.checkIcon,
+                    ),
+                    CommonCourseCompareCard(
+                      title: 'Placement Assistance',
+                      bodyText: 'Available',
+                      cardType: CourseComareCardType.checkIcon,
+                    ),
                   ],
                 ),
               ],

@@ -110,7 +110,7 @@
     "sendNewsLetter":"Send me newsletters and updates about WiZR’s activities",
     "firstName":"First Name",
     "lastName":"Last Name",
-    "andLastName":"And your first name",
+    "andLastName":"And your last name",
     "emailHint":"youname@email.com",
     "dob":"DOB",
     "dobHint":"mm/dd/yy",

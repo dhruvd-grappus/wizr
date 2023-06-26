@@ -49,7 +49,7 @@ class _CourseRecommendationsPageState extends State<CourseRecommendationsPage> {
         body: SafeArea(
           child: Column(
             children: [
-              const AppHeader(),
+              const AppHeader(isBack: true),
               StepProgressIndicator(
                 totalSteps: 5,
                 currentStep: _currentStep,
