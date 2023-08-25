@@ -27,7 +27,7 @@ dependencies:
   go_router: ^8.0.2
   intl: ^0.18.0
   permission_handler: ^10.3.0
-  pinput: ^2.2.31
+  pinput: ^3.0.1
   simple_ripple_animation: ^0.0.7
   sleek_circular_slider: ^2.0.1
   step_progress_indicator: ^1.0.2
