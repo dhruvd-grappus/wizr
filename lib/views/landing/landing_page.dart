@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wizr/core/widgets/app_header.dart';
 import 'package:wizr/views/landing/snap_eight.dart';
 import 'package:wizr/views/landing/snap_five.dart';
 import 'package:wizr/views/landing/snap_four.dart';
@@ -8,7 +9,6 @@ import 'package:wizr/views/landing/snap_seven.dart';
 import 'package:wizr/views/landing/snap_six.dart';
 import 'package:wizr/views/landing/snap_three.dart';
 import 'package:wizr/views/landing/snap_two.dart';
-import 'package:wizr/views/landing/widgets/landing_app_bar.dart';
 import 'package:wizr/views/landing/widgets/stack_view.dart';
 
 class LandingPage extends StatelessWidget {
@@ -32,7 +32,7 @@ class LandingPage extends StatelessWidget {
     return Column(
       children: [
         // app bar
-        const LandingAppBar(),
+        const AppHeader(),
         Expanded(
           child: StackSwiper(
             curve: Curves.ease,
@@ -44,13 +44,12 @@ class LandingPage extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemWidth: MediaQuery.of(context).size.width,
             itemHeight: MediaQuery.of(context)
-                .size
-                .height - // total height// top AppBar height
+                    .size
+                    .height - // total height// top AppBar height
                 kBottomNavigationBarHeight,
             loop: false,
           ),
         ),
-
       ],
     );
   }

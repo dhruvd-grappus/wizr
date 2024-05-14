@@ -33,21 +33,21 @@ class FinancePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 26.toResponsiveHeight(context)),
+                      SizedBox(height: 12.toResponsiveHeight(context)),
                       Text(
                         context.l10n.financeHome,
                         style: context.textTheme.labelSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 31.toResponsiveHeight(context)),
+                      SizedBox(height: 12.toResponsiveHeight(context)),
                       Align(
                         alignment: Alignment.centerRight,
                         child: SvgPicture.asset(
                           AssetImages.creditLimit,
                         ),
                       ),
-                      SizedBox(height: 40.toResponsiveHeight(context)),
+                      SizedBox(height: 24.toResponsiveHeight(context)),
                       Text(
                         context.l10n.youUnlockedYour,
                         style: context.textTheme.headlineMedium,
@@ -65,7 +65,7 @@ class FinancePage extends StatelessWidget {
                               color: AppColors.credBlue,
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: SvgPicture.asset(AssetImages.cread),
+                            child: SvgPicture.asset(AssetImages.cred),
                           ),
                           const SizedBox(width: 6),
                           Text(
@@ -83,14 +83,12 @@ class FinancePage extends StatelessWidget {
                           height: 1.2,
                         ),
                       ),
-                      SizedBox(height: 16.toResponsiveHeight(context)),
+                      SizedBox(height: 12.toResponsiveHeight(context)),
                       const CreditLimitCard(),
-                      SizedBox(height: 16.toResponsiveHeight(context)),
+                      SizedBox(height: 12.toResponsiveHeight(context)),
                       PrimaryButton(
                         label: context.l10n.activateYourCreditLimit,
-                        onTap: () => context.pushNamed(
-                          RouteNames.kycEmployeePage,
-                        ),
+                        onTap: () => context.goNamed(RouteNames.phoneLoginPage),
                       )
                     ],
                   ),

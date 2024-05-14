@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -24,10 +25,10 @@ class SnapThree extends StatelessWidget {
           Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 16).copyWith(bottom: 12),
-            child: const Row(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   '02',
                   style: TextStyle(
                     fontFamily: 'Quintus',
@@ -37,11 +38,11 @@ class SnapThree extends StatelessWidget {
                     color: Color(0xffF5F4F6),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Learn',
                       style: TextStyle(
                         fontFamily: 'Patron',
@@ -51,8 +52,8 @@ class SnapThree extends StatelessWidget {
                         color: Color(0xff1D1B21),
                       ),
                     ),
-                    SizedBox(height: 19),
-                    Text(
+                    const SizedBox(height: 19),
+                    const Text(
                       'with Purpose',
                       style: TextStyle(
                         fontFamily: 'Quintus',
@@ -62,14 +63,16 @@ class SnapThree extends StatelessWidget {
                         color: Color(0xffF5F4F6),
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Receive unbiased and personalized course\nrecommendations from across India and the\nworld. Filter, compare and enrol',
+                    SizedBox(height: 20.h),
+                    const Text(
+                      'Receive unbiased and personalized course'
+                      '\nrecommendations from across India and '
+                      'the\nworld. Filter, compare and enrol',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
-                        height: 1,
+                        height: 1.4,
                         color: Color(0xff161C20),
                       ),
                     ),
@@ -159,7 +162,8 @@ class SnapThree extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 12),
                                 const Text(
-                                  'Based on your profile get\nunbiased course\nrecommendations.',
+                                  'Based on your profile get\nunbiased'
+                                  ' course\nrecommendations.',
                                   style: TextStyle(
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.w500,
@@ -172,7 +176,7 @@ class SnapThree extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            bottom: 58,
+                            bottom: 0,
                             left: 16,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -228,6 +232,9 @@ class SnapThree extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: kBottomNavigationBarHeight,
+          )
         ],
       ),
     );

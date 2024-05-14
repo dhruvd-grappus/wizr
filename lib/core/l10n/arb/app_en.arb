@@ -72,7 +72,7 @@
     "aadharUpload":"Aadhaar upload",
     "uploadYourAadharCard":"Upload your Aadhaar card",
     "fileSpecs":"File should be PDF or JPEG. Max file size 5 MB",
-    "tapToUploadDoc": "Tap to upload {doc} front photo here",
+    "tapToUploadDoc": "Tap to upload {doc}",
     "@tapToUploadDoc": {
         "placeholders": {
             "doc": {
@@ -81,6 +81,8 @@
             }
         }
     },
+    "frontPhotoHere":" front photo here",
+    "backPhotoHere":" back photo here",
     "front":"Front",
     "back":"Back",
     "identityProof":"Identity Proof",
@@ -95,6 +97,86 @@
                 "example": "Aadhaar's"
             }
         }
-    }
+    },
+    "contactDetails":"Contact Details",
+    "letsGetYouStarted":"Let’s get you started!",
+    "firstWeNeedPhone":"First we need your phone number",
+"phoneNumber":"Phone Number",
+"byUsingWizr":"By using WiZR you agree to the",
+"termsAndPrivacy":"Terms of Service & Privacy Policy",
+    "weSentYouAnOtp":"We’ve sent you an OTP",
+    "onYourPhone":"On your phone number",
+    "moreAboutYou":"A little more about you",
+    "sendNewsLetter":"Send me newsletters and updates about WiZR’s activities",
+    "firstName":"First Name",
+    "lastName":"Last Name",
+    "andLastName":"And your first name",
+    "emailHint":"youname@email.com",
+    "dob":"DOB",
+    "dobHint":"mm/dd/yy",
+    "gender":"Gender",
+    "select":"Select",
+    "agreeToTerms":"I agree to WiZR’s terms & conditions",
+    "getUpdatesOnWhatsapp":"Get updates on Whatsapp",
+"bestDescribesYou": "What describes you the best?",
+"curateCourses": "We will curate courses based on who you are",
+    "iam" : "I am",
+    "aStudent" : "A Student",
+    "aProfessional" : "A Professional",
+    "selectYourBank":"Select your bank",
+
+    "selectYourSalaryAccount":"Select your salary account",
+    "pleaseSelectOneBank":"Please select any one bank",
+    "searchYourBank":"Search your bank",
+    "updateBankDetails":"Update Bank Details",
+    "accountType":"Account Type",
+    "current":"Current",
+    "savings":"Savings",
+    "other":"Other",
+    "bankName":"Bank Name",
+    "accountNumber":"Account Number",
+    "accountHolderName":"Account Holder Name",
+    "ifscCode":"IFSC Code",
+    "creditAccount":"Credit Account",
+    "overDraftAccount":"Overdraft Account",
+    "selectAccountType":"Select Account Type",
+    "bankSupportsNACH":"Your bank supports digital NACH",
+    "selectedType":"Selected Type:",
+    "greatWeAreVerifying":"Great, we are verifying your bank account",
+    "weAreDepositingRs":"We are now depositing Rs. 01 in your account for verify it from our behalf.",
+    "verificationInProgress":"Verification in Progress...",
+    "cancelledCheque":"Cancelled Cheque",
+    "bankPassbook":"Bank Passbook",
+    "bankStatement":"Bank Statement",
+    "uploadBankStatement":"Upload bank statement",
+    "uploadAnyOfTheseDocs":"Upload any of these documents",
+    "congratulationsAccountVerified":"Congratulations! your\naccount has been verified",
+
+    "greatThanks":"Great! Thanks",
+    "justOneMoreMinuteToBeIn":"Just one more minute to be in",
+    "forVerification":"For verification, you need to",
+    "clickASelfie":"Click a selfie",
+    "stepIntoAWellLitArea":"Step into a well-lit area & smile at your camera!",
+    "keepYourIDReady":"Keep your ID card ready",
+    "youWillUploadAadhar":"You will upload a picture\nof your Aadhaar Card\nDon’t have Aadhar? Tap here",
+    "panCard":"Pan Card",
+    "youWillUploadPan":"You will upload a picture\nof your PAN",
+    "selfie":"Selfie",
+    "forASelfieToGetApproved":"For a selfie to get approved, please note",
+    "complete":"Complete",
+    "yourTopCourses":"Your top three Course\nRecommendations",
+    "compare":"Compare",
+    "shortlistedForComparision": "Shortlisted for comparision",
+    "zeroCostEMI":"Zero-Cost EMI",
+    "starts":"Starts",
+    "totalCost":"Total Cost",
+    "viewDetails":"View details",
+    "applyFilters":"Apply Filters",
+    "courseFilters":"Course Filters"
+
+
+
+
+
 
 }

@@ -26,7 +26,7 @@ class SelfEmployed extends StatelessWidget {
         child: PrimaryButton(
           label: context.l10n.continueBtnLabel,
           active: false,
-          onTap: () => context.pushNamed(RouteNames.kycHomeTypePage),
+          onTap: () => context.pushNamed(RouteNames.kycUploadPhotoPage),
         ),
       ),
       backgroundColor: AppColors.offWhiteBackground,

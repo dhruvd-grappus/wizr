@@ -8,6 +8,7 @@ import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/core/widgets/buttons.dart';
+import 'package:wizr/core/widgets/rounded_bottom_sheet.dart';
 import 'package:wizr/views/kyc/address/detect_location_sheet.dart';
 import 'package:wizr/views/kyc/widgets/address_card.dart';
 import 'package:wizr/views/kyc/widgets/kyc_header_with_title.dart';
@@ -29,12 +30,7 @@ class KycAddressSelectPage extends StatelessWidget {
               SizedBox(height: 22.toResponsiveHeight(context)),
               GestureDetector(
                 onTap: () {
-                  showModalBottomSheet<void>(
-                    context: context,
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    builder: (_) => const DetectLocationSheet(),
-                  );
+                  showRoundedBottomSheet(context, const DetectLocationSheet());
                 },
                 child: Text(
                   context.l10n.cantFindAddressQuestion,
@@ -78,7 +74,7 @@ class KycAddressSelectPage extends StatelessWidget {
                     context.l10n.addressFoundDesc,
                     style: context.textTheme.bodyMedium!
                         .responsiveFont(context)
-                        .withColor(AppColors.tabColor),
+                        .withColor(AppColors.financeBlueDark),
                   ),
                   SizedBox(
                     height: 24.toResponsiveHeight(context),

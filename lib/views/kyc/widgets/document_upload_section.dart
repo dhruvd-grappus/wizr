@@ -45,14 +45,14 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
       ),
       child: RippleAnimation(
         color: AppColors.greyTextColor.withOpacity(0.2),
-        delay: const Duration(seconds: 3),
         duration: const Duration(seconds: 3),
         minRadius: 45.toResponsiveHeight(context),
         repeat: true,
-        ripplesCount: 4,
+        ripplesCount: 6,
         child: Container(
           padding: EdgeInsets.symmetric(
-            horizontal: 65.toResponsiveWidth(context),
+            horizontal:
+                (widget.isDocument ? 32 : 65).toResponsiveWidth(context),
           ),
           height: 200.toResponsiveHeight(context),
           width: context.screenWidth,
@@ -72,9 +72,11 @@ class _DocumentUploadCardState extends State<DocumentUploadCard> {
               ),
               Text(
                 widget.title,
+                maxLines: widget.isDocument ? 1 : null,
                 textAlign: TextAlign.center,
-                style: CustomTextStyles.captionLarge
-                    .withColor(AppColors.midnightBlack.withOpacity(0.72)),
+                style: CustomTextStyles.displayLarge
+                    .withColor(AppColors.midnightBlack.withOpacity(0.72))
+                    .responsiveFont(context),
               ),
               if (widget.isDocument)
                 Padding(

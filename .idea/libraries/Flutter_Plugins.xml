@@ -2,6 +2,15 @@
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fluttertoast-8.2.2" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/smart_auth-1.0.8" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/camera_avfoundation-0.9.13+2" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/google_mlkit_commons-0.3.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/face_camera-0.0.7" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/permission_handler-10.3.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/camera_android-0.10.8+2" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/camera_web-0.3.1+4" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/camera-0.10.5+2" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/google_mlkit_face_detection-0.6.0" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

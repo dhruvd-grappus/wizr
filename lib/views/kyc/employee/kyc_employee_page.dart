@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wizr/core/l10n/l10n.dart';
+import 'package:wizr/core/navigation/go_router_config.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
 import 'package:wizr/views/kyc/constants/employee_type_enum.dart';
@@ -25,11 +26,12 @@ class _KycEmployeePageState extends State<KycEmployeePage> {
         );
         return false;
       } else {
-        context.pop();
-        return true;
+        context.goNamed(RouteNames.financePage);
+        return false;
       }
     }
-    return true;
+    context.goNamed(RouteNames.financePage);
+    return false;
   }
 
   @override
@@ -46,42 +48,44 @@ class _KycEmployeePageState extends State<KycEmployeePage> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: goToPreviousPage,
-      child: Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: AppColors.offWhiteBackground,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ValueListenableBuilder<bool>(
-              valueListenable: isLastPage,
-              builder: (_, isLastPage, child) {
-                return KycHeaderWithTitle(
-                  title: isLastPage
-                      ? context.l10n.borrowerDetails
-                      : context.l10n.kycEmployeeStatus,
-                  onBack: goToPreviousPage,
-                );
-              },
-            ),
-            SizedBox(height: 28.toResponsiveHeight(context)),
-            Expanded(
-              child: SizedBox(
-                width: context.screenWidth,
-                child: PageView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: EmployeeType.values.length,
-                  controller: pageController,
-                  itemBuilder: (_, index) {
-                    final type = EmployeeType.values[index];
-                    return CustomEmployeeForm(
-                      employeeType: type,
-                      child: type.pageContent(pageController),
-                    );
-                  },
-                ),
+      child: SafeArea(
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          backgroundColor: AppColors.offWhiteBackground,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ValueListenableBuilder<bool>(
+                valueListenable: isLastPage,
+                builder: (_, isLastPage, child) {
+                  return KycHeaderWithTitle(
+                    title: isLastPage
+                        ? context.l10n.borrowerDetails
+                        : context.l10n.kycEmployeeStatus,
+                    onBack: goToPreviousPage,
+                  );
+                },
               ),
-            )
-          ],
+              SizedBox(height: 28.toResponsiveHeight(context)),
+              Expanded(
+                child: SizedBox(
+                  width: context.screenWidth,
+                  child: PageView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: EmployeeType.values.length,
+                    controller: pageController,
+                    itemBuilder: (_, index) {
+                      final type = EmployeeType.values[index];
+                      return CustomEmployeeForm(
+                        employeeType: type,
+                        child: type.pageContent(pageController),
+                      );
+                    },
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

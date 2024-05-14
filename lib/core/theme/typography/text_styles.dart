@@ -7,7 +7,6 @@ part 'text_style_extensions.dart';
 abstract class CustomTextStyles {
   static const _patronStyle = TextStyle(fontFamily: 'Patron');
   static const _interStyle = TextStyle(fontFamily: 'Inter');
-
   static TextStyle headlineLarge = _patronStyle.copyWith(
     fontSize: 31,
     fontWeight: CustomFontWeights.bold,
@@ -45,6 +44,12 @@ abstract class CustomTextStyles {
     color: Colors.black,
     letterSpacing: -0.01,
   );
+  static TextStyle displaySmall = _interStyle.copyWith(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.purple1,
+    letterSpacing: -0.01,
+  );
 
   static TextStyle headlineSmall = _patronStyle.copyWith(
     fontSize: 20,
@@ -53,12 +58,13 @@ abstract class CustomTextStyles {
     letterSpacing: 0.02,
   );
 
-  static TextStyle captionLarge = _patronStyle.copyWith(
+  static TextStyle displayLarge = _patronStyle.copyWith(
     fontSize: 16,
     fontWeight: FontWeight.w700,
     color: AppColors.black,
     letterSpacing: 0.02,
   );
+
   static TextStyle captionMedium = _interStyle.copyWith(
     fontSize: 14,
     fontWeight: FontWeight.w600,

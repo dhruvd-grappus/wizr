@@ -80,7 +80,6 @@ class KycHomeTypePage extends StatelessWidget {
                                     context.pushNamed(
                                       RouteNames.kycAddressSelectPage,
                                     );
-                                    // TODO(dhruv): navigate to addresses page
                                   },
                                   bodyText: e.description(context),
                                 ),

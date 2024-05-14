@@ -10,8 +10,8 @@ class KycCard extends StatelessWidget {
   const KycCard({
     required this.title,
     required this.iconPath,
-    required this.onTap,
     required this.bodyText,
+    this.onTap,
     this.cardType = KycCardType.fullCard,
     this.isHalfCard = false,
     this.bodyWidget,
@@ -23,7 +23,7 @@ class KycCard extends StatelessWidget {
   final String bodyText;
   final Widget? bodyWidget;
   final String iconPath;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final bool isHalfCard;
   final double? height;
 

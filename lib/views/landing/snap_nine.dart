@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SnapNine extends StatelessWidget {
@@ -7,8 +6,7 @@ class SnapNine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final List<Partner> partners = [
+    final partners = <Partner>[
       Partner('assets/images/img_partner1.png', const Color(0xffBCA7E2)),
       Partner('assets/images/img_partner2.png', const Color(0xffF8F5F2)),
       Partner('assets/images/img_partner3.png', const Color(0xffF2E1C2)),
@@ -67,7 +65,8 @@ class SnapNine extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           Text(
-            'We’ve been fortunate to have brilliant alliances\nwith esteemed institutes all over the world',
+            "We've been fortunate to have brilliant alliances4"
+            '\nwith esteemed institutes all over the world',
             style: TextStyle(
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
@@ -85,21 +84,21 @@ class SnapNine extends StatelessWidget {
               color: const Color(0xff292F1E),
             ),
             margin: const EdgeInsets.symmetric(horizontal: 11),
-            child:GridView.custom(
+            child: GridView.custom(
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverStairedGridDelegate(
                 pattern: const [
-                  StairedGridTile(1.0, 8 / 4),
+                  StairedGridTile(1, 8 / 4),
                   StairedGridTile(0.5, 0.8),
                   StairedGridTile(0.5, 4 / 4),
                 ],
               ),
               childrenDelegate: SliverChildBuilderDelegate(
                 childCount: 9,
-                    (context, index) => PartnerLogoWidget(
-                      logo: Image.asset(partners[index].logoPath),
-                      background: partners[index].background,
-                    ),
+                (context, index) => PartnerLogoWidget(
+                  logo: Image.asset(partners[index].logoPath),
+                  background: partners[index].background,
+                ),
               ),
             ),
           ),
@@ -124,7 +123,10 @@ class SnapNine extends StatelessWidget {
                     color: Color(0xff292F1E),
                   ),
                 ),
-                PartnerLogoWidget(logo: Image.asset(partners[7].logoPath), background: partners[7].background,),
+                PartnerLogoWidget(
+                  logo: Image.asset(partners[7].logoPath),
+                  background: partners[7].background,
+                ),
               ],
             ),
           ),
@@ -135,7 +137,11 @@ class SnapNine extends StatelessWidget {
 }
 
 class PartnerLogoWidget extends StatelessWidget {
-  const PartnerLogoWidget({super.key, required this.logo, required this.background});
+  const PartnerLogoWidget({
+    required this.logo,
+    required this.background,
+    super.key,
+  });
 
   final Widget logo;
   final Color background;
@@ -147,7 +153,7 @@ class PartnerLogoWidget extends StatelessWidget {
       width: 108,
       decoration: BoxDecoration(
         color: background,
-        shape: BoxShape.circle
+        shape: BoxShape.circle,
       ),
       child: Center(
         child: logo,
@@ -156,7 +162,7 @@ class PartnerLogoWidget extends StatelessWidget {
   }
 }
 
-class Partner{
+class Partner {
   Partner(this.logoPath, this.background);
 
   final String logoPath;

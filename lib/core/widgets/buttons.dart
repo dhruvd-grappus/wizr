@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wizr/core/theme/app_colors.dart';
 import 'package:wizr/core/theme/typography/text_styles.dart';
 import 'package:wizr/core/utils/responsive_utils.dart';
@@ -10,28 +10,35 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     this.active = true,
     this.height = 52,
+    this.radius = 1000,
     this.onTap,
     this.backgroundColor,
     this.icon,
     this.width,
     this.customLabelStyle,
     this.margin,
+    this.borderColor,
+    this.padding,
   });
   final void Function()? onTap;
   final String label;
   final bool active;
   final Color? backgroundColor;
-  final String? icon;
+  final Widget? icon;
   final double? width;
   final double? height;
   final TextStyle? customLabelStyle;
   final EdgeInsets? margin;
+  final Color? borderColor;
+  final EdgeInsets? padding;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: width,
+        padding: padding,
         constraints: height == null ? null : BoxConstraints(maxHeight: height!),
         margin: margin ??
             const EdgeInsets.symmetric(vertical: 12, horizontal: 16)
@@ -39,9 +46,11 @@ class PrimaryButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor ??
               (active ? Colors.black : AppColors.midnightGrey),
-          borderRadius: BorderRadius.circular(1000.toResponsiveHeight(context)),
-          border:
-              Border.all(color: active ? Colors.black : AppColors.midnightGrey),
+          borderRadius: BorderRadius.circular(radius.h),
+          border: Border.all(
+            color:
+                borderColor ?? (active ? Colors.black : AppColors.midnightGrey),
+          ),
         ),
         child: Center(
           child: Row(
@@ -50,7 +59,7 @@ class PrimaryButton extends StatelessWidget {
               if (icon != null)
                 Container(
                   margin: const EdgeInsets.only(right: 10).responsive(context),
-                  child: SvgPicture.asset(icon!),
+                  child: icon,
                 )
               else
                 const SizedBox(),
